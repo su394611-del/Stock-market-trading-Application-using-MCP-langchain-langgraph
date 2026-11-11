@@ -1,11 +1,9 @@
-
-
-#    MCP_Langchain_Langraph_Tools.py --self-test
- #   MCP_Langchain_Langraph_Tools.py --list
-  #  MCP_Langchain_Langraph_Tools.py --topic all
-   # MCP_Langchain_Langraph_Tools.py --topic mcp-client
-    # MCP_Langchain_Langraph_Tools.py --topic react --include-news
-  #  MCP_Langchain_Langraph_Tools.py --topic tools --live  # requires OPENAI_API_KEY
+# MCP_Langchain_Langraph_Tools.py --self-test
+# MCP_Langchain_Langraph_Tools.py --list
+# MCP_Langchain_Langraph_Tools.py --topic all
+# MCP_Langchain_Langraph_Tools.py --topic mcp-client
+# MCP_Langchain_Langraph_Tools.py --topic react --include-news
+# MCP_Langchain_Langraph_Tools.py --topic tools --live  # requires OPENAI_API_KEY
 
 #For --include-news, launch the HTTP example in another terminal:
  #   python news_mcp_server.py
