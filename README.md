@@ -10,7 +10,7 @@ Stock market trading application using MCP-LangChain-LangGraph
 
 | File | Purpose |
 |---|---|
-| `MCP_Langchain_Langraph_Tools.py` | Standalone CLI covering all 11 lesson topics |
+| `MCP_Langchain_Langraph_Tools.py` | Standalone CLI  |
 | `MCP_Langchain_Langraph_Tools.ipynb` | Step-by-step notebook for VS Code/Jupyter/Colab |
 | `stock_market_mcp_server.py` | MCP stock server with **STDIO** transport |
 | `news_mcp_server.py` | MCP news server with **Streamable HTTP** transport |
