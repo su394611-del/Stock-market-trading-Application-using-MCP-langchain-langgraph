@@ -1,0 +1,11 @@
+# Use Python 3.12 in a new environment. LangChain 1.4+ has built-in MCPAdapter.
+# DO NOT install the legacy langchain-mcp-adapters 0.3.2 alongside MCP SDK 2.x:
+# that legacy package explicitly requires MCP SDK <2.
+langchain[mcp]>=1.4,<2.0
+langgraph>=1.0,<2.0
+langchain-openai>=1.0,<2.0
+langchain-tavily>=0.2,<1.0
+mcp[cli]>=2.0,<3.0
+python-dotenv>=1.0,<2.0
+ipykernel>=6.29
+nbformat>=5.10
