@@ -2,7 +2,7 @@
 Stock market trading application using MCP-LangChain-LangGraph
 #  LangChain Tools, MCP and LangGraph/ReAct
 
-A complete, runnable educational conversion of the supplied notebook **`Model Context Protocol (MCP).ipynb`**. Includes a standalone Python program, a guided Jupyter Notebook, a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
+Complete code for the supplied notebook **`Model Context Protocol (MCP).ipynb`**. Includes a standalone Python program, a guided Jupyter Notebook, a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
 
 > **Safety and accuracy:** This course uses simulated stock quotes, synthetic market news, and simulated buy/sell operations. It **never** places brokerage orders and does not offer investment advice. The *offline* model is a small deterministic rule-based demonstration, **not** a real LLM. Using `--live` enables OpenAI API requests (costs may apply).
 
