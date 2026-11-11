@@ -2,7 +2,7 @@
 Stock market trading application using MCP-LangChain-LangGraph
 #  LangChain Tools, MCP and LangGraph/ReAct
 
-Complete code for the supplied notebook **`Model Context Protocol (MCP).ipynb`**. Includes a standalone Python program, a guided Jupyter Notebook, a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
+ **`Model Context Protocol (MCP).ipynb`**. Includes a standalone Python program, a guided Jupyter Notebook, a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
 
 > **Safety and accuracy:** This course uses simulated stock quotes, synthetic market news, and simulated buy/sell operations. It **never** places brokerage orders and does not offer investment advice. The *offline* model is a small deterministic rule-based demonstration, **not** a real LLM. Using `--live` enables OpenAI API requests (costs may apply).
 
@@ -20,7 +20,7 @@ Complete code for the supplied notebook **`Model Context Protocol (MCP).ipynb`**
 ## Requirements
 
 - **Python 3.12** recommended (Windows 11, Linux, macOS, Google Colab compatible subject to package support).
-- Network connection is required for initial package installation, for downloading packages and when using paid APIs. No GPU/CUDA required.
+- A network connection is required for initial package installation, for downloading packages and when using paid APIs. No GPU/CUDA required.
 - The **Python MCP SDK 2.x** is used by default. The included server files use the SDK 2.x import path.
 - The **LangChain 1.4+ built-in MCPAdapter** is used. The original notebook's `MultiServerMCPClient` came from a legacy package whose current 0.3.2 release requires MCP SDK `<2`, so **do not combine `langchain-mcp-adapters` with MCP SDK 2**.
 - OpenAI and Tavily API keys are only required for the explicitly enabled live examples.
@@ -49,7 +49,7 @@ If `Activate.ps1` is blocked by PowerShell policy, run `\.venv\Scripts\python.ex
 
 ### Jupyter / Google Colab
 
-Upload / keep all project files in one directory. Install dependencies in a notebook cell:
+Upload/keep all project files in one directory. Install dependencies in a notebook cell:
 
 ```python
 %pip install -r requirements.txt
@@ -78,7 +78,7 @@ python MCP_Langchain_Langraph_Tools.py --topic mcp-graph
 python MCP_Langchain_Langraph_Tools.py --topic react --graph-mermaid
 ```
 
-Default `--topic all` runs **offline** demos for all topics. It uses a deterministic rule-based model rather than calling OpenAI. For LangChain and MCP topics, the third-party packages must be installed. `--self-test` and `test_chapter11.py` do not require any third-party packages.
+Default `--topic all` runs **offline** demos for all topics. It uses a deterministic rule-based model rather than calling OpenAI. For LangChain and MCP topics, you must install the third-party packages. `--self-test` and `test_chapter11.py` do not require any third-party packages.
 
 ### Start the MCP servers
 
