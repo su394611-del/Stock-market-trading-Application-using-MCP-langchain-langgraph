@@ -1,10 +1,10 @@
 # Stock-market-trading-Application-using-MCP-langchain-langgraph
 Stock market trading application using MCP-LangChain-LangGraph
 #  LangChain Tools, MCP and LangGraph/ReAct
-
+ LangChain Tools, MCP and LangGraph/ReAct production-grade example or demonstration.
  **`Model Context Protocol (MCP).ipynb`**. Includes a standalone Python program, a guided Jupyter Notebook, a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
 
-> **Safety and accuracy:** This course uses simulated stock quotes, synthetic market news, and simulated buy/sell operations. It **never** places brokerage orders and does not offer investment advice. The *offline* model is a small deterministic rule-based demonstration, **not** a real LLM. Using `--live` enables OpenAI API requests (costs may apply).
+> **Safety and accuracy:** This course uses simulated stock quotes, synthetic market news, and simulated buy/sell operations. It **never** places brokerage orders and does not offer investment advice. The *offline* model is a small, deterministic, rule-based demonstration, **not ** a real decoder-only  LLM. Using `--live` enables OpenAI API requests (costs may apply).
 
 ## Files
 
@@ -152,7 +152,7 @@ The default model is `gpt-5-mini` to match the supplied source. Change it with `
 
 ## Known limitations
 
-- This is a **runnable Python program**, not a native compiled Windows `.exe`. The included `.cmd` launcher can be double-clicked on Windows after installing dependencies. Native EXE packaging with PyInstaller is outside the scope of this conversion and can require bundling server scripts and the Python packages.
+- This is a ** production-grade runnable Python program**, not a native compiled Windows `.exe`. The included `.cmd` launcher can be double-clicked on Windows after installing dependencies. Native EXE packaging with PyInstaller is outside the scope of this conversion and can require bundling server scripts and the Python packages.
 - The `--self-test` only tests standard-library functionality; it **does not verify** live OpenAI, Tavily, HTTP MCP interoperability, or third-party LangGraph API behavior.
 - This package was syntax-checked and passed standard-library tests, but complete third-party integration execution was not available in the conversion environment due to missing packages.
 - The demonstration parser is deliberately limited; example prompts are selected to be deterministic. Use `--live` for real LLM tool-call selection.
