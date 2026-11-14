@@ -167,4 +167,4 @@ The default model is `gpt-5-mini` to match the supplied source. Change it with `
 - Old adapter compatibility warning: https://github.com/langchain-ai/langchain-mcp-adapters/releases
 - LangGraph `ToolNode`: https://reference.langchain.com/python/langgraph.prebuilt/tool_node/ToolNode
 - LangGraph `tools_condition`: https://reference.langchain.com/python/langgraph.prebuilt/tool_node/tools_condition
-
+This project is licensed under the Apache License, Version 2.0.© 2026 Sudhanshu Shukla · Licensed under the Apache License, Version 2.0
