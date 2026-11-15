@@ -1,7 +1,7 @@
 # Stock-market-trading-Application-using-MCP-langchain-langgraph
 Stock market trading application using MCP-LangChain-LangGraph
-#  LangChain Tools, MCP and LangGraph/ReAct
- LangChain Tools, MCP and LangGraph/ReAct production-grade example or demonstration.
+#  LangChain Tools, MCP and LangGraph/ReAct?multi-agents
+ LangChain Tools, MCP, LangGraph/ReAct, and multi-agent, production-grade example or demonstration.
  **`Model Context Protocol (MCP).ipynb`**. Includes a standalone Python program, a guided Jupyter Notebook, a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
 
 > **Safety and accuracy:** This course uses simulated stock quotes, synthetic market news, and simulated buy/sell operations. It **never** places brokerage orders and does not offer investment advice. The *offline* model is a small, deterministic, rule-based demonstration, **not ** a real decoder-only  LLM. Using `--live` enables OpenAI API requests (costs may apply).
@@ -78,7 +78,7 @@ python MCP_Langchain_Langraph_Tools.py --topic mcp-graph
 python MCP_Langchain_Langraph_Tools.py --topic react --graph-mermaid
 ```
 
-Default `--topic all` runs **offline** demos for all topics. It uses a deterministic rule-based model rather than calling OpenAI. For LangChain and MCP topics, you must install the third-party packages. `--self-test` and `test_chapter11.py` do not require any third-party packages.
+Default `--topic all` runs **offline** demos for all topics. It uses a deterministic rule-based model rather than calling OpenAI. For LangChain and MCP topics, you must install the third-party packages. `--self-test` and `test.py` do not require any third-party packages.
 
 ### Start the MCP servers
 
