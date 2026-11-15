@@ -1,6 +1,6 @@
 # Stock-market-trading-Application-using-MCP-langchain-langgraph
 Stock market trading application using MCP-LangChain-LangGraph
-#  LangChain Tools, MCP and LangGraph/ReAct?multi-agents
+#  LangChain Tools, MCP and LangGraph/ReAct and multi-agents
  LangChain Tools, MCP, LangGraph/ReAct, and multi-agent, production-grade example or demonstration.
  **`Model Context Protocol (MCP).ipynb`**. Includes a standalone Python program, a guided Jupyter Notebook, a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
 
