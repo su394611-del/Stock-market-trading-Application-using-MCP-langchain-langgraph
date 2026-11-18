@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://su394611-del.github.io/Stock-market-trading-Application-using-MCP-langchain-langgraph/sitemap.xml
