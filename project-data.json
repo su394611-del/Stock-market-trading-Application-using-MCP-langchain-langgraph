@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "mixtral-healthcare",
+    "title": "Mixtral Healthcare LLM — From Scratch, Pretraining & Medical SFT",
+    "url": "https://su394611-del.github.io/Mixtral-Healthcare-LLM-From-Scratch/",
+    "category": "training",
+    "description": "End-to-end PyTorch implementation of a Mixtral-style sparse Mixture-of-Experts language model: a healthcare-focused tokenizer, biomedical pretraining from randomly initialized weights, and full-parameter medical supervised fine-tuning. Explore the four-expert, top-2-routed decoder architecture, training checkpoints, evaluation workflow, and two separately hosted Hugging Face model releases.",
+    "keywords": "PyTorch Sparse MoE Medical SFT Hugging Face"
+  },
+  {
+    "slug": "rag-service",
+    "title": "Multi-Tenant Retrieval & RAG Service",
+    "url": "https://su394611-del.github.io/RAG-service/",
+    "category": "retrieval",
+    "description": "Qdrant, FastAPI, tenant-scoped retrieval and semantic caching; retrieval responses rather than unverified generated answers.",
+    "keywords": "Python Qdrant FastAPI"
+  },
+  {
+    "slug": "langgraph-agents",
+    "title": "Multi-Agent Workflows with LangGraph",
+    "url": "https://su394611-del.github.io/Mutli-agents-using-LangGraph/",
+    "category": "agents",
+    "description": "StateGraph workflows, Pydantic validation, reducers, MessagesState and reusable HR/IT subgraphs.",
+    "keywords": "LangGraph Pydantic Python"
+  },
+  {
+    "slug": "pretraining-finetuning",
+    "title": "LLM Fine-Tuning & Preference Optimization",
+    "url": "https://su394611-del.github.io/Pre-training-and-Fine-tuning/",
+    "category": "training",
+    "description": "Qwen2.5 LoRA tuning with separate SmolLM-based SFT→DPO and ORPO pipelines, using version-isolated training stacks.",
+    "keywords": "Qwen2.5 LoRA TRL"
+  },
+  {
+    "slug": "distributed-training",
+    "title": "Distributed LLM Training with PyTorch DDP",
+    "url": "https://su394611-del.github.io/Distributed-Data-Parallel-Processing/",
+    "category": "training",
+    "description": "torchrun workers, DistributedSampler, gradient synchronization and Qwen LoRA training workflows with independent model replicas.",
+    "keywords": "PyTorch DDP LoRA"
+  },
+  {
+    "slug": "parallel-inference",
+    "title": "Parallel LLM Batch Inference",
+    "url": "https://su394611-del.github.io/Parallel-LLM-Inference/",
+    "category": "inference",
+    "description": "Qwen2.5 batch sentiment inference with Python worker queues, per-device model replicas, JSONL validation and ordered outputs.",
+    "keywords": "Qwen2.5 Multi-GPU JSONL"
+  },
+  {
+    "slug": "transformer-encoder",
+    "title": "Transformer Encoder from Scratch",
+    "url": "https://su394611-del.github.io/LLM-from-scratch/",
+    "category": "training",
+    "description": "Custom multi-head self-attention, positional encoding, pre-LayerNorm blocks and classification on Yelp-style review data.",
+    "keywords": "PyTorch Attention NLP"
+  },
+  {
+    "slug": "distilbert-tuning",
+    "title": "DistilBERT Full vs. Frozen Fine-Tuning",
+    "url": "https://su394611-del.github.io/Full-Fine-Training-Pre-Training-Mid-Training/",
+    "category": "training",
+    "description": "Full-encoder fine-tuning compared with frozen-backbone classification, weighted F1, confusion matrices and saved checkpoints.",
+    "keywords": "DistilBERT Trainer F1"
+  },
+  {
+    "slug": "transformer-evaluation",
+    "title": "Transformer Training & Model Evaluation",
+    "url": "https://su394611-del.github.io/Transformers-Training/",
+    "category": "training",
+    "description": "DistilBERT-based support-text classification, full and frozen-backbone configurations, evaluation and prediction outputs.",
+    "keywords": "Transformers DistilBERT PyTorch"
+  },
+  {
+    "slug": "mcp-market",
+    "title": "MCP & LangGraph Market Workflow Simulation",
+    "url": "https://su394611-del.github.io/Stock-market-trading-Application-using-MCP-langchain-langgraph/",
+    "category": "agents",
+    "description": "LangChain tools, LangGraph routing and STDIO/HTTP MCP servers for simulated stock quotes, synthetic news and non-executing trade actions.",
+    "keywords": "MCP LangChain LangGraph"
+  },
+  {
+    "slug": "tiny-gpt",
+    "title": "Tiny GPT-Style Language Model from Scratch",
+    "url": "https://huggingface.co/sudhanshu42844/my-tiny-llm",
+    "category": "training",
+    "description": "1.06M-parameter decoder-only GPT-style model from scratch trained from random weights on a TinyStories subset, with a custom BPE tokenizer, CUDA training and Hugging Face-compatible checkpoint export.",
+    "keywords": "PyTorch GPT-style Hugging Face"
+  }
+]
