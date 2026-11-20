@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-20 19:34:53 +0000",
+ "generated_at": "2026-11-20 19:39:44 +0000",
  "engine": {
   "python": "3.12.16",
-  "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+  "platform": "Linux-7.0.0-1016-aws-x86_64-with-glibc2.43",
   "runner": "GitHub Actions",
   "mcp": "2.3.0",
   "langgraph": "1.2.24",
@@ -23,8 +23,8 @@
    "target": "stock_market_mcp_server.py",
    "server": "DemoStockMarket",
    "protocol": "2026-07-28",
-   "connect_ms": 698.2,
-   "list_ms": 1.93,
+   "connect_ms": 467.7,
+   "list_ms": 1.55,
    "tools": [
     {
      "name": "stock_price",
@@ -58,7 +58,7 @@
      },
      "is_error": false,
      "text": "175.0",
-     "ms": 41.34
+     "ms": 28.62
     },
     {
      "tool": "stock_price",
@@ -67,7 +67,7 @@
      },
      "is_error": false,
      "text": "125.0",
-     "ms": 1.63
+     "ms": 2.2
     },
     {
      "tool": "stock_price",
@@ -76,7 +76,7 @@
      },
      "is_error": false,
      "text": "100.0",
-     "ms": 1.43
+     "ms": 1.05
     },
     {
      "tool": "buy_stock",
@@ -86,7 +86,7 @@
      },
      "is_error": false,
      "text": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-     "ms": 2.26
+     "ms": 1.35
     },
     {
      "tool": "sell_stock",
@@ -96,7 +96,7 @@
      },
      "is_error": false,
      "text": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-     "ms": 2.21
+     "ms": 1.34
     },
     {
      "tool": "buy_stock",
@@ -106,7 +106,7 @@
      },
      "is_error": true,
      "text": "Error executing tool buy_stock",
-     "ms": 526.22
+     "ms": 340.25
     }
    ]
   },
@@ -115,8 +115,8 @@
    "target": "http://127.0.0.1:8000/mcp",
    "server": "DemoNews",
    "protocol": "2026-07-28",
-   "connect_ms": 31.6,
-   "list_ms": 2.58,
+   "connect_ms": 22.3,
+   "list_ms": 1.96,
    "tools": [
     {
      "name": "market_news",
@@ -141,7 +141,7 @@
      },
      "is_error": false,
      "text": "SYNTHETIC DEMO: Example news search for 'Tesla earnings'. No live articles were fetched.",
-     "ms": 4.07
+     "ms": 3.27
     },
     {
      "tool": "market_sentiment",
@@ -150,7 +150,7 @@
      },
      "is_error": false,
      "text": "SYNTHETIC DEMO: TSLA sentiment unavailable without real market data.",
-     "ms": 3.18
+     "ms": 2.38
     },
     {
      "tool": "market_sentiment",
@@ -159,7 +159,7 @@
      },
      "is_error": true,
      "text": "Error executing tool market_sentiment",
-     "ms": 515.92
+     "ms": 337.27
     }
    ]
   }
@@ -375,7 +375,7 @@
    {
     "agent": "basic",
     "scenario": "S1",
-    "ms": 2.671,
+    "ms": 2.119,
     "crashed": null,
     "nodes": [
      "agent"
@@ -393,7 +393,7 @@
      },
      {
       "node": "agent",
-      "ms": 2.632,
+      "ms": 2.081,
       "messages": [
        {
         "type": "AIMessage",
@@ -438,7 +438,7 @@
    {
     "agent": "basic",
     "scenario": "S2",
-    "ms": 1.066,
+    "ms": 0.764,
     "crashed": null,
     "nodes": [
      "agent"
@@ -456,7 +456,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.032,
+      "ms": 0.741,
       "messages": [
        {
         "type": "AIMessage",
@@ -492,7 +492,7 @@
    {
     "agent": "basic",
     "scenario": "S3",
-    "ms": 0.934,
+    "ms": 0.594,
     "crashed": null,
     "nodes": [
      "agent"
@@ -510,7 +510,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.901,
+      "ms": 0.573,
       "messages": [
        {
         "type": "AIMessage",
@@ -546,7 +546,7 @@
    {
     "agent": "basic",
     "scenario": "S4",
-    "ms": 0.79,
+    "ms": 0.47,
     "crashed": null,
     "nodes": [
      "agent"
@@ -564,7 +564,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.761,
+      "ms": 0.452,
       "messages": [
        {
         "type": "AIMessage",
@@ -589,7 +589,7 @@
    {
     "agent": "basic",
     "scenario": "S5",
-    "ms": 0.848,
+    "ms": 0.494,
     "crashed": null,
     "nodes": [
      "agent"
@@ -607,7 +607,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.817,
+      "ms": 0.476,
       "messages": [
        {
         "type": "AIMessage",
@@ -634,7 +634,7 @@
    {
     "agent": "basic",
     "scenario": "S6",
-    "ms": 0.79,
+    "ms": 0.473,
     "crashed": null,
     "nodes": [
      "agent"
@@ -652,7 +652,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.76,
+      "ms": 0.453,
       "messages": [
        {
         "type": "AIMessage",
@@ -689,7 +689,7 @@
    {
     "agent": "basic",
     "scenario": "S7",
-    "ms": 0.84,
+    "ms": 0.459,
     "crashed": null,
     "nodes": [
      "agent"
@@ -707,7 +707,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.802,
+      "ms": 0.441,
       "messages": [
        {
         "type": "AIMessage",
@@ -732,7 +732,7 @@
    {
     "agent": "basic",
     "scenario": "S8",
-    "ms": 0.912,
+    "ms": 0.549,
     "crashed": null,
     "nodes": [
      "agent"
@@ -750,7 +750,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.881,
+      "ms": 0.513,
       "messages": [
        {
         "type": "AIMessage",
@@ -787,7 +787,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S1",
-    "ms": 2.388,
+    "ms": 1.62,
     "crashed": null,
     "nodes": [
      "agent",
@@ -806,7 +806,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.894,
+      "ms": 0.653,
       "messages": [
        {
         "type": "AIMessage",
@@ -834,7 +834,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.458,
+      "ms": 0.94,
       "messages": [
        {
         "type": "ToolMessage",
@@ -869,7 +869,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S2",
-    "ms": 1.673,
+    "ms": 1.125,
     "crashed": null,
     "nodes": [
      "agent",
@@ -888,7 +888,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.849,
+      "ms": 0.564,
       "messages": [
        {
         "type": "AIMessage",
@@ -907,7 +907,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.793,
+      "ms": 0.539,
       "messages": [
        {
         "type": "ToolMessage",
@@ -936,7 +936,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S3",
-    "ms": 1.51,
+    "ms": 0.989,
     "crashed": null,
     "nodes": [
      "agent",
@@ -955,7 +955,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.843,
+      "ms": 0.545,
       "messages": [
        {
         "type": "AIMessage",
@@ -974,7 +974,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.637,
+      "ms": 0.424,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1003,7 +1003,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S4",
-    "ms": 1.026,
+    "ms": 0.66,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1022,7 +1022,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.782,
+      "ms": 0.5,
       "messages": [
        {
         "type": "AIMessage",
@@ -1032,7 +1032,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.226,
+      "ms": 0.148,
       "messages": []
      }
     ],
@@ -1052,7 +1052,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S5",
-    "ms": 1.023,
+    "ms": 0.606,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1071,7 +1071,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.801,
+      "ms": 0.474,
       "messages": [
        {
         "type": "AIMessage",
@@ -1081,7 +1081,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.205,
+      "ms": 0.121,
       "messages": []
      }
     ],
@@ -1103,7 +1103,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S6",
-    "ms": 1.519,
+    "ms": 0.976,
     "crashed": "ValueError: name must be supplied and qty must be a positive integer",
     "nodes": [
      "agent"
@@ -1121,7 +1121,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.834,
+      "ms": 0.494,
       "messages": [
        {
         "type": "AIMessage",
@@ -1158,7 +1158,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S7",
-    "ms": 1.049,
+    "ms": 0.757,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1177,7 +1177,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.82,
+      "ms": 0.601,
       "messages": [
        {
         "type": "AIMessage",
@@ -1187,7 +1187,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.21,
+      "ms": 0.143,
       "messages": []
      }
     ],
@@ -1207,7 +1207,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S8",
-    "ms": 1.519,
+    "ms": 1.034,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1226,7 +1226,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.818,
+      "ms": 0.568,
       "messages": [
        {
         "type": "AIMessage",
@@ -1245,7 +1245,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.671,
+      "ms": 0.445,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1275,7 +1275,7 @@
    {
     "agent": "conditional",
     "scenario": "S1",
-    "ms": 2.342,
+    "ms": 1.539,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1294,7 +1294,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.001,
+      "ms": 0.689,
       "messages": [
        {
         "type": "AIMessage",
@@ -1322,7 +1322,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.306,
+      "ms": 0.825,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1357,7 +1357,7 @@
    {
     "agent": "conditional",
     "scenario": "S2",
-    "ms": 1.73,
+    "ms": 1.165,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1376,7 +1376,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.936,
+      "ms": 0.682,
       "messages": [
        {
         "type": "AIMessage",
@@ -1395,7 +1395,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.764,
+      "ms": 0.463,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1424,7 +1424,7 @@
    {
     "agent": "conditional",
     "scenario": "S3",
-    "ms": 1.67,
+    "ms": 1.054,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1443,7 +1443,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.007,
+      "ms": 0.613,
       "messages": [
        {
         "type": "AIMessage",
@@ -1462,7 +1462,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.633,
+      "ms": 0.421,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1491,7 +1491,7 @@
    {
     "agent": "conditional",
     "scenario": "S4",
-    "ms": 0.858,
+    "ms": 0.538,
     "crashed": null,
     "nodes": [
      "agent"
@@ -1509,7 +1509,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.828,
+      "ms": 0.52,
       "messages": [
        {
         "type": "AIMessage",
@@ -1534,7 +1534,7 @@
    {
     "agent": "conditional",
     "scenario": "S5",
-    "ms": 0.862,
+    "ms": 0.54,
     "crashed": null,
     "nodes": [
      "agent"
@@ -1552,7 +1552,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.833,
+      "ms": 0.52,
       "messages": [
        {
         "type": "AIMessage",
@@ -1579,7 +1579,7 @@
    {
     "agent": "conditional",
     "scenario": "S6",
-    "ms": 1.397,
+    "ms": 0.898,
     "crashed": "ValueError: name must be supplied and qty must be a positive integer",
     "nodes": [
      "agent"
@@ -1597,7 +1597,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.888,
+      "ms": 0.536,
       "messages": [
        {
         "type": "AIMessage",
@@ -1634,7 +1634,7 @@
    {
     "agent": "conditional",
     "scenario": "S7",
-    "ms": 1.024,
+    "ms": 0.725,
     "crashed": null,
     "nodes": [
      "agent"
@@ -1652,7 +1652,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.993,
+      "ms": 0.704,
       "messages": [
        {
         "type": "AIMessage",
@@ -1677,7 +1677,7 @@
    {
     "agent": "conditional",
     "scenario": "S8",
-    "ms": 1.597,
+    "ms": 1.032,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1696,7 +1696,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.924,
+      "ms": 0.6,
       "messages": [
        {
         "type": "AIMessage",
@@ -1715,7 +1715,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.643,
+      "ms": 0.413,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1745,7 +1745,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S1",
-    "ms": 3.407,
+    "ms": 2.553,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1764,7 +1764,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.985,
+      "ms": 0.681,
       "messages": [
        {
         "type": "AIMessage",
@@ -1792,7 +1792,7 @@
      },
      {
       "node": "tools",
-      "ms": 2.385,
+      "ms": 1.84,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1827,7 +1827,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S2",
-    "ms": 2.048,
+    "ms": 1.457,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1846,7 +1846,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.958,
+      "ms": 0.673,
       "messages": [
        {
         "type": "AIMessage",
@@ -1865,7 +1865,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.059,
+      "ms": 0.76,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1894,7 +1894,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S3",
-    "ms": 1.91,
+    "ms": 1.323,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1913,7 +1913,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.954,
+      "ms": 0.617,
       "messages": [
        {
         "type": "AIMessage",
@@ -1932,7 +1932,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.925,
+      "ms": 0.682,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1961,7 +1961,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S4",
-    "ms": 0.849,
+    "ms": 0.563,
     "crashed": null,
     "nodes": [
      "agent"
@@ -1979,7 +1979,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.819,
+      "ms": 0.544,
       "messages": [
        {
         "type": "AIMessage",
@@ -2004,7 +2004,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S5",
-    "ms": 0.845,
+    "ms": 0.536,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2022,7 +2022,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.816,
+      "ms": 0.518,
       "messages": [
        {
         "type": "AIMessage",
@@ -2049,7 +2049,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S6",
-    "ms": 1.776,
+    "ms": 1.155,
     "crashed": "ValueError: name must be supplied and qty must be a positive integer",
     "nodes": [
      "agent"
@@ -2067,7 +2067,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.894,
+      "ms": 0.557,
       "messages": [
        {
         "type": "AIMessage",
@@ -2104,7 +2104,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S7",
-    "ms": 0.881,
+    "ms": 0.605,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2122,7 +2122,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.853,
+      "ms": 0.586,
       "messages": [
        {
         "type": "AIMessage",
@@ -2147,7 +2147,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S8",
-    "ms": 2.068,
+    "ms": 1.515,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2166,7 +2166,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.928,
+      "ms": 0.576,
       "messages": [
        {
         "type": "AIMessage",
@@ -2185,7 +2185,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.109,
+      "ms": 0.913,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2215,7 +2215,7 @@
    {
     "agent": "react-local",
     "scenario": "S1",
-    "ms": 3.078,
+    "ms": 2.331,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2235,7 +2235,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.972,
+      "ms": 0.736,
       "messages": [
        {
         "type": "AIMessage",
@@ -2263,7 +2263,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.698,
+      "ms": 1.34,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2281,7 +2281,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.376,
+      "ms": 0.232,
       "messages": [
        {
         "type": "AIMessage",
@@ -2306,7 +2306,7 @@
    {
     "agent": "react-local",
     "scenario": "S2",
-    "ms": 2.362,
+    "ms": 1.671,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2326,7 +2326,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.929,
+      "ms": 0.637,
       "messages": [
        {
         "type": "AIMessage",
@@ -2345,7 +2345,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.082,
+      "ms": 0.803,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2357,7 +2357,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.321,
+      "ms": 0.21,
       "messages": [
        {
         "type": "AIMessage",
@@ -2382,7 +2382,7 @@
    {
     "agent": "react-local",
     "scenario": "S3",
-    "ms": 2.328,
+    "ms": 1.531,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2402,7 +2402,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.94,
+      "ms": 0.607,
       "messages": [
        {
         "type": "AIMessage",
@@ -2421,7 +2421,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.996,
+      "ms": 0.678,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2433,7 +2433,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.361,
+      "ms": 0.224,
       "messages": [
        {
         "type": "AIMessage",
@@ -2458,7 +2458,7 @@
    {
     "agent": "react-local",
     "scenario": "S4",
-    "ms": 0.855,
+    "ms": 0.534,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2476,7 +2476,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.826,
+      "ms": 0.516,
       "messages": [
        {
         "type": "AIMessage",
@@ -2501,7 +2501,7 @@
    {
     "agent": "react-local",
     "scenario": "S5",
-    "ms": 0.859,
+    "ms": 0.537,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2519,7 +2519,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.828,
+      "ms": 0.518,
       "messages": [
        {
         "type": "AIMessage",
@@ -2546,7 +2546,7 @@
    {
     "agent": "react-local",
     "scenario": "S6",
-    "ms": 1.882,
+    "ms": 1.264,
     "crashed": "ValueError: name must be supplied and qty must be a positive integer",
     "nodes": [
      "agent"
@@ -2564,7 +2564,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.884,
+      "ms": 0.509,
       "messages": [
        {
         "type": "AIMessage",
@@ -2601,7 +2601,7 @@
    {
     "agent": "react-local",
     "scenario": "S7",
-    "ms": 0.864,
+    "ms": 0.619,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2619,7 +2619,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.835,
+      "ms": 0.601,
       "messages": [
        {
         "type": "AIMessage",
@@ -2644,7 +2644,7 @@
    {
     "agent": "react-local",
     "scenario": "S8",
-    "ms": 2.334,
+    "ms": 1.53,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2664,7 +2664,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.913,
+      "ms": 0.559,
       "messages": [
        {
         "type": "AIMessage",
@@ -2683,7 +2683,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.03,
+      "ms": 0.752,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2695,7 +2695,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.36,
+      "ms": 0.199,
       "messages": [
        {
         "type": "AIMessage",
@@ -2722,7 +2722,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S1",
-    "ms": 9.42,
+    "ms": 7.032,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2741,7 +2741,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.996,
+      "ms": 1.768,
       "messages": [
        {
         "type": "AIMessage",
@@ -2769,7 +2769,7 @@
      },
      {
       "node": "tools",
-      "ms": 7.35,
+      "ms": 5.208,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2804,7 +2804,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S2",
-    "ms": 4.992,
+    "ms": 3.86,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2823,7 +2823,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.448,
+      "ms": 1.09,
       "messages": [
        {
         "type": "AIMessage",
@@ -2842,7 +2842,7 @@
      },
      {
       "node": "tools",
-      "ms": 3.483,
+      "ms": 2.725,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2871,7 +2871,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S3",
-    "ms": 3.922,
+    "ms": 2.956,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2890,7 +2890,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.393,
+      "ms": 0.962,
       "messages": [
        {
         "type": "AIMessage",
@@ -2909,7 +2909,7 @@
      },
      {
       "node": "tools",
-      "ms": 2.46,
+      "ms": 1.949,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2938,7 +2938,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S4",
-    "ms": 1.377,
+    "ms": 0.935,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2956,7 +2956,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.317,
+      "ms": 0.893,
       "messages": [
        {
         "type": "AIMessage",
@@ -2981,7 +2981,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S5",
-    "ms": 1.4,
+    "ms": 0.982,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2999,7 +2999,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.34,
+      "ms": 0.943,
       "messages": [
        {
         "type": "AIMessage",
@@ -3026,7 +3026,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S6",
-    "ms": 513.987,
+    "ms": 341.956,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3045,7 +3045,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.348,
+      "ms": 0.907,
       "messages": [
        {
         "type": "AIMessage",
@@ -3065,7 +3065,7 @@
      },
      {
       "node": "tools",
-      "ms": 512.558,
+      "ms": 340.968,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3095,7 +3095,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S7",
-    "ms": 1.515,
+    "ms": 1.551,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3113,7 +3113,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.454,
+      "ms": 1.491,
       "messages": [
        {
         "type": "AIMessage",
@@ -3138,7 +3138,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S8",
-    "ms": 4.58,
+    "ms": 4.072,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3157,7 +3157,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.422,
+      "ms": 1.322,
       "messages": [
        {
         "type": "AIMessage",
@@ -3176,7 +3176,7 @@
      },
      {
       "node": "tools",
-      "ms": 3.077,
+      "ms": 2.707,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3206,7 +3206,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S1",
-    "ms": 16.901,
+    "ms": 10.853,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3226,7 +3226,7 @@
      },
      {
       "node": "agent",
-      "ms": 3.513,
+      "ms": 1.622,
       "messages": [
        {
         "type": "AIMessage",
@@ -3254,7 +3254,7 @@
      },
      {
       "node": "tools",
-      "ms": 12.423,
+      "ms": 8.623,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3272,11 +3272,11 @@
      },
      {
       "node": "agent",
-      "ms": 0.906,
+      "ms": 0.571,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': 'SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.', 'id': 'lc_c5f462ab-e196-47c7-b7e6-666a819b7122'}] | [{'type': 'text', 'text': 'SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.', 'id': 'lc_ecaf4511-f04c-41ec-b02c-4a49ace67eae'}]"
+        "content": "Demo tool execution complete: SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed. | SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
        }
       ]
      }
@@ -3297,7 +3297,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S2",
-    "ms": 8.749,
+    "ms": 5.797,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3317,7 +3317,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.548,
+      "ms": 0.992,
       "messages": [
        {
         "type": "AIMessage",
@@ -3336,7 +3336,7 @@
      },
      {
       "node": "tools",
-      "ms": 6.314,
+      "ms": 4.248,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3348,11 +3348,11 @@
      },
      {
       "node": "agent",
-      "ms": 0.833,
+      "ms": 0.524,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': '175.0', 'id': 'lc_789eb092-aef2-4127-9e15-f60d50d8549a'}]"
+        "content": "Demo tool execution complete: 175.0"
        }
       ]
      }
@@ -3373,7 +3373,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S3",
-    "ms": 7.445,
+    "ms": 5.266,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3393,7 +3393,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.512,
+      "ms": 1.002,
       "messages": [
        {
         "type": "AIMessage",
@@ -3412,7 +3412,7 @@
      },
      {
       "node": "tools",
-      "ms": 5.043,
+      "ms": 3.649,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3424,11 +3424,11 @@
      },
      {
       "node": "agent",
-      "ms": 0.833,
+      "ms": 0.58,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': '135.0', 'id': 'lc_908a406a-7d02-4b95-8f55-bba3443d7705'}]"
+        "content": "Demo tool execution complete: 135.0"
        }
       ]
      }
@@ -3449,7 +3449,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S4",
-    "ms": 1.437,
+    "ms": 0.87,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3467,7 +3467,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.374,
+      "ms": 0.835,
       "messages": [
        {
         "type": "AIMessage",
@@ -3492,7 +3492,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S5",
-    "ms": 10.45,
+    "ms": 6.959,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3512,7 +3512,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.462,
+      "ms": 0.873,
       "messages": [
        {
         "type": "AIMessage",
@@ -3531,7 +3531,7 @@
      },
      {
       "node": "tools",
-      "ms": 8.045,
+      "ms": 5.528,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3543,11 +3543,11 @@
      },
      {
       "node": "agent",
-      "ms": 0.886,
+      "ms": 0.522,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': 'SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.', 'id': 'lc_e5907706-96e8-4ae3-aa1f-702d3ab85e85'}]"
+        "content": "Demo tool execution complete: SYNTHETIC DEMO: TESLA sentiment unavailable without real market data."
        }
       ]
      }
@@ -3568,7 +3568,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S6",
-    "ms": 521.941,
+    "ms": 350.502,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3588,7 +3588,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.475,
+      "ms": 0.96,
       "messages": [
        {
         "type": "AIMessage",
@@ -3608,7 +3608,7 @@
      },
      {
       "node": "tools",
-      "ms": 519.502,
+      "ms": 348.847,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3621,11 +3621,11 @@
      },
      {
       "node": "agent",
-      "ms": 0.908,
+      "ms": 0.647,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': 'Error executing tool buy_stock', 'id': 'lc_fb830c84-00cd-4719-9327-f0d9752199f9'}]"
+        "content": "Demo tool execution complete: Error executing tool buy_stock"
        }
       ]
      }
@@ -3646,7 +3646,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S7",
-    "ms": 1.412,
+    "ms": 1.055,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3664,7 +3664,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.351,
+      "ms": 1.013,
       "messages": [
        {
         "type": "AIMessage",
@@ -3689,7 +3689,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S8",
-    "ms": 11.414,
+    "ms": 8.826,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3709,7 +3709,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.46,
+      "ms": 0.958,
       "messages": [
        {
         "type": "AIMessage",
@@ -3735,7 +3735,7 @@
      },
      {
       "node": "tools",
-      "ms": 9.096,
+      "ms": 7.318,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3753,11 +3753,11 @@
      },
      {
       "node": "agent",
-      "ms": 0.805,
+      "ms": 0.49,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': '215.0', 'id': 'lc_b349d6a3-0a5e-4fce-818c-5f888ec249a0'}] | [{'type': 'text', 'text': 'SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.', 'id': 'lc_c24e6048-8be8-413c-b09e-f5c55587b94d'}]"
+        "content": "Demo tool execution complete: 215.0 | SYNTHETIC DEMO: TESLA sentiment unavailable without real market data."
        }
       ]
      }
@@ -3778,7 +3778,7 @@
    {
     "agent": "supervisor",
     "scenario": "S1",
-    "ms": 15.7,
+    "ms": 12.487,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -3801,12 +3801,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.521,
+      "ms": 2.057,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.875,
+      "ms": 0.938,
       "messages": [
        {
         "type": "AIMessage",
@@ -3834,7 +3834,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 11.249,
+      "ms": 8.047,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3852,27 +3852,27 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.83,
+      "ms": 0.649,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': 'SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.', 'id': 'lc_f440cbf4-5322-47be-8c4b-f83591858aa4'}] | [{'type': 'text', 'text': 'SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.', 'id': 'lc_47683998-2b1d-4ec7-b2e6-2d20415ffc4d'}]",
+        "content": "Demo tool execution complete: SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed. | SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
         "name": "stock_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.731,
+      "ms": 0.468,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.441,
+      "ms": 0.274,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Supervisor summary - stock_agent: Demo tool execution complete: [{'type': 'text', 'text': 'SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.', 'id': 'lc_f440cbf4-5322-47be-8c4b-f83591858aa4'}] | [{'type': 'text', 'text': 'SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.', 'id': 'lc_47683998-2b1d-4ec7-b2e6-2d20415ffc4d'}]",
+        "content": "Supervisor summary - stock_agent: Demo tool execution complete: SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed. | SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
         "name": "supervisor"
        }
       ]
@@ -3894,7 +3894,7 @@
    {
     "agent": "supervisor",
     "scenario": "S2",
-    "ms": 9.564,
+    "ms": 7.024,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -3917,12 +3917,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.25,
+      "ms": 0.835,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.778,
+      "ms": 0.563,
       "messages": [
        {
         "type": "AIMessage",
@@ -3941,7 +3941,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 5.551,
+      "ms": 4.224,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3953,27 +3953,27 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.776,
+      "ms": 0.596,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': '175.0', 'id': 'lc_e41b70ee-87af-44e2-9821-7487518cd94a'}]",
+        "content": "Demo tool execution complete: 175.0",
         "name": "stock_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.72,
+      "ms": 0.482,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.437,
+      "ms": 0.291,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Supervisor summary - stock_agent: Demo tool execution complete: [{'type': 'text', 'text': '175.0', 'id': 'lc_e41b70ee-87af-44e2-9821-7487518cd94a'}]",
+        "content": "Supervisor summary - stock_agent: Demo tool execution complete: 175.0",
         "name": "supervisor"
        }
       ]
@@ -3995,7 +3995,7 @@
    {
     "agent": "supervisor",
     "scenario": "S3",
-    "ms": 8.683,
+    "ms": 6.856,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4018,12 +4018,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.213,
+      "ms": 0.801,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.745,
+      "ms": 0.531,
       "messages": [
        {
         "type": "AIMessage",
@@ -4042,7 +4042,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 4.733,
+      "ms": 4.096,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4054,27 +4054,27 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.8,
+      "ms": 0.627,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': '135.0', 'id': 'lc_7173d4a4-24c4-44b4-a06d-502728e032bc'}]",
+        "content": "Demo tool execution complete: 135.0",
         "name": "stock_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.725,
+      "ms": 0.479,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.414,
+      "ms": 0.273,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Supervisor summary - stock_agent: Demo tool execution complete: [{'type': 'text', 'text': '135.0', 'id': 'lc_7173d4a4-24c4-44b4-a06d-502728e032bc'}]",
+        "content": "Supervisor summary - stock_agent: Demo tool execution complete: 135.0",
         "name": "supervisor"
        }
       ]
@@ -4096,7 +4096,7 @@
    {
     "agent": "supervisor",
     "scenario": "S4",
-    "ms": 1.789,
+    "ms": 1.151,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4115,12 +4115,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.294,
+      "ms": 0.812,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.434,
+      "ms": 0.302,
       "messages": [
        {
         "type": "AIMessage",
@@ -4146,7 +4146,7 @@
    {
     "agent": "supervisor",
     "scenario": "S5",
-    "ms": 10.515,
+    "ms": 8.159,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4169,12 +4169,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.232,
+      "ms": 0.765,
       "messages": []
      },
      {
       "node": "news_agent",
-      "ms": 0.737,
+      "ms": 0.513,
       "messages": [
        {
         "type": "AIMessage",
@@ -4193,7 +4193,7 @@
      },
      {
       "node": "news_tools",
-      "ms": 6.586,
+      "ms": 5.403,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4205,27 +4205,27 @@
      },
      {
       "node": "news_agent",
-      "ms": 0.784,
+      "ms": 0.629,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': 'SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.', 'id': 'lc_3edc452e-2672-4450-80eb-8ee56ed02f1d'}]",
+        "content": "Demo tool execution complete: SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
         "name": "news_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.695,
+      "ms": 0.522,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.43,
+      "ms": 0.294,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Supervisor summary - news_agent: Demo tool execution complete: [{'type': 'text', 'text': 'SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.', 'id': 'lc_3edc452e-2672-4450-80eb-8ee56ed02f1d'}]",
+        "content": "Supervisor summary - news_agent: Demo tool execution complete: SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
         "name": "supervisor"
        }
       ]
@@ -4247,7 +4247,7 @@
    {
     "agent": "supervisor",
     "scenario": "S6",
-    "ms": 519.871,
+    "ms": 346.908,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4270,12 +4270,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.209,
+      "ms": 0.805,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.748,
+      "ms": 0.516,
       "messages": [
        {
         "type": "AIMessage",
@@ -4295,7 +4295,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 515.605,
+      "ms": 343.958,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4308,27 +4308,27 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.964,
+      "ms": 0.776,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': 'Error executing tool buy_stock', 'id': 'lc_b28cbc40-2a77-4af7-89c0-f13abc5c3d7a'}]",
+        "content": "Demo tool execution complete: Error executing tool buy_stock",
         "name": "stock_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.798,
+      "ms": 0.509,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.491,
+      "ms": 0.309,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Supervisor summary - stock_agent: Demo tool execution complete: [{'type': 'text', 'text': 'Error executing tool buy_stock', 'id': 'lc_b28cbc40-2a77-4af7-89c0-f13abc5c3d7a'}]",
+        "content": "Supervisor summary - stock_agent: Demo tool execution complete: Error executing tool buy_stock",
         "name": "supervisor"
        }
       ]
@@ -4350,7 +4350,7 @@
    {
     "agent": "supervisor",
     "scenario": "S7",
-    "ms": 3.422,
+    "ms": 2.126,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4371,12 +4371,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.34,
+      "ms": 0.894,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.796,
+      "ms": 0.449,
       "messages": [
        {
         "type": "AIMessage",
@@ -4387,12 +4387,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.781,
+      "ms": 0.449,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.444,
+      "ms": 0.294,
       "messages": [
        {
         "type": "AIMessage",
@@ -4418,7 +4418,7 @@
    {
     "agent": "supervisor",
     "scenario": "S8",
-    "ms": 18.339,
+    "ms": 14.119,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4445,12 +4445,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.356,
+      "ms": 0.802,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.828,
+      "ms": 0.543,
       "messages": [
        {
         "type": "AIMessage",
@@ -4469,7 +4469,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 5.438,
+      "ms": 4.459,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4481,23 +4481,23 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.814,
+      "ms": 0.626,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': '215.0', 'id': 'lc_f09285c5-b295-47f2-a844-dc36a2b521df'}]",
+        "content": "Demo tool execution complete: 215.0",
         "name": "stock_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.702,
+      "ms": 0.477,
       "messages": []
      },
      {
       "node": "news_agent",
-      "ms": 0.813,
+      "ms": 0.509,
       "messages": [
        {
         "type": "AIMessage",
@@ -4516,7 +4516,7 @@
      },
      {
       "node": "news_tools",
-      "ms": 6.417,
+      "ms": 5.316,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4528,27 +4528,27 @@
      },
      {
       "node": "news_agent",
-      "ms": 0.764,
+      "ms": 0.603,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: [{'type': 'text', 'text': '215.0', 'id': 'lc_f09285c5-b295-47f2-a844-dc36a2b521df'}] | [{'type': 'text', 'text': 'SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.', 'id': 'lc_6b58952d-4451-4bbc-b689-5709150447aa'}]",
+        "content": "Demo tool execution complete: 215.0 | SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
         "name": "news_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.72,
+      "ms": 0.481,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.436,
+      "ms": 0.272,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Supervisor summary - stock_agent: Demo tool execution complete: [{'type': 'text', 'text': '215.0', 'id': 'lc_f09285c5-b295-47f2-a844-dc36a2b521df'}] || news_agent: Demo tool execution complete: [{'type': 'text', 'text': '215.0', 'id': 'lc_f09285c5-b295-47f2-a844-dc36a2b521df'}] | [{'type': 'text', 'text': 'SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.', 'id': 'lc_6b58952d-4451-4bbc-b689-5709150447aa'}]",
+        "content": "Supervisor summary - stock_agent: Demo tool execution complete: 215.0 || news_agent: Demo tool execution complete: 215.0 | SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
         "name": "supervisor"
        }
       ]
@@ -4579,9 +4579,9 @@
    "supervisor": "---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tsupervisor(supervisor)\n\tstock_agent(stock_agent)\n\tstock_tools(stock_tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock</em></small>)\n\tnews_agent(news_agent)\n\tnews_tools(news_tools<hr/><small><em>__tools = news_market_news, news_market_sentiment</em></small>)\n\tfinish(finish)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> supervisor;\n\tnews_agent -. &nbsp;tools&nbsp; .-> news_tools;\n\tnews_agent -. &nbsp;__end__&nbsp; .-> supervisor;\n\tnews_tools --> news_agent;\n\tstock_agent -. &nbsp;tools&nbsp; .-> stock_tools;\n\tstock_agent -. &nbsp;__end__&nbsp; .-> supervisor;\n\tstock_tools --> stock_agent;\n\tsupervisor -.-> finish;\n\tsupervisor -.-> news_agent;\n\tsupervisor -.-> stock_agent;\n\tfinish --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n"
   },
   "mcp_connect_ms": {
-   "mcp-prebuilt": 1151.0,
-   "mcp-react": 736.2,
-   "supervisor": 711.8
+   "mcp-prebuilt": 754.7,
+   "mcp-react": 493.3,
+   "supervisor": 479.6
   },
   "mcp_adapters": [
    "langchain.mcp.MCPAdapter"
@@ -4591,99 +4591,99 @@
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client --include-news   # news server NOT started",
    "exit": 0,
-   "ms": 3166.2,
-   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: []\nSTDIO sample tool result: [{'type': 'text', 'text': '175.0', 'id': 'lc_b5533df2-06ad-4317-97b2-57760194ed10'}] (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:332: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/20/26 19:34:55] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n[11/20/26 19:34:55] Failed to connect to MCP server 'news', skipping            \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:95 in         \u2502\n                    \u2502 map_httpcore_exceptions                                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502    92 \u2502   if len(HTTPCORE_EXC_MAP) == 0:                 \u2502\n                    \u2502    93 \u2502   \u2502   HTTPCORE_EXC_MAP = _load_httpcore_exceptio \u2502\n                    \u2502    94 \u2502   try:                                           \u2502\n                    \u2502 \u2771  95 \u2502   \u2502   yield                                      \u2502\n                    \u2502    96 \u2502   except Exception as exc:                       \u2502\n                    \u2502    97 \u2502   \u2502   mapped_exc = None                          \u2502\n                    \u2502    98                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:385 in        \u2502\n                    \u2502 handle_async_request                                     \u2502\n                    \u2502                                                          \u2502\n                    \u2502   382 \u2502   \u2502   \u2502   extensions=request.extensions,         \u2502\n                    \u2502   383 \u2502   \u2502   )                                          \u2502\n                    \u2502   384 \u2502   \u2502   with map_httpcore_exceptions():            \u2502\n                    \u2502 \u2771 385 \u2502   \u2502   \u2502   resp = await self._pool.handle_async_r \u2502\n                    \u2502   386 \u2502   \u2502                                              \u2502\n                    \u2502   387 \u2502   \u2502   assert isinstance(resp.stream, AsyncIterab \u2502\n                    \u2502   388                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 7 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:158 in __exit__                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpcore2/_exceptions.py:16 in              \u2502\n                    \u2502 map_exceptions                                           \u2502\n                    \u2502                                                          \u2502\n                    \u2502   13 \u2502   except Exception as exc:                        \u2502\n                    \u2502   14 \u2502   \u2502   for from_exc, to_exc in map.items():        \u2502\n                    \u2502   15 \u2502   \u2502   \u2502   if isinstance(exc, from_exc):           \u2502\n                    \u2502 \u2771 16 \u2502   \u2502   \u2502   \u2502   raise to_exc(exc) from exc          \u2502\n                    \u2502   17 \u2502   \u2502   raise  # pragma: no cover                   \u2502\n                    \u2502   18                                                     \u2502\n                    \u2502   19                                                     \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:1261 in            \u2502\n                    \u2502 _session_runner                                          \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:659 in enter_async_context                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502   656 \u2502   \u2502   \u2502   raise TypeError(f\"'{cls.__module__}.{c \u2502\n                    \u2502   657 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   f\"not support the asyn \u2502\n                    \u2502   658 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502      ) from None             \u2502\n                    \u2502 \u2771 659 \u2502   \u2502   result = await _enter(cm)                  \u2502\n                    \u2502   660 \u2502   \u2502   self._push_async_cm_exit(cm, _exit)        \u2502\n                    \u2502   661 \u2502   \u2502   return result                              \u2502\n                    \u2502   662                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 16 frames hidden ...                 \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:158 in __exit__                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:112 in        \u2502\n                    \u2502 map_httpcore_exceptions                                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502   109 \u2502   \u2502   \u2502   raise                                  \u2502\n                    \u2502   110 \u2502   \u2502                                              \u2502\n                    \u2502   111 \u2502   \u2502   message = str(exc)                         \u2502\n                    \u2502 \u2771 112 \u2502   \u2502   raise mapped_exc(message) from exc         \u2502\n                    \u2502   113                                                    \u2502\n                    \u2502   114                                                    \u2502\n                    \u2502   115 class ResponseStream(SyncByteStream):              \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/transports/config.py:255 in  \u2502\n                    \u2502 _build_composite                                         \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/transports/config.py:380 in  \u2502\n                    \u2502 _create_proxy                                            \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 1 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:988 in             \u2502\n                    \u2502 _enter_context                                           \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:1146 in _connect   \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    RuntimeError: Client failed to connect: All connection      \n                    attempts failed",
+   "ms": 2796.6,
+   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: []\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:354: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/20/26 19:39:46] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n[11/20/26 19:39:46] Failed to connect to MCP server 'news', skipping            \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:95 in         \u2502\n                    \u2502 map_httpcore_exceptions                                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502    92 \u2502   if len(HTTPCORE_EXC_MAP) == 0:                 \u2502\n                    \u2502    93 \u2502   \u2502   HTTPCORE_EXC_MAP = _load_httpcore_exceptio \u2502\n                    \u2502    94 \u2502   try:                                           \u2502\n                    \u2502 \u2771  95 \u2502   \u2502   yield                                      \u2502\n                    \u2502    96 \u2502   except Exception as exc:                       \u2502\n                    \u2502    97 \u2502   \u2502   mapped_exc = None                          \u2502\n                    \u2502    98                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:385 in        \u2502\n                    \u2502 handle_async_request                                     \u2502\n                    \u2502                                                          \u2502\n                    \u2502   382 \u2502   \u2502   \u2502   extensions=request.extensions,         \u2502\n                    \u2502   383 \u2502   \u2502   )                                          \u2502\n                    \u2502   384 \u2502   \u2502   with map_httpcore_exceptions():            \u2502\n                    \u2502 \u2771 385 \u2502   \u2502   \u2502   resp = await self._pool.handle_async_r \u2502\n                    \u2502   386 \u2502   \u2502                                              \u2502\n                    \u2502   387 \u2502   \u2502   assert isinstance(resp.stream, AsyncIterab \u2502\n                    \u2502   388                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 7 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:158 in __exit__                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpcore2/_exceptions.py:16 in              \u2502\n                    \u2502 map_exceptions                                           \u2502\n                    \u2502                                                          \u2502\n                    \u2502   13 \u2502   except Exception as exc:                        \u2502\n                    \u2502   14 \u2502   \u2502   for from_exc, to_exc in map.items():        \u2502\n                    \u2502   15 \u2502   \u2502   \u2502   if isinstance(exc, from_exc):           \u2502\n                    \u2502 \u2771 16 \u2502   \u2502   \u2502   \u2502   raise to_exc(exc) from exc          \u2502\n                    \u2502   17 \u2502   \u2502   raise  # pragma: no cover                   \u2502\n                    \u2502   18                                                     \u2502\n                    \u2502   19                                                     \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:1261 in            \u2502\n                    \u2502 _session_runner                                          \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:659 in enter_async_context                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502   656 \u2502   \u2502   \u2502   raise TypeError(f\"'{cls.__module__}.{c \u2502\n                    \u2502   657 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   f\"not support the asyn \u2502\n                    \u2502   658 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502      ) from None             \u2502\n                    \u2502 \u2771 659 \u2502   \u2502   result = await _enter(cm)                  \u2502\n                    \u2502   660 \u2502   \u2502   self._push_async_cm_exit(cm, _exit)        \u2502\n                    \u2502   661 \u2502   \u2502   return result                              \u2502\n                    \u2502   662                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 16 frames hidden ...                 \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:158 in __exit__                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:112 in        \u2502\n                    \u2502 map_httpcore_exceptions                                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502   109 \u2502   \u2502   \u2502   raise                                  \u2502\n                    \u2502   110 \u2502   \u2502                                              \u2502\n                    \u2502   111 \u2502   \u2502   message = str(exc)                         \u2502\n                    \u2502 \u2771 112 \u2502   \u2502   raise mapped_exc(message) from exc         \u2502\n                    \u2502   113                                                    \u2502\n                    \u2502   114                                                    \u2502\n                    \u2502   115 class ResponseStream(SyncByteStream):              \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/transports/config.py:255 in  \u2502\n                    \u2502 _build_composite                                         \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/transports/config.py:380 in  \u2502\n                    \u2502 _create_proxy                                            \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 1 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:988 in             \u2502\n                    \u2502 _enter_context                                           \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:1146 in _connect   \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    RuntimeError: Client failed to connect: All connection      \n                    attempts failed",
    "expect_failure": true
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --list",
    "exit": 0,
-   "ms": 76.8,
+   "ms": 58.7,
    "output": "tools\ntool-calling\nmanual-execution\ngraph-basic\ngraph-manual-tools\ngraph-conditional\ngraph-prebuilt\ntavily\nmcp-client\nmcp-graph\nreact"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --self-test",
    "exit": 0,
-   "ms": 76.1,
+   "ms": 58.5,
    "output": "PASS: pure-Python parsing, simulated tools, safety checks, package files"
   },
   {
    "cmd": "python test.py",
    "exit": 0,
-   "ms": 107.8,
+   "ms": 90.1,
    "output": "test_invalid_trades_rejected (__main__.MCP_LangChain_LangGraph.test_invalid_trades_rejected) ... ok\ntest_known_price_is_fixed_demo_data (__main__.MCP_LangChain_LangGraph.test_known_price_is_fixed_demo_data) ... ok\ntest_multi_tool_request (__main__.MCP_LangChain_LangGraph.test_multi_tool_request) ... ok\ntest_pe_ratio_no_tool (__main__.MCP_LangChain_LangGraph.test_pe_ratio_no_tool) ... ok\ntest_prefixed_mcp_tools (__main__.MCP_LangChain_LangGraph.test_prefixed_mcp_tools) ... ok\ntest_sentiment_tool (__main__.MCP_LangChain_LangGraph.test_sentiment_tool) ... ok\ntest_simulated_trade_cannot_place_an_order (__main__.MCP_LangChain_LangGraph.test_simulated_trade_cannot_place_an_order) ... ok\ntest_stock_price_tool (__main__.MCP_LangChain_LangGraph.test_stock_price_tool) ... ok\ntest_unknown_price_is_placeholder_not_live (__main__.MCP_LangChain_LangGraph.test_unknown_price_is_placeholder_not_live) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.001s\n\nOK"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tools",
    "exit": 0,
-   "ms": 758.8,
+   "ms": 515.6,
    "output": "============== TOOLS ==============\nStock price tool type: <class 'langchain_core.tools.structured.StructuredTool'>\nStock price example (NOT live): 175.0\nSimulated trade: SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tool-calling",
    "exit": 0,
-   "ms": 748.9,
+   "ms": 493.7,
    "output": "============== TOOL-CALLING ==============\n\nQUESTION: Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n\nQUESTION: Explain the P/E ratio in one line\n[AIMessage] P/E ratio = stock price divided by earnings per share (demo)."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic manual-execution",
    "exit": 0,
-   "ms": 789.8,
+   "ms": 510.2,
    "output": "============== MANUAL-EXECUTION ==============\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\nExecuted tool responses (ToolMessage objects):\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.\nNo-call case:\n[AIMessage] P/E ratio = stock price divided by earnings per share (demo)."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-basic --graph-mermaid",
    "exit": 0,
-   "ms": 1023.2,
+   "ms": 671.7,
    "output": "============== GRAPH-BASIC ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-manual-tools",
    "exit": 0,
-   "ms": 972.2,
+   "ms": 669.3,
    "output": "============== GRAPH-MANUAL-TOOLS ==============\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-conditional",
    "exit": 0,
-   "ms": 1009.1,
+   "ms": 680.4,
    "output": "============== GRAPH-CONDITIONAL ==============\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-prebuilt --graph-mermaid",
    "exit": 0,
-   "ms": 1005.7,
+   "ms": 677.8,
    "output": "============== GRAPH-PREBUILT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_price, buy_stock, sell_stock</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tavily",
    "exit": 0,
-   "ms": 79.5,
+   "ms": 58.5,
    "output": "============== TAVILY ==============\nTavily is skipped in offline mode. Enable --live and set TAVILY_API_KEY + OPENAI_API_KEY."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client",
    "exit": 0,
-   "ms": 2618.5,
-   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO stock server tools: ['stock_price']\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:332: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter"
+   "ms": 1889.0,
+   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO stock server tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:354: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client --include-news",
    "exit": 0,
-   "ms": 2875.2,
-   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock', 'news_market_news', 'news_market_sentiment']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: ['news_market_news', 'news_market_sentiment']\nSTDIO sample tool result: [{'type': 'text', 'text': '175.0', 'id': 'lc_15d69e6b-3c2f-4d69-a53c-cd909e77d84c'}] (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:332: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/20/26 19:35:11] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 1939.8,
+   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock', 'news_market_news', 'news_market_sentiment']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: ['news_market_news', 'news_market_sentiment']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:354: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/20/26 19:39:57] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-graph --include-news",
    "exit": 0,
-   "ms": 3021.0,
-   "output": "============== MCP-GRAPH ==============\n[HumanMessage] What is the price of Apple stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Apple'})\n[ToolMessage] [{'type': 'text', 'text': '175.0', 'id': 'lc_47c6b361-e900-44f9-92a4-85b7afb12eb4'}]\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:349: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/20/26 19:35:13] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n[11/20/26 19:35:14] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 2041.9,
+   "output": "============== MCP-GRAPH ==============\n[HumanMessage] What is the price of Apple stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Apple'})\n[ToolMessage] 175.0\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:371: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/20/26 19:39:59] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic react --graph-mermaid --include-news",
    "exit": 0,
-   "ms": 3026.0,
-   "output": "============== REACT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock, news_market_news, news_market_sentiment</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> agent;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] What is the price of Google stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Google'})\n[ToolMessage] [{'type': 'text', 'text': '135.0', 'id': 'lc_ff8a0153-32df-4bec-beec-6c7e99ab3964'}]\n[AIMessage] Demo tool execution complete: [{'type': 'text', 'text': '135.0', 'id': 'lc_ff8a0153-32df-4bec-beec-6c7e99ab3964'}]\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:349: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/20/26 19:35:17] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 2125.0,
+   "output": "============== REACT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock, news_market_news, news_market_sentiment</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> agent;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] What is the price of Google stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Google'})\n[ToolMessage] 135.0\n[AIMessage] Demo tool execution complete: 135.0\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:371: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/20/26 19:40:01] INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1531\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   }
  ]
 }

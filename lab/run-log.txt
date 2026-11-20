@@ -1,4 +1,4 @@
-[11/20/26 19:34:58] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
+[11/20/26 19:39:48] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
                              exception                                          
                              ╭─ Traceback (most recent call last─╮              
                              │ /opt/hostedtoolcache/Python/3.12. │              
@@ -161,7 +161,7 @@
                              tool buy_stock                                     
 /home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py:335: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.
   from langchain.mcp import MCPAdapter
-[11/20/26 19:35:19] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
+[11/20/26 19:40:03] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
                              exception                                          
                              ╭─ Traceback (most recent call last─╮              
                              │ /opt/hostedtoolcache/Python/3.12. │              
@@ -322,7 +322,7 @@
                              ╰───────────────────────────────────╯              
                              UnexpectedToolError: Error executing               
                              tool buy_stock                                     
-[11/20/26 19:35:21] INFO     Proxy detected connected client -     proxy.py:1531
+[11/20/26 19:40:04] INFO     Proxy detected connected client -     proxy.py:1531
                              reusing existing session for all                   
                              requests. This may cause context                   
                              mixing in concurrent scenarios, and                
@@ -342,7 +342,7 @@
                              output schema rather than relayed                  
                              as-is. Pass a disconnected client to               
                              avoid both.                                        
-[11/20/26 19:35:21] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
+[11/20/26 19:40:04] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
                              exception                                          
                              ╭─ Traceback (most recent call last─╮              
                              │ /opt/hostedtoolcache/Python/3.12. │              
@@ -503,7 +503,7 @@
                              ╰───────────────────────────────────╯              
                              UnexpectedToolError: Error executing               
                              tool buy_stock                                     
-[11/20/26 19:35:22] INFO     Proxy detected connected client -     proxy.py:1531
+                    INFO     Proxy detected connected client -     proxy.py:1531
                              reusing existing session for all                   
                              requests. This may cause context                   
                              mixing in concurrent scenarios, and                
@@ -523,7 +523,7 @@
                              output schema rather than relayed                  
                              as-is. Pass a disconnected client to               
                              avoid both.                                        
-[11/20/26 19:35:22] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
+[11/20/26 19:40:05] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
                              exception                                          
                              ╭─ Traceback (most recent call last─╮              
                              │ /opt/hostedtoolcache/Python/3.12. │              
