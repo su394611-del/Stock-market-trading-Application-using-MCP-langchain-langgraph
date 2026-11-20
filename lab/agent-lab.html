@@ -224,7 +224,7 @@ ol.flow li{margin:3px 0}
    <div class="panel chart"><h2>Graph depth per run</h2><p class="sub">Node executions per run; ×n marks scenarios with the same depth, <span style="color:var(--critical);font-weight:900">✕</span> marks a graph that raised. ReAct and supervisor graphs loop back through the agent.</p><div id="c-depth"></div></div>
    <div class="panel chart"><h2>Tool calls proposed vs. executed</h2><p class="sub">Totals across the eight scenarios. Executed = a ToolMessage was produced (success or handled error).</p><div id="c-calls"></div></div>
    <div class="panel chart"><h2>MCP tool-call round trip</h2><p class="sub">Measured with the official MCP Python SDK client against the repository's two servers. The first STDIO call includes server warm-up.</p><div id="c-mcp"></div></div>
-   <div class="panel chart"><h2>Graph run time (median per agent)</h2><p class="sub">Wall time of one graph run in this sandbox. MCP agents include real MCP round trips; graph overhead comes from the stand-in engine, so treat it as relative.</p><div id="c-lat"></div></div>
+   <div class="panel chart"><h2>Graph run time (median per agent)</h2><p class="sub" id="lat-sub">Wall time of one graph run. MCP agents include real MCP round trips.</p><div id="c-lat"></div></div>
   </div>
  </section>
 
@@ -466,10 +466,15 @@ function badges() {
   const b = $("#badges");
   const add = (cls, html, title) => b.append(el("span", {class: "badge " + cls, html, title: title || ""}));
   add("real", `MCP SDK <b>${esc(e.mcp || "?")}</b> · real servers`, "Both MCP servers ran and were called through the official MCP Python SDK client");
-  add(e.langgraph ? "real" : "stand", e.langgraph ? `LangGraph <b>${esc(e.langgraph)}</b>` : `LangGraph <b>API stand-in</b>`, e.langgraph ? "" : "langgraph/langchain could not be installed in the run environment; the repository code ran unchanged against a minimal API-compatible stand-in");
-  add("", `Python <b>${esc(e.python || "?")}</b>`);
+  if (e.langgraph) add("real", `LangGraph <b>${esc(e.langgraph)}</b>`, "langgraph package used for every graph");
+  else add("stand", `LangGraph <b>API stand-in</b>`, "langgraph/langchain were not installable where this data was generated; the repository code ran against a minimal API-compatible stand-in");
+  if (e.langchain || e["langchain-core"]) add("real", `LangChain <b>${esc(e.langchain || "")}</b>${e["langchain-core"] ? ` · core <b>${esc(e["langchain-core"])}</b>` : ""}`, e.mcp_adapter ? "MCP tools via " + e.mcp_adapter : "");
+  add("", `Python <b>${esc(e.python || "?")}</b>${e.runner === "GitHub Actions" ? " · GitHub Actions" : ""}`);
+  const live = e.live || {};
+  if (live.model && /ran|carried/.test(live.status || "")) add("real", `live · <b>${esc(live.model)}</b>`, `Live agents ran on ${live.model}${live.at ? " at " + live.at : ""}; recorded results`);
   add("", `offline · DemoToolCallingModel`);
-  $("#foot").innerHTML = `Data generated ${esc(DATA.generated_at || "")} by <code>python lab/run_agent_lab.py</code>. Simulation only: fixed example prices, synthetic news, trade tools that never contact a broker; the offline model is rule-based, not an LLM. Not investment advice.`;
+  const adapter = e.mcp_adapter ? ` MCP tools reached the graphs through ${esc(e.mcp_adapter)}.` : "";
+  $("#foot").innerHTML = `Data generated ${esc(DATA.generated_at || "")}${e.runner === "GitHub Actions" ? " on GitHub Actions" : ""} by <code>python lab/run_agent_lab.py</code> with ${e.langgraph ? `langgraph ${esc(e.langgraph)}` : "a LangGraph stand-in"}.${adapter} Simulation only: fixed example prices, synthetic news, trade tools that never contact a broker; the offline model is rule-based, not an LLM. Not investment advice.`;
 }
 
 /* ---------------- tabs ---------------- */
@@ -496,7 +501,14 @@ const LAYOUT = {
   supervisor: {supervisor: [280, 100], stock_agent: [100, 205], news_agent: [460, 205], finish: [280, 245], stock_tools: [100, 335], news_tools: [460, 335], __end__: [280, 352]}
 };
 const SUBTITLE = {agent: "bound.invoke(messages)", supervisor: "route(state)", stock_agent: "ReAct · stock tools", news_agent: "ReAct · news tools", finish: "summary node", stock_tools: "ToolNode · STDIO MCP", news_tools: "ToolNode · HTTP MCP"};
-function parseEdges(mm) { const out = []; for (const line of String(mm || "").split("\n")) { const m = line.trim().match(/^([\w]+)\s+(-->|-\.->)\s+([\w]+);$/); if (m) out.push({from: m[1], to: m[3], cond: m[2] === "-.->"}); } return out; }
+function parseEdges(mm) {
+  const out = [];
+  for (const line of String(mm || "").split("\n")) {
+    const m = line.trim().match(/^(\w+)\s+(-->|-\.->|-\.\s.*?\s\.->|--\s.*?\s-->)\s+(\w+);?$/);
+    if (m && !out.some(e => e.from === m[1] && e.to === m[3])) out.push({from: m[1], to: m[3], cond: m[2].startsWith("-.")});
+  }
+  return out;
+}
 function nodeBox(name) { return name.startsWith("__") ? [110, 34] : [150, 50]; }
 function clip(cx, cy, w, h, tx, ty) { const dx = tx - cx, dy = ty - cy; if (!dx && !dy) return [cx, cy]; const s = Math.min(Math.abs((w / 2 + 3) / (dx || 1e-9)), Math.abs((h / 2 + 3) / (dy || 1e-9))); return [cx + dx * s, cy + dy * s]; }
 let G = {nodes: {}, edges: {}};
@@ -560,25 +572,35 @@ function currentPreset() { const sc = EV.scenarios.find(s => s.id === R.scenario
 function prepare() {
   stop();
   const agent = agentOf(R.agent), sc = currentPreset(), prompt = $("#prompt").value.trim();
-  const live = LabEngine.run(agent.variant, agent.tools, prompt);
   const rec = sc ? runOf(agent.id, sc.id) : null;
+  if (agent.live && !rec) {
+    R.run = null; R.seq = ["__start__"]; R.i = -1; paint(R.seq, -1);
+    $("#log").innerHTML = ""; $("#log").append(el("div", {class: "empty", text: `${agent.label} runs a live model, so only its recorded runs can be replayed here. Pick a scenario, or choose an offline agent to run your own prompt in the browser.`}));
+    $("#scorebar").innerHTML = ""; $("#parity").textContent = ""; $("#source").innerHTML = "Source: <b>recorded live runs only</b>";
+    $("#step-info").textContent = "No recorded run for this prompt."; $("#step-ms").textContent = "";
+    return false;
+  }
+  const live = agent.live ? null : LabEngine.run(agent.variant, agent.tools, prompt);
   R.run = rec ? {steps: rec.steps, crashed: rec.crashed, nodes: rec.nodes, rec, live} : {...live, rec: null, live};
   R.seq = ["__start__", ...R.run.nodes];
   R.crashAt = null;
   if (R.run.crashed) { R.crashAt = R.seq.length; R.seq.push(crashNode(agent, R.run)); } else R.seq.push("__end__");
   R.i = -1;
   $("#log").innerHTML = ""; $("#scorebar").innerHTML = ""; $("#parity").textContent = ""; $("#parity").className = "parity";
-  $("#source").innerHTML = rec ? `Source: <b>recorded Python run</b> (${esc(rec.scenario)} · ${fmt(rec.ms, rec.ms < 1 ? 3 : 1)} ms)` : `Source: <b>in-browser engine</b> (custom prompt)`;
+  $("#source").innerHTML = rec ? `Source: <b>recorded ${agent.live ? "live-model" : "Python"} run</b> (${esc(rec.scenario)} · ${fmt(rec.ms, rec.ms < 1 ? 3 : 1)} ms)` : `Source: <b>in-browser engine</b> (custom prompt)`;
+  return true;
   paint(R.seq, -1);
   $("#step-info").textContent = "Ready: " + (R.seq.length - 1) + " transitions.";
   $("#step-ms").textContent = "";
 }
-function crashNode(agent, run) {   // node that raised = the one routing would have entered next
-  const last = run.nodes[run.nodes.length - 1];
-  return agent.variant === "manual-tools" || agent.variant === "conditional" ? "tools" : last;
+function crashNode(agent, run) {   // node that raised = the one routing entered next
+  const last = run.nodes[run.nodes.length - 1] || "agent";
+  const step = run.steps[run.steps.length - 1], msg = step && step.messages[step.messages.length - 1];
+  if (msg && msg.tool_calls && msg.tool_calls.length) return {stock_agent: "stock_tools", news_agent: "news_tools"}[last] || "tools";
+  return last;
 }
 function step() {
-  if (!R.run) prepare();
+  if (!R.run && !prepare()) return false;
   if (R.i >= R.seq.length - 1) { stop(); return false; }
   R.i++;
   paint(R.seq, R.i, R.crashAt);
@@ -598,9 +620,10 @@ function finishRun() {
     const m = rec.metrics;
     sb.append(statusEl(m.status), ...[["selection", m.selection], ["execution", m.execution], ["answer", m.answer], ["safety", m.safety], ["overall", m.overall]].map(([k, v]) => el("span", {class: "pill", html: `${k} <b>${fmt(v)}</b>`})));
     m.notes.forEach(n => sb.append(el("span", {class: "pill", text: n})));
-    const same = JSON.stringify(strip(R.run.live)) === JSON.stringify(strip(rec));
-    const p = $("#parity"); p.className = "parity " + (same ? "ok" : "bad");
-    p.textContent = same ? "✓ The in-browser engine reproduces this recorded trace exactly." : "✕ The in-browser engine differs from the recorded trace.";
+    const p = $("#parity");
+    if (!R.run.live) { p.className = "parity"; p.textContent = `Recorded live run on ${((DATA.engine || {}).live || {}).model || "a live model"}; the in-browser engine reproduces only the offline demo model.`; }
+    else { const same = JSON.stringify(strip(R.run.live)) === JSON.stringify(strip(rec)); p.className = "parity " + (same ? "ok" : "bad");
+      p.textContent = same ? "✓ The in-browser engine reproduces this recorded trace exactly." : "✕ The in-browser engine differs from the recorded trace."; }
   } else {
     const calls = R.run.steps.flatMap(s => s.messages).flatMap(m => m.tool_calls || []).length;
     sb.append(el("span", {class: "pill", html: `node executions <b>${R.run.nodes.length}</b>`}), el("span", {class: "pill", html: `tool calls <b>${calls}</b>`}), el("span", {class: "pill", text: R.run.crashed ? "graph raised" : "completed"}));
@@ -608,7 +631,7 @@ function finishRun() {
 }
 function strip(r) { return {nodes: r.nodes, crashed: r.crashed, msgs: r.steps.map(s => s.messages.map(m => [m.type, m.content, (m.tool_calls || []).map(c => [c.name, c.args]), m.status || null, m.name || null]))}; }
 function statusEl(s) { const icon = {pass: "✓", partial: "◐", crash: "✕", fail: "✕"}[s]; return el("span", {class: "status s-" + s, html: `<i aria-hidden="true">${icon}</i>${s}`}); }
-function play() { if (!R.run || R.i >= R.seq.length - 1) prepare(); stop(); $("#run-btn").textContent = "❚❚ Pause"; R.timer = setInterval(() => { if (!step()) stop(); }, +$("#speed").value); step(); }
+function play() { if ((!R.run || R.i >= R.seq.length - 1) && !prepare()) return; stop(); $("#run-btn").textContent = "❚❚ Pause"; R.timer = setInterval(() => { if (!step()) stop(); }, +$("#speed").value); step(); }
 function stop() { if (R.timer) clearInterval(R.timer); R.timer = null; $("#run-btn").textContent = "▶ Run"; }
 function selectAgent(id, sync = true) {
   R.agent = id; const a = agentOf(id);
@@ -616,18 +639,18 @@ function selectAgent(id, sync = true) {
   $("#graph-title").textContent = `${a.label} — LangGraph`;
   $("#graph-sub").textContent = `variant: ${a.variant} · tools: ${a.tools} · ${a.extension ? "lab extension" : "repo: " + a.cli}`;
   $("#mermaid").textContent = EV.mermaid[id] || "";
-  const n = AGENT_NOTES[id];
+  const n = AGENT_NOTES[id] || (a.live ? {src: "Live model · " + (((DATA.engine || {}).live || {}).model || "Claude"), doc: "Same graph as the offline agent of this shape, with the rule-based DemoToolCallingModel replaced by a real tool-calling model through choose_llm(live=True). The supervisor routing stays rule-based.", obs: "Scored with the same checks; tickers such as TSLA count as Tesla, and extra price or news look-ups are not penalised."} : null);
   $("#agent-note").innerHTML = n ? `<div class="src">${esc(n.src)}</div><p style="margin:4px 0"><strong>Docs:</strong> ${esc(n.doc)}</p><p style="margin:4px 0"><strong>Observed:</strong> ${esc(n.obs)}</p>` : "";
   drawGraph(a); R.run = null; if (sync) prepare();
 }
 function selectScenario(id) { R.scenario = id; const sc = EV.scenarios.find(s => s.id === id); $("#prompt").value = sc.prompt; document.querySelectorAll("#sc-chips .chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.id === id)); prepare(); }
 function runner() {
   const ac = $("#agent-chips");
-  EV.agents.forEach(a => { const b = el("button", {class: "chip", "data-id": a.id, type: "button", "aria-pressed": "false"}, a.label); if (a.extension) b.append(el("small", {class: "ext", text: "ext"})); b.addEventListener("click", () => selectAgent(a.id)); ac.append(b); });
+  EV.agents.forEach(a => { const b = el("button", {class: "chip", "data-id": a.id, type: "button", "aria-pressed": "false"}, a.label); if (a.live) b.append(el("small", {class: "ext", text: "live"})); else if (a.extension) b.append(el("small", {class: "ext", text: "ext"})); b.addEventListener("click", () => selectAgent(a.id)); ac.append(b); });
   const scc = $("#sc-chips");
   EV.scenarios.forEach(s => { const b = el("button", {class: "chip", "data-id": s.id, type: "button", "aria-pressed": "false", title: s.prompt}, s.id); b.append(el("small", {text: s.title})); b.addEventListener("click", () => selectScenario(s.id)); scc.append(b); });
   $("#run-btn").addEventListener("click", () => R.timer ? stop() : play());
-  $("#step-btn").addEventListener("click", () => { stop(); if (!R.run || R.i >= R.seq.length - 1) prepare(); step(); });
+  $("#step-btn").addEventListener("click", () => { stop(); if ((!R.run || R.i >= R.seq.length - 1) && !prepare()) return; step(); });
   $("#reset-btn").addEventListener("click", prepare);
   $("#prompt").addEventListener("input", () => { R.run = null; document.querySelectorAll("#sc-chips .chip").forEach(c => c.setAttribute("aria-pressed", currentPreset() && c.dataset.id === R.scenario)); $("#source").innerHTML = currentPreset() ? "Source: <b>recorded Python run</b>" : "Source: <b>in-browser engine</b> (custom prompt)"; });
   $("#prompt").addEventListener("keydown", e => { if (e.key === "Enter") play(); });
@@ -757,14 +780,17 @@ function charts() {
   const mmax = Math.ceil(Math.max(...mrows.map(r => r.value)) / 20) * 20 || 20;
   hbar(mc, mrows, {max: mmax, labelW: 190, fmtV: v => `${fmt(v, 1)} ms`, tipFn: r => `<b>${esc(r.c.tool)}</b> via ${esc(r.t.transport)}<div class="r">args ${esc(JSON.stringify(r.c.args))}</div><div style="margin-top:4px">${r.c.is_error ? '<span style="color:#ffb4b4">isError</span> · ' : ""}${esc(r.c.text)}</div><div class="r">${fmt(r.c.ms, 2)} ms</div>`});
   // latency
-  const lr = rows.map(r => ({label: r.label, value: median(r.rs.map(x => x.ms)), rs: r.rs}));
+  const liveIds = new Set(EV.agents.filter(a => a.live).map(a => a.id));
+  const lr = rows.filter(r => !liveIds.has(r.id)).map(r => ({label: r.label, value: median(r.rs.map(x => x.ms)), rs: r.rs}));
+  const eng = DATA.engine || {};
+  $("#lat-sub").textContent = `Wall time of one graph run${eng.runner === "GitHub Actions" ? " on a GitHub Actions runner" : ""}${eng.langgraph ? ` with langgraph ${eng.langgraph}` : " (LangGraph stand-in: treat as relative)"}. MCP agents include real MCP round trips.${liveIds.size ? " Live-model agents are left out: their time is dominated by model API calls." : ""}`;
   const lmax = Math.max(...lr.map(r => r.value)); const step = lmax > 4 ? 2 : 1;
   hbar($("#c-lat"), lr, {max: Math.ceil(lmax / step) * step || 1, fmtV: v => `${fmt(v, 2)} ms`, tipFn: r => `<b>${esc(r.label)}</b><div class="r">median ${fmt(r.value, 3)} ms · min ${fmt(Math.min(...r.rs.map(x => x.ms)), 3)} · max ${fmt(Math.max(...r.rs.map(x => x.ms)), 3)}</div>`});
   // tiles
   const all = EV.runs, pass = all.filter(r => r.metrics.status === "pass").length, crash = all.filter(r => r.crashed).length;
   const cli = DATA.cli || [], cliOk = cli.filter(c => c.expect_failure ? c.exit !== 0 : c.exit === 0).length;
   const tools = (DATA.mcp_sdk || []).reduce((s, t) => s + t.tools.length, 0);
-  const tiles = [["Evaluated runs", all.length, `${EV.agents.length} agents × ${EV.scenarios.length} scenarios`], ["Passed", `${pass}`, `${Math.round(pass / all.length * 100)}% of runs scored 1.00`], ["Graph crashes", crash, "custom execute_tools on S6"], ["MCP tools", tools, "3 over STDIO · 2 over HTTP"], ["CLI commands", `${cliOk}/${cli.length}`, "behaved as documented"]];
+  const tiles = [["Evaluated runs", all.length, `${EV.agents.length} agents × ${EV.scenarios.length} scenarios`], ["Passed", `${pass}`, `${Math.round(pass / all.length * 100)}% of runs scored 1.00`], ["Graph crashes", crash, crash ? [...new Set(all.filter(r => r.crashed).map(r => agentOf(r.agent).label))].join(", ") : "none"], ["MCP tools", tools, "3 over STDIO · 2 over HTTP"], ["CLI commands", `${cliOk}/${cli.length}`, "behaved as documented"]];
   tiles.forEach(([k, n, d]) => $("#tiles").append(el("div", {class: "tile"}, el("div", {class: "k", text: k}), el("div", {class: "n", text: n}), el("div", {class: "d", text: d}))));
 }
 
@@ -803,11 +829,11 @@ function notes() {
   FLOW.forEach(([d, o]) => $("#flow").append(el("li", {html: `${esc(d)}<br><span style="color:var(--dim)">↳ ${esc(o)}</span>`})));
   const cli = DATA.cli || [], ran = re => cli.find(c => re.test(c.cmd) && c.exit === 0);
   const tests = [
-    ["ok", "Install requirements.txt in a fresh Python 3.12 environment", `Ran on Python ${(DATA.engine || {}).python}. MCP SDK ${(DATA.engine || {}).mcp} was installed; langgraph/langchain could not be installed (no package access), so their API was supplied by a minimal stand-in.`, !((DATA.engine || {}).langgraph) ? "warn" : "ok"],
+    ["ok", "Install requirements.txt in a fresh Python 3.12 environment", (DATA.engine || {}).langgraph ? `Ran on Python ${(DATA.engine || {}).python}${(DATA.engine || {}).runner === "GitHub Actions" ? " (GitHub Actions)" : ""} with langgraph ${(DATA.engine || {}).langgraph}, langchain ${(DATA.engine || {}).langchain || "?"} and MCP SDK ${(DATA.engine || {}).mcp}.` : `Ran on Python ${(DATA.engine || {}).python}. MCP SDK ${(DATA.engine || {}).mcp} was installed; langgraph/langchain were not installable there, so their API was supplied by a minimal stand-in.`, !((DATA.engine || {}).langgraph) ? "warn" : "ok"],
     ["ok", "Run --topic tools and --topic graph-prebuilt", ran(/--topic tools$/) && ran(/graph-prebuilt/) ? "Both exit 0; outputs under MCP & CLI runs." : "Not completed."],
     ["ok", "Run --topic mcp-client and confirm STDIO tool discovery", ran(/mcp-client$/) ? "stock_stock_price, stock_buy_stock and stock_sell_stock discovered; sample call returned 175.0." : "Not completed."],
     ["ok", "Launch news_mcp_server.py and rerun with --include-news", ran(/mcp-client --include-news$/) ? "Five tools across both transports. Without the server the same command exits 1, as documented." : "Not completed."],
-    ["skip", "Verify --live calls only after granting API access", "Skipped: no OpenAI or Tavily key was provided, and live calls can incur charges."]
+    (() => { const lv = (DATA.engine || {}).live || {}; return /ran|carried/.test(lv.status || "") ? ["ok", "Verify --live calls only after granting API access", `Live tool calling verified on ${lv.model}${lv.at ? " (" + lv.at + ")" : ""}, using a temporary API key that was then removed. Tavily was not tested.`] : ["skip", "Verify --live calls only after granting API access", "Skipped: no API key was provided, and live calls can incur charges."]; })()
   ];
   tests.forEach(([st, t, d, override]) => { const s = override || st; $("#itests").append(el("div", {class: "check"}, el("span", {class: "ic " + s, text: s === "ok" ? "✓" : s === "warn" ? "!" : "–", "aria-label": s}), el("div", {}, el("strong", {text: t}), el("p", {text: d})))); });
   const find = (a, s) => runOf(a, s) || {metrics: {}};

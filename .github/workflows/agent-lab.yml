@@ -1,0 +1,61 @@
+name: Agent Lab data
+
+# Runs lab/run_agent_lab.py with the real packages from requirements.txt and commits
+# the regenerated lab data. Live Claude agents run only while the repository secret
+# ANTHROPIC_API_KEY exists; their results are kept after the secret is deleted.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "lab/run_agent_lab.py"
+      - ".github/workflows/agent-lab.yml"
+      - "MCP_Langchain_Langraph_Tools.py"
+      - "stock_market_mcp_server.py"
+      - "news_mcp_server.py"
+      - "requirements.txt"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agent-lab
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the real packages
+        run: |
+          python -m pip install --upgrade pip
+          if python -m pip install -r requirements.txt > lab/install-log.txt 2>&1; then
+            echo "installed: requirements.txt" | tee -a lab/install-log.txt
+          else
+            echo "requirements.txt failed; installing the core set" | tee -a lab/install-log.txt
+            python -m pip install "mcp[cli]>=2,<3" "langgraph>=1,<2" "langchain>=1,<2" "langchain-core>=1,<2" \
+              "langchain-anthropic>=1,<2" "python-dotenv>=1,<2" >> lab/install-log.txt 2>&1
+          fi
+          python -m pip freeze | grep -i -E "^(langgraph|langchain|mcp|fastmcp|anthropic)" | tee -a lab/install-log.txt
+
+      - name: Run the Agent Lab
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python lab/run_agent_lab.py 2>&1 | tee lab/run-log.txt
+
+      - name: Commit the regenerated data
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lab/
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Agent Lab: regenerate data with the real packages [skip ci]"
+          git push

@@ -180,11 +180,23 @@ class DemoToolCallingModel:
 
 
 def choose_llm(*, live: bool = False, model_name: str = MODEL_DEFAULT):
-    """Explicitly require OPENAI_API_KEY for real-model calls."""
+    """Explicitly require an API key for real-model calls.
+
+    Model names starting with "claude" use Anthropic (ANTHROPIC_API_KEY);
+    everything else uses OpenAI (OPENAI_API_KEY).
+    """
     if not live:
         return DemoToolCallingModel()
-    from dotenv import load_dotenv
-    load_dotenv(ROOT / ".env")
+    try:
+        from dotenv import load_dotenv
+        load_dotenv(ROOT / ".env")
+    except ImportError:
+        pass  # .env support is optional; environment variables still work
+    if model_name.startswith("claude"):
+        if not os.getenv("ANTHROPIC_API_KEY"):
+            raise RuntimeError("ANTHROPIC_API_KEY is missing. Set it in the environment or .env.")
+        from langchain_anthropic import ChatAnthropic
+        return ChatAnthropic(model=model_name, temperature=0)
     if not os.getenv("OPENAI_API_KEY"):
         raise RuntimeError("OPENAI_API_KEY is missing. Create .env (see .env.example).")
     from langchain_openai import ChatOpenAI

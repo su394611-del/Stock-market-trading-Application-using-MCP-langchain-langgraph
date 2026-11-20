@@ -118,7 +118,18 @@ MCP_Langchain_Langraph_Tools.py --topic tavily --live
 MCP_Langchain_Langraph_Tools.py --topic react --live
 ```
 
-The default model is `gpt-5-mini` to match the supplied source. Change it with `--model YOUR_MODEL_ID` if your account supports a different tool-capable model. Live LLM calls may incur charges. `--topic tavily` demonstrates binding the search tool; its code does not automatically execute a tool call proposed by the LLM.
+The default model is `gpt-5-mini` to match the supplied source. Change it with `--model YOUR_MODEL_ID` if your account supports a different tool-capable model. Live LLM calls may incur charges.
+
+**Claude models:** a `--model` value starting with `claude` uses Anthropic instead of OpenAI and needs `ANTHROPIC_API_KEY` (in the environment or `.env`):
+
+```powershell
+python MCP_Langchain_Langraph_Tools.py --topic tool-calling --live --model claude-sonnet-5-5
+python MCP_Langchain_Langraph_Tools.py --topic react --include-news --live --model claude-sonnet-5-5
+```
+
+## Agent Lab (website)
+
+`lab/agent-lab.html` is the interactive lab embedded on the project site. Its data comes from `python lab/run_agent_lab.py`, which runs both MCP servers, the CLI topics and eight LangGraph agents across eight scenarios with the packages in `requirements.txt`. The **Agent Lab data** GitHub Actions workflow runs it with the real packages and commits the result. If the repository secret `ANTHROPIC_API_KEY` exists, the workflow also runs three agents on a Claude model; their results stay in the data after the secret is deleted. `--topic tavily` demonstrates binding the search tool; its code does not automatically execute a tool call proposed by the LLM.
 
 ## Topics mapped from the source notebook
 
