@@ -48,7 +48,9 @@ jobs:
       - name: Run the Agent Lab
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python lab/run_agent_lab.py 2>&1 | tee lab/run-log.txt
+        run: |
+          set -o pipefail
+          python lab/run_agent_lab.py 2>&1 | tee lab/run-log.txt
 
       - name: Commit the regenerated data
         if: always()

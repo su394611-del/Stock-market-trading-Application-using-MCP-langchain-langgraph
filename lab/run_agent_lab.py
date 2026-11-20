@@ -113,16 +113,18 @@ def build_supervisor_graph(llm: Any, stock_tools: list, news_tools: list):
     from langgraph.prebuilt import ToolNode, tools_condition
 
     stock_llm, news_llm = llm.bind_tools(stock_tools), llm.bind_tools(news_tools)
+    # Inner functions stay unannotated: LangGraph resolves a branch function's type hints
+    # against module globals, and MessagesState is imported locally here.
 
     def _turn(state):
         msgs = state["messages"]
         idx = max(i for i, m in enumerate(msgs) if isinstance(m, HumanMessage))
         return str(msgs[idx].content), msgs[idx:]
 
-    def supervisor(state: MessagesState):
+    def supervisor(state):
         return {"messages": []}
 
-    def route(state: MessagesState) -> str:
+    def route(state):
         text, turn = _turn(state)
         done = {m.name for m in turn if isinstance(m, AIMessage) and m.name}
         if STOCK_INTENT.search(text) and "stock_agent" not in done:
@@ -132,7 +134,7 @@ def build_supervisor_graph(llm: Any, stock_tools: list, news_tools: list):
         return "finish"
 
     def specialist(name, bound):
-        def node(state: MessagesState):
+        def node(state):
             msg = bound.invoke(state["messages"])
             if not msg.tool_calls:
                 msg.name = name  # hand control back to the supervisor
@@ -140,7 +142,7 @@ def build_supervisor_graph(llm: Any, stock_tools: list, news_tools: list):
         node.__name__ = name
         return node
 
-    def finish(state: MessagesState):
+    def finish(state):
         text, turn = _turn(state)
         parts = [f"{m.name}: {text_of(m.content)}" for m in turn
                  if isinstance(m, AIMessage) and m.name in ("stock_agent", "news_agent")]
