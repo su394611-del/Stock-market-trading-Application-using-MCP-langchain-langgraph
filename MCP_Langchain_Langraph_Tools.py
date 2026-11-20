@@ -50,6 +50,16 @@ def simulated_trade(action: str, name: str, qty: int) -> str:
     return f"SIMULATION ONLY: would {action} {qty} shares of {name}. No trade was placed."
 
 
+def content_text(content: Any) -> str:
+    """Plain text of a message's content (a string, or LangChain/MCP content blocks)."""
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        return "".join(str(c.get("text", "")) if isinstance(c, dict) else str(getattr(c, "text", c))
+                       for c in content if not isinstance(c, dict) or c.get("type", "text") == "text")
+    return str(content)
+
+
 def interpret_demo_request(text: str, allowed_tools: Sequence[str]) -> list[dict[str, Any]]:
     """Simple offline rule-based tool-call demonstration. NOT a language model."""
     allowed = set(allowed_tools)
@@ -164,7 +174,7 @@ class DemoToolCallingModel:
             text = next((str(m.content) for m in reversed(msgs)
                          if isinstance(m, HumanMessage)), "")
         if isinstance(last, ToolMessage):
-            last_results = [str(m.content) for m in msgs if isinstance(m, ToolMessage)]
+            last_results = [content_text(m.content) for m in msgs if isinstance(m, ToolMessage)]
             return AIMessage(content="Demo tool execution complete: " + " | ".join(last_results))
         if "p/e" in text.lower() or "pe ratio" in text.lower():
             return AIMessage(content="P/E ratio = stock price divided by earnings per share (demo).")
@@ -205,7 +215,7 @@ def choose_llm(*, live: bool = False, model_name: str = MODEL_DEFAULT):
 
 def describe_messages(messages: Sequence[Any]) -> None:
     for msg in messages:
-        print(f"[{msg.__class__.__name__}] {str(msg.content)[:500]}")
+        print(f"[{msg.__class__.__name__}] {content_text(msg.content)[:500]}")
         for call in getattr(msg, "tool_calls", []) or []:
             print(f"  TOOL CALL: {call.get('name')}({call.get('args')})")
 
@@ -311,6 +321,18 @@ def _run_tavily(llm: Any, live: bool) -> None:
     print("Tool calls are only proposed here; no search executed until invoked.")
 
 
+STOCK_TOOL_NAMES = ("stock_price", "buy_stock", "sell_stock")
+NEWS_TOOL_NAMES = ("market_news", "market_sentiment")
+
+
+def server_tool_name(name: str, server: str) -> str:
+    """Strip the server prefix MCPAdapter adds when several servers are connected
+    (stock_stock_price -> stock_price). With a single server, names are unprefixed."""
+    prefix = server + "_"
+    rest = name[len(prefix):] if name.startswith(prefix) else None
+    return rest if rest in STOCK_TOOL_NAMES + NEWS_TOOL_NAMES else name
+
+
 def mcp_connections(*, include_news: bool = False) -> dict[str, Any]:
     """Modern MCPAdapter config, using paths independent of notebook CWD."""
     servers: dict[str, dict[str, Any]] = {
@@ -333,15 +355,15 @@ async def _run_mcp_client(*, include_news: bool) -> list[Any]:
     async with MCPAdapter(mcp_connections(include_news=include_news)) as adapter:
         tools = await adapter.list_tools()
         print("All MCP tools:", [t.name for t in tools])
-        stock_tools = [t for t in tools if t.name.startswith("stock_")]
+        stock_tools = [t for t in tools if server_tool_name(t.name, "stock") in STOCK_TOOL_NAMES]
         print("STDIO stock server tools:", [t.name for t in stock_tools])
         if include_news:
-            news_tools = [t for t in tools if t.name.startswith("news_")]
+            news_tools = [t for t in tools if server_tool_name(t.name, "news") in NEWS_TOOL_NAMES]
             print("HTTP news server tools:", [t.name for t in news_tools])
-        example_price_tool = next((t for t in stock_tools if t.name.endswith("_stock_price")), None)
+        example_price_tool = next((t for t in stock_tools if server_tool_name(t.name, "stock") == "stock_price"), None)
         if example_price_tool is not None:
             result = await example_price_tool.ainvoke({"name": "Apple"})
-            print("STDIO sample tool result:", result, "(simulated, not market data)")
+            print("STDIO sample tool result:", content_text(result), "(simulated, not market data)")
         return tools
 
 

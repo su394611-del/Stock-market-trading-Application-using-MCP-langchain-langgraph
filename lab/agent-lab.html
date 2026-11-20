@@ -263,8 +263,8 @@ ol.flow li{margin:3px 0}
 /*ENGINE-START*/
 /* In-browser port of the repository's offline logic: interpret_demo_request,
    DemoToolCallingModel, the simulated tools, build_graph variants and the lab's
-   supervisor graph. It reproduces the recorded Python traces exactly (checked live
-   below each run). Rule-based, not an LLM; all data is simulated. */
+   supervisor graph, with langgraph 1.2 ToolNode semantics. It reproduces the recorded
+   Python traces exactly (checked live below each run). Rule-based, not an LLM. */
 const LabEngine = (() => {
   const PRICES = {apple:175.0, microsoft:320.0, google:135.0, alphabet:135.0, ibm:145.0, tesla:215.0, nvidia:125.0};
   const pyFloat = x => Number.isInteger(x) ? x.toFixed(1) : String(x);
@@ -320,17 +320,19 @@ const LabEngine = (() => {
     };
   }
 
-  /* tools: local LangChain @tool functions, or MCP tools (server-prefixed, errors masked by the SDK) */
+  /* tools: local LangChain @tool functions (errors raise), or MCP tools via langchain.mcp.MCPAdapter
+     (server-prefixed; a server error comes back as an error ToolMessage with the SDK's masked text) */
   const BASE = {stock_price: a => pyFloat(fakePrice(a.name)), buy_stock: a => simulatedTrade("buy", a.name, a.qty), sell_stock: a => simulatedTrade("sell", a.name, a.qty), market_news: a => marketNews(a.query), market_sentiment: a => marketSentiment(a.symbol)};
   function toolset(kind) {
     const make = (name, base, mcp) => ({name, invoke(call) {
       try { return {type: "ToolMessage", content: BASE[base](call.args || {}), name, tool_call_id: call.id}; }
-      catch (e) { if (!(e instanceof PyError)) throw e; if (mcp) throw new PyError("ToolException", `Error executing tool ${base}`); throw e; }
+      catch (e) { if (!(e instanceof PyError)) throw e; if (mcp) return {type: "ToolMessage", content: `Error executing tool ${base}`, name, status: "error", tool_call_id: call.id}; throw e; }
     }});
     if (kind === "local") return ["stock_price", "buy_stock", "sell_stock"].map(b => make(b, b, false));
+    if (kind === "mcp:stock") return ["stock_price", "buy_stock", "sell_stock"].map(b => make(b, b, true));   // one server: no prefix
     const stock = ["stock_price", "buy_stock", "sell_stock"].map(b => make("stock_" + b, b, true));
     const news = ["market_news", "market_sentiment"].map(b => make("news_" + b, b, true));
-    return kind === "mcp:stock" ? stock : [...stock, ...news];
+    return [...stock, ...news];
   }
   const toolNode = tools => state => {
     const byName = Object.fromEntries(tools.map(t => [t.name, t]));
@@ -338,8 +340,7 @@ const LabEngine = (() => {
     for (const call of state.messages[state.messages.length - 1].tool_calls || []) {
       const t = byName[call.name];
       if (!t) { out.push({type: "ToolMessage", content: `Error: ${call.name} is not a valid tool, try one of [${Object.keys(byName).join(", ")}].`, name: call.name, status: "error", tool_call_id: call.id}); continue; }
-      try { out.push(t.invoke(call)); }
-      catch (e) { out.push({type: "ToolMessage", content: `Error: ${e.repr()}\n Please fix your mistakes.`, name: call.name, status: "error", tool_call_id: call.id}); }
+      out.push(t.invoke(call));   // langgraph 1.2 ToolNode default: a tool's own exception propagates
     }
     return out;
   };
@@ -427,10 +428,10 @@ const AGENT_NOTES = {
   "basic": {src: "Wiki · Graph Variants", doc: "START → agent → END. The model may propose tool calls but nothing executes them.", obs: "Confirmed: every tool-needing scenario ends on an AIMessage with pending tool calls, so execution and answer score 0."},
   "manual-tools": {src: "Wiki · Graph Variants", doc: "Always agent → tools → END with the custom execute_tools node; no conditional shortcut.", obs: "Runs tools, but the custom executor has no error handling: the zero-quantity guardrail (S6) raises ValueError and crashes the graph."},
   "conditional": {src: "Wiki · Graph Variants", doc: "tools_condition routes to the custom execute_tools node, or ends when there are no calls.", obs: "Same crash as manual-tools on S6. Skips the tools node when no calls are proposed (S4, S5, S7)."},
-  "prebuilt": {src: "Wiki · Graph Variants", doc: "tools_condition + LangGraph ToolNode; run the tools, then end.", obs: "ToolNode turns the S6 failure into an error ToolMessage, so no crash, but the graph ends on a ToolMessage with no final answer."},
-  "react-local": {src: "Wiki · Graph Variants", doc: "ReAct: loop tools → agent until the model stops calling tools.", obs: "Passes every scenario its three local tools can serve. Fails only where news tools are needed (S5, part of S8)."},
-  "mcp-prebuilt": {src: "README · Start the MCP servers", doc: "STDIO: the client launches stock_market_mcp_server.py as a child process — do not start it manually.", obs: "Confirmed: MCPAdapter spawned the server itself. Tools arrive server-prefixed (stock_stock_price). Prebuilt routing still ends on a ToolMessage."},
-  "mcp-react": {src: "README · Start the MCP servers", doc: "Start news_mcp_server.py in another terminal; --include-news fails if the HTTP server is not listening.", obs: "Both claims confirmed: with the server down the CLI exits 1 (ConnectError); with it up, the ReAct agent sees all five MCP tools and passes 8/8."},
+  "prebuilt": {src: "Wiki · Graph Variants", doc: "tools_condition + LangGraph ToolNode; run the tools, then end.", obs: "Ends on a ToolMessage with no final answer. On S6 it crashes: with langgraph 1.2, ToolNode's default error handling lets the tool's ValueError propagate."},
+  "react-local": {src: "Wiki · Graph Variants", doc: "ReAct: loop tools → agent until the model stops calling tools.", obs: "Passes the price, trade and no-tool scenarios. Crashes on S6 (ToolNode lets the guardrail's ValueError propagate) and misses the news tools it does not have (S5, part of S8)."},
+  "mcp-prebuilt": {src: "README · Start the MCP servers", doc: "STDIO: the client launches stock_market_mcp_server.py as a child process — do not start it manually.", obs: "Confirmed: MCPAdapter spawned the server itself. With a single server, tool names are not prefixed (stock_price). Prebuilt routing still ends on a ToolMessage."},
+  "mcp-react": {src: "README · Start the MCP servers", doc: "Start news_mcp_server.py in another terminal; --include-news fails if the HTTP server is not listening.", obs: "With the server up, the ReAct agent sees all five MCP tools (server-prefixed, e.g. news_market_sentiment) and passes 8/8. With it down, the MCP adapter skips the news server instead of failing; see MCP & CLI runs."},
   "supervisor": {src: "Lab extension (not in the repository)", doc: "A supervisor routes the request to a stock specialist (STDIO MCP tools) and a news specialist (HTTP MCP tools). Each runs its own ReAct loop and hands back, then a finish node summarises.", obs: "Passes 8/8. It takes up to 10 node executions (S8), against 3 for single-agent ReAct, in exchange for scoped tool access per agent."}
 };
 const CLI_NOTES = [
@@ -445,9 +446,9 @@ const CLI_NOTES = [
   [/graph-conditional/, "Wiki · Graph Variants", "tools_condition with the custom executor."],
   [/graph-prebuilt/, "Wiki · Graph Variants", "ToolNode + tools_condition."],
   [/tavily/, "Wiki · Offline vs Live", "Skipped offline: requires --live with OPENAI_API_KEY and TAVILY_API_KEY."],
-  [/NOT started/, "README · Start the MCP servers", "Documented failure path: --include-news without the HTTP server. Exit code 1 is the expected result."],
-  [/mcp-client --include-news$/, "Wiki · MCP Integration", "Terminal A runs news_mcp_server.py; terminal B runs the client. Five tools across both transports."],
-  [/mcp-client$/, "README · Start the MCP servers", "STDIO only: the adapter spawns the stock server as a child process."],
+  [/NOT started/, "README · Start the MCP servers", "The README says --include-news fails when the HTTP server is not listening."],
+  [/mcp-client --include-news$/, "Wiki · MCP Integration", "Terminal A runs news_mcp_server.py; terminal B runs the client. Five tools across both transports, prefixed by server name."],
+  [/mcp-client$/, "README · Start the MCP servers", "STDIO only: the adapter spawns the stock server as a child process. With one server the tool names carry no prefix."],
   [/mcp-graph/, "Wiki · Execution Sequence", "MCP-backed graph: the adapter discovers tools, the graph calls stock_stock_price over STDIO."],
   [/react/, "Wiki · Execution Sequence", "ReAct loop: tools → agent until no calls; recursion_limit=8 bounds the loop."]
 ];
@@ -455,7 +456,7 @@ const FLOW = [
   ["A human prompt is placed in MessagesState.", "Every trace starts with the HumanMessage at __start__."],
   ["The bound offline demo model (or live model) returns an AIMessage.", "agent / specialist nodes append one AIMessage per visit."],
   ["tools_condition chooses tool execution if calls are present.", "Dashed edges in the graph view are the conditional routes."],
-  ["Tool execution produces ToolMessage objects.", "ToolNode also converts tool errors into error ToolMessages; the custom executor does not."],
+  ["Tool execution produces ToolMessage objects.", "A local tool's exception is not converted: with langgraph 1.2 defaults, ToolNode and the custom executor both let it propagate. MCP server errors arrive as error ToolMessages."],
   ["Prebuilt graphs end after the tools; the ReAct graph returns to the agent.", "prebuilt: 2 node executions; react: 3 (see Run graphs)."],
   ["The CLI prints messages and tool-call metadata; no order is submitted.", "All trade results read “SIMULATION ONLY … No trade was placed.”"]
 ];
@@ -818,7 +819,8 @@ function mcpPanels() {
       list.querySelectorAll(".term-item").forEach(x => x.setAttribute("aria-pressed", x === b));
       out.textContent = `$ ${c.cmd}\n${c.output}\n\n[exit ${c.exit} · ${fmt(c.ms, 0)} ms]`;
       const n = CLI_NOTES.find(([re]) => re.test(c.cmd));
-      note.innerHTML = n ? `<div class="src">${esc(n[1])}</div><p style="margin:4px 0">${esc(n[2])}</p><p style="margin:4px 0"><strong>Observed:</strong> exit ${c.exit}${c.expect_failure ? " (expected failure)" : ""} in ${fmt(c.ms, 0)} ms.</p>` : "";
+      const obs = c.expect_failure ? (c.exit !== 0 ? `exit ${c.exit}: it fails, as documented.` : `exit 0: it does not fail. The MCP adapter logs the refused connection, skips the news server and carries on with the STDIO tools.`) : `exit ${c.exit} in ${fmt(c.ms, 0)} ms.`;
+      note.innerHTML = n ? `<div class="src">${esc(n[1])}</div><p style="margin:4px 0">${esc(n[2])}</p><p style="margin:4px 0"><strong>Observed:</strong> ${esc(obs)}</p>` : "";
     });
     list.append(b); if (i === 0) b.click();
   });
@@ -832,16 +834,16 @@ function notes() {
     ["ok", "Install requirements.txt in a fresh Python 3.12 environment", (DATA.engine || {}).langgraph ? `Ran on Python ${(DATA.engine || {}).python}${(DATA.engine || {}).runner === "GitHub Actions" ? " (GitHub Actions)" : ""} with langgraph ${(DATA.engine || {}).langgraph}, langchain ${(DATA.engine || {}).langchain || "?"} and MCP SDK ${(DATA.engine || {}).mcp}.` : `Ran on Python ${(DATA.engine || {}).python}. MCP SDK ${(DATA.engine || {}).mcp} was installed; langgraph/langchain were not installable there, so their API was supplied by a minimal stand-in.`, !((DATA.engine || {}).langgraph) ? "warn" : "ok"],
     ["ok", "Run --topic tools and --topic graph-prebuilt", ran(/--topic tools$/) && ran(/graph-prebuilt/) ? "Both exit 0; outputs under MCP & CLI runs." : "Not completed."],
     ["ok", "Run --topic mcp-client and confirm STDIO tool discovery", ran(/mcp-client$/) ? "stock_stock_price, stock_buy_stock and stock_sell_stock discovered; sample call returned 175.0." : "Not completed."],
-    ["ok", "Launch news_mcp_server.py and rerun with --include-news", ran(/mcp-client --include-news$/) ? "Five tools across both transports. Without the server the same command exits 1, as documented." : "Not completed."],
+    ["ok", "Launch news_mcp_server.py and rerun with --include-news", ran(/mcp-client --include-news$/) ? `Five tools across both transports. ${((DATA.cli || []).find(c => c.expect_failure) || {}).exit ? "Without the server the same command fails, as documented." : "Without the server the command still exits 0: the adapter skips the unreachable server."}` : "Not completed."],
     (() => { const lv = (DATA.engine || {}).live || {}; return /ran|carried/.test(lv.status || "") ? ["ok", "Verify --live calls only after granting API access", `Live tool calling verified on ${lv.model}${lv.at ? " (" + lv.at + ")" : ""}, using a temporary API key that was then removed. Tavily was not tested.`] : ["skip", "Verify --live calls only after granting API access", "Skipped: no API key was provided, and live calls can incur charges."]; })()
   ];
   tests.forEach(([st, t, d, override]) => { const s = override || st; $("#itests").append(el("div", {class: "check"}, el("span", {class: "ic " + s, text: s === "ok" ? "✓" : s === "warn" ? "!" : "–", "aria-label": s}), el("div", {}, el("strong", {text: t}), el("p", {text: d})))); });
   const find = (a, s) => runOf(a, s) || {metrics: {}};
   const F = [
     ["Only the looping graphs produce a final answer.", `graph-prebuilt and mcp-graph end on a ToolMessage (answer check 0 on every tool scenario); react and supervisor return to the model and finish with an AIMessage.`],
-    ["The custom execute_tools node crashes on tool errors.", `S6 (“Buy 0 shares of IBM”): graph-manual-tools and graph-conditional raise ${esc((find("manual-tools", "S6").crashed || "ValueError").split(":")[0])}. ToolNode converts the same error into an error ToolMessage. Wrapping execute_tools in try/except, or using ToolNode, removes the crash.`],
+    ["Local tool errors crash every graph that runs them.", `S6 (“Buy 0 shares of IBM”): ${esc(EV.runs.filter(r => r.scenario === "S6" && r.crashed).map(r => agentOf(r.agent).label).join(", ") || "no graph")} raise ${esc((find("manual-tools", "S6").crashed || "ValueError").split(":")[0])}. With langgraph ${esc((DATA.engine || {}).langgraph || "1.2")}, ToolNode's default handler only converts tool-input validation errors, and the custom execute_tools has no handler. Over MCP the same rejection arrives as an error ToolMessage, so the MCP agents finish. ToolNode(tools, handle_tool_errors=True), or raising ToolException with handle_tool_error set on the tools, would turn the crash into a message the agent can act on.`],
     ["The SDK hides the validation reason from MCP clients.", `Over MCP the client receives only “Error executing tool buy_stock”, because MCP SDK 2.x masks unexpected exceptions. Raising mcp.server.mcpserver.exceptions.ToolError in the servers passes the message through; verified in a probe run (“Error executing tool b: qty must be a positive integer”).`],
-    ["The demo model reports success even after a tool error.", `ReAct on S6 replies “Demo tool execution complete: Error: …”. It also joins every ToolMessage in the history, so in the supervisor run the news agent repeats the stock price.`],
+    ["The demo model reports success even after a tool error.", `ReAct over MCP on S6 replies “Demo tool execution complete: Error executing tool buy_stock”. It also joins every ToolMessage in the history, so in the supervisor run the news agent repeats the stock price.`],
     ["Multi-agent routing costs depth, not correctness.", `On S8 the supervisor takes ${find("supervisor", "S8").nodes ? find("supervisor", "S8").nodes.length : 9} node executions against ${find("mcp-react", "S8").nodes ? find("mcp-react", "S8").nodes.length : 3} for single-agent ReAct with the same five tools. Both score 1.00; the supervisor keeps each agent's tool access scoped.`],
     ["Guardrails hold on every path.", "No run produced a “would buy 0” trade or advice text. Invalid quantities are rejected by simulated_trade on both the local and MCP paths."]
   ];
@@ -850,7 +852,8 @@ function notes() {
     ["README run commands missing a space or the interpreter", "Several lines read MCP_Langchain_Langraph_Tools.py--topic … (manual-execution, graph-prebuilt, react --include-news), and the --include-news and --live blocks omit python. The wiki's CLI Reference has the correct forms."],
     [".env.example is listed but not in the repository", "README · Files and Live OpenAI tool calling both reference it. Add a placeholder with OPENAI_API_KEY= and TAVILY_API_KEY=."],
     ["news_mcp_server.py import order", "It tries mcp.server.fastmcp first, which no longer exists in SDK 2.x, then falls back to MCPServer. It works, but the comment describes the fallback as the older layout when it is the current one."],
-    ["README corrections list numbering", "Items run 1–8, 11, 9, 10."]
+    ["README corrections list numbering", "Items run 1–8, 11, 9, 10."],
+    ...(((DATA.cli || []).find(c => c.expect_failure) || {}).exit === 0 ? [["“--include-news will fail if the HTTP server is not listening”", "Not with langchain " + ((DATA.engine || {}).langchain || "1.5") + ": langchain.mcp.MCPAdapter (FastMCP) logs “Client failed to connect”, drops that server and continues, so the run succeeds with the STDIO tools only."]] : [])
   ];
   D.forEach(([t, d]) => $("#docnotes").append(el("div", {class: "check"}, el("span", {class: "ic warn", text: "!", "aria-hidden": "true"}), el("div", {}, el("strong", {text: t}), el("p", {text: d})))));
 }
