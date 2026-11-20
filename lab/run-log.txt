@@ -1,0 +1,571 @@
+[11/20/26 19:31:45] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
+                             exception                                          
+                             ╭─ Traceback (most recent call last─╮              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/bas │              
+                             │ e.py:179 in run                   │              
+                             │                                   │              
+                             │   176 │   │   │   │   │   return  │              
+                             │       else resolved               │              
+                             │   177 │   │   │   │   pass_direct │              
+                             │   178 │   │   │                   │              
+                             │ ❱ 179 │   │   │   result = await  │              
+                             │       pass_directly)              │              
+                             │   180 │   │   │                   │              
+                             │   181 │   │   │   # Registration  │              
+                             │   182 │   │   │   # a body that r │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/utilities │              
+                             │ /func_metadata.py:164 in call_fn  │              
+                             │                                   │              
+                             │   161 │   │   kwargs = arguments  │              
+                             │   162 │   │   if fn_is_async:     │              
+                             │   163 │   │   │   return await fn │              
+                             │ ❱ 164 │   │   return await anyio. │              
+                             │   165 │                           │              
+                             │   166 │   @deprecated(            │              
+                             │   167 │   │   "FuncMetadata.call_ │              
+                             │       3.0; "                      │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/to_thread.py:65 in       │              
+                             │ run_sync                          │              
+                             │                                   │              
+                             │   62 │   │   │   stacklevel=2,    │              
+                             │   63 │   │   )                    │              
+                             │   64 │                            │              
+                             │ ❱ 65 │   return await get_async_b │              
+                             │   66 │   │   func, args, abandon_ │              
+                             │   67 │   )                        │              
+                             │   68                              │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/_backends/_asyncio.py:27 │              
+                             │ 79 in run_sync_in_worker_thread   │              
+                             │                                   │              
+                             │   2776 │   │   │   │   │   worker │              
+                             │   2777 │   │   │   │              │              
+                             │   2778 │   │   │   │   worker.que │              
+                             │ ❱ 2779 │   │   │   │   return awa │              
+                             │   2780 │                          │              
+                             │   2781 │   @classmethod           │              
+                             │   2782 │   def check_cancelled(cl │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/_backends/_asyncio.py:11 │              
+                             │ 24 in run                         │              
+                             │                                   │              
+                             │   1121 │   │   │   │   if not fut │              
+                             │   1122 │   │   │   │   │   thread │              
+                             │   1123 │   │   │   │   │   try:   │              
+                             │ ❱ 1124 │   │   │   │   │   │   re │              
+                             │   1125 │   │   │   │   │   except │              
+                             │   1126 │   │   │   │   │   │   ex │              
+                             │   1127 │   │   │   │   │   finall │              
+                             │                                   │              
+                             │ /home/runner/work/Stock-market-tr │              
+                             │ ading-Application-using-MCP-langc │              
+                             │ hain-langgraph/Stock-market-tradi │              
+                             │ ng-Application-using-MCP-langchai │              
+                             │ n-langgraph/stock_market_mcp_serv │              
+                             │ er.py:18 in buy_stock             │              
+                             │                                   │              
+                             │   15 @mcp.tool()                  │              
+                             │   16 def buy_stock(name: str, qty │              
+                             │   17 │   """SIMULATE a buy order  │              
+                             │ ❱ 18 │   return simulated_trade(" │              
+                             │   19                              │              
+                             │   20                              │              
+                             │   21 @mcp.tool()                  │              
+                             │                                   │              
+                             │ /home/runner/work/Stock-market-tr │              
+                             │ ading-Application-using-MCP-langc │              
+                             │ hain-langgraph/Stock-market-tradi │              
+                             │ ng-Application-using-MCP-langchai │              
+                             │ n-langgraph/MCP_Langchain_Langrap │              
+                             │ h_Tools.py:49 in simulated_trade  │              
+                             │                                   │              
+                             │    46 │   if action not in ("buy" │              
+                             │    47 │   │   raise ValueError("a │              
+                             │    48 │   if not name.strip() or  │              
+                             │ ❱  49 │   │   raise ValueError("n │              
+                             │    50 │   return f"SIMULATION ONL │              
+                             │       placed."                    │              
+                             │    51                             │              
+                             │    52                             │              
+                             ╰───────────────────────────────────╯              
+                             ValueError: name must be supplied and              
+                             qty must be a positive integer                     
+                                                                                
+                             The above exception was the direct                 
+                             cause of the following exception:                  
+                                                                                
+                             ╭─ Traceback (most recent call last─╮              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/server.py │              
+                             │ :442 in _handle_call_tool         │              
+                             │                                   │              
+                             │    439 │   ) -> CallToolResult |  │              
+                             │    440 │   │   context = Context( │              
+                             │        subscriptions=self._subscr │              
+                             │    441 │   │   try:               │              
+                             │ ❱  442 │   │   │   return await s │              
+                             │    443 │   │   except MCPError:   │              
+                             │    444 │   │   │   raise          │              
+                             │    445 │   │   except Exception a │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/server.py │              
+                             │ :548 in call_tool                 │              
+                             │                                   │              
+                             │    545 │   │   """                │              
+                             │    546 │   │   if context is None │              
+                             │    547 │   │   │   context = Cont │              
+                             │ ❱  548 │   │   return await self. │              
+                             │        convert_result=True)       │              
+                             │    549 │                          │              
+                             │    550 │   async def list_resourc │              
+                             │    551 │   │   """List all availa │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/too │              
+                             │ l_manager.py:87 in call_tool      │              
+                             │                                   │              
+                             │   84 │   │   if not tool:         │              
+                             │   85 │   │   │   raise ToolError( │              
+                             │   86 │   │                        │              
+                             │ ❱ 87 │   │   return await tool.ru │              
+                             │   88                              │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/bas │              
+                             │ e.py:213 in run                   │              
+                             │                                   │              
+                             │   210 │   │   │   raise ToolError │              
+                             │   211 │   │   except Exception as │              
+                             │   212 │   │   │   # A crash: the  │              
+                             │ ❱ 213 │   │   │   raise Unexpecte │              
+                             │   214                             │              
+                             ╰───────────────────────────────────╯              
+                             UnexpectedToolError: Error executing               
+                             tool buy_stock                                     
+/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py:333: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.
+  from langchain.mcp import MCPAdapter
+[11/20/26 19:32:00] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
+                             exception                                          
+                             ╭─ Traceback (most recent call last─╮              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/bas │              
+                             │ e.py:179 in run                   │              
+                             │                                   │              
+                             │   176 │   │   │   │   │   return  │              
+                             │       else resolved               │              
+                             │   177 │   │   │   │   pass_direct │              
+                             │   178 │   │   │                   │              
+                             │ ❱ 179 │   │   │   result = await  │              
+                             │       pass_directly)              │              
+                             │   180 │   │   │                   │              
+                             │   181 │   │   │   # Registration  │              
+                             │   182 │   │   │   # a body that r │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/utilities │              
+                             │ /func_metadata.py:164 in call_fn  │              
+                             │                                   │              
+                             │   161 │   │   kwargs = arguments  │              
+                             │   162 │   │   if fn_is_async:     │              
+                             │   163 │   │   │   return await fn │              
+                             │ ❱ 164 │   │   return await anyio. │              
+                             │   165 │                           │              
+                             │   166 │   @deprecated(            │              
+                             │   167 │   │   "FuncMetadata.call_ │              
+                             │       3.0; "                      │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/to_thread.py:65 in       │              
+                             │ run_sync                          │              
+                             │                                   │              
+                             │   62 │   │   │   stacklevel=2,    │              
+                             │   63 │   │   )                    │              
+                             │   64 │                            │              
+                             │ ❱ 65 │   return await get_async_b │              
+                             │   66 │   │   func, args, abandon_ │              
+                             │   67 │   )                        │              
+                             │   68                              │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/_backends/_asyncio.py:27 │              
+                             │ 79 in run_sync_in_worker_thread   │              
+                             │                                   │              
+                             │   2776 │   │   │   │   │   worker │              
+                             │   2777 │   │   │   │              │              
+                             │   2778 │   │   │   │   worker.que │              
+                             │ ❱ 2779 │   │   │   │   return awa │              
+                             │   2780 │                          │              
+                             │   2781 │   @classmethod           │              
+                             │   2782 │   def check_cancelled(cl │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/_backends/_asyncio.py:11 │              
+                             │ 24 in run                         │              
+                             │                                   │              
+                             │   1121 │   │   │   │   if not fut │              
+                             │   1122 │   │   │   │   │   thread │              
+                             │   1123 │   │   │   │   │   try:   │              
+                             │ ❱ 1124 │   │   │   │   │   │   re │              
+                             │   1125 │   │   │   │   │   except │              
+                             │   1126 │   │   │   │   │   │   ex │              
+                             │   1127 │   │   │   │   │   finall │              
+                             │                                   │              
+                             │ /home/runner/work/Stock-market-tr │              
+                             │ ading-Application-using-MCP-langc │              
+                             │ hain-langgraph/Stock-market-tradi │              
+                             │ ng-Application-using-MCP-langchai │              
+                             │ n-langgraph/stock_market_mcp_serv │              
+                             │ er.py:18 in buy_stock             │              
+                             │                                   │              
+                             │   15 @mcp.tool()                  │              
+                             │   16 def buy_stock(name: str, qty │              
+                             │   17 │   """SIMULATE a buy order  │              
+                             │ ❱ 18 │   return simulated_trade(" │              
+                             │   19                              │              
+                             │   20                              │              
+                             │   21 @mcp.tool()                  │              
+                             │                                   │              
+                             │ /home/runner/work/Stock-market-tr │              
+                             │ ading-Application-using-MCP-langc │              
+                             │ hain-langgraph/Stock-market-tradi │              
+                             │ ng-Application-using-MCP-langchai │              
+                             │ n-langgraph/MCP_Langchain_Langrap │              
+                             │ h_Tools.py:49 in simulated_trade  │              
+                             │                                   │              
+                             │    46 │   if action not in ("buy" │              
+                             │    47 │   │   raise ValueError("a │              
+                             │    48 │   if not name.strip() or  │              
+                             │ ❱  49 │   │   raise ValueError("n │              
+                             │    50 │   return f"SIMULATION ONL │              
+                             │       placed."                    │              
+                             │    51                             │              
+                             │    52                             │              
+                             ╰───────────────────────────────────╯              
+                             ValueError: name must be supplied and              
+                             qty must be a positive integer                     
+                                                                                
+                             The above exception was the direct                 
+                             cause of the following exception:                  
+                                                                                
+                             ╭─ Traceback (most recent call last─╮              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/server.py │              
+                             │ :442 in _handle_call_tool         │              
+                             │                                   │              
+                             │    439 │   ) -> CallToolResult |  │              
+                             │    440 │   │   context = Context( │              
+                             │        subscriptions=self._subscr │              
+                             │    441 │   │   try:               │              
+                             │ ❱  442 │   │   │   return await s │              
+                             │    443 │   │   except MCPError:   │              
+                             │    444 │   │   │   raise          │              
+                             │    445 │   │   except Exception a │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/server.py │              
+                             │ :548 in call_tool                 │              
+                             │                                   │              
+                             │    545 │   │   """                │              
+                             │    546 │   │   if context is None │              
+                             │    547 │   │   │   context = Cont │              
+                             │ ❱  548 │   │   return await self. │              
+                             │        convert_result=True)       │              
+                             │    549 │                          │              
+                             │    550 │   async def list_resourc │              
+                             │    551 │   │   """List all availa │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/too │              
+                             │ l_manager.py:87 in call_tool      │              
+                             │                                   │              
+                             │   84 │   │   if not tool:         │              
+                             │   85 │   │   │   raise ToolError( │              
+                             │   86 │   │                        │              
+                             │ ❱ 87 │   │   return await tool.ru │              
+                             │   88                              │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/bas │              
+                             │ e.py:213 in run                   │              
+                             │                                   │              
+                             │   210 │   │   │   raise ToolError │              
+                             │   211 │   │   except Exception as │              
+                             │   212 │   │   │   # A crash: the  │              
+                             │ ❱ 213 │   │   │   raise Unexpecte │              
+                             │   214                             │              
+                             ╰───────────────────────────────────╯              
+                             UnexpectedToolError: Error executing               
+                             tool buy_stock                                     
+[11/20/26 19:32:01] INFO     Proxy detected connected client -     proxy.py:1531
+                             reusing existing session for all                   
+                             requests. This may cause context                   
+                             mixing in concurrent scenarios, and                
+                             the session's existing settings                    
+                             apply, so backend results are                      
+                             validated against their declared                   
+                             output schema rather than relayed                  
+                             as-is. Pass a disconnected client to               
+                             avoid both.                                        
+                    INFO     Proxy detected connected client -     proxy.py:1531
+                             reusing existing session for all                   
+                             requests. This may cause context                   
+                             mixing in concurrent scenarios, and                
+                             the session's existing settings                    
+                             apply, so backend results are                      
+                             validated against their declared                   
+                             output schema rather than relayed                  
+                             as-is. Pass a disconnected client to               
+                             avoid both.                                        
+[11/20/26 19:32:01] ERROR    Tool 'buy_stock' raised an unexpected server.py:455
+                             exception                                          
+                             ╭─ Traceback (most recent call last─╮              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/bas │              
+                             │ e.py:179 in run                   │              
+                             │                                   │              
+                             │   176 │   │   │   │   │   return  │              
+                             │       else resolved               │              
+                             │   177 │   │   │   │   pass_direct │              
+                             │   178 │   │   │                   │              
+                             │ ❱ 179 │   │   │   result = await  │              
+                             │       pass_directly)              │              
+                             │   180 │   │   │                   │              
+                             │   181 │   │   │   # Registration  │              
+                             │   182 │   │   │   # a body that r │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/utilities │              
+                             │ /func_metadata.py:164 in call_fn  │              
+                             │                                   │              
+                             │   161 │   │   kwargs = arguments  │              
+                             │   162 │   │   if fn_is_async:     │              
+                             │   163 │   │   │   return await fn │              
+                             │ ❱ 164 │   │   return await anyio. │              
+                             │   165 │                           │              
+                             │   166 │   @deprecated(            │              
+                             │   167 │   │   "FuncMetadata.call_ │              
+                             │       3.0; "                      │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/to_thread.py:65 in       │              
+                             │ run_sync                          │              
+                             │                                   │              
+                             │   62 │   │   │   stacklevel=2,    │              
+                             │   63 │   │   )                    │              
+                             │   64 │                            │              
+                             │ ❱ 65 │   return await get_async_b │              
+                             │   66 │   │   func, args, abandon_ │              
+                             │   67 │   )                        │              
+                             │   68                              │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/_backends/_asyncio.py:27 │              
+                             │ 79 in run_sync_in_worker_thread   │              
+                             │                                   │              
+                             │   2776 │   │   │   │   │   worker │              
+                             │   2777 │   │   │   │              │              
+                             │   2778 │   │   │   │   worker.que │              
+                             │ ❱ 2779 │   │   │   │   return awa │              
+                             │   2780 │                          │              
+                             │   2781 │   @classmethod           │              
+                             │   2782 │   def check_cancelled(cl │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/anyio/_backends/_asyncio.py:11 │              
+                             │ 24 in run                         │              
+                             │                                   │              
+                             │   1121 │   │   │   │   if not fut │              
+                             │   1122 │   │   │   │   │   thread │              
+                             │   1123 │   │   │   │   │   try:   │              
+                             │ ❱ 1124 │   │   │   │   │   │   re │              
+                             │   1125 │   │   │   │   │   except │              
+                             │   1126 │   │   │   │   │   │   ex │              
+                             │   1127 │   │   │   │   │   finall │              
+                             │                                   │              
+                             │ /home/runner/work/Stock-market-tr │              
+                             │ ading-Application-using-MCP-langc │              
+                             │ hain-langgraph/Stock-market-tradi │              
+                             │ ng-Application-using-MCP-langchai │              
+                             │ n-langgraph/stock_market_mcp_serv │              
+                             │ er.py:18 in buy_stock             │              
+                             │                                   │              
+                             │   15 @mcp.tool()                  │              
+                             │   16 def buy_stock(name: str, qty │              
+                             │   17 │   """SIMULATE a buy order  │              
+                             │ ❱ 18 │   return simulated_trade(" │              
+                             │   19                              │              
+                             │   20                              │              
+                             │   21 @mcp.tool()                  │              
+                             │                                   │              
+                             │ /home/runner/work/Stock-market-tr │              
+                             │ ading-Application-using-MCP-langc │              
+                             │ hain-langgraph/Stock-market-tradi │              
+                             │ ng-Application-using-MCP-langchai │              
+                             │ n-langgraph/MCP_Langchain_Langrap │              
+                             │ h_Tools.py:49 in simulated_trade  │              
+                             │                                   │              
+                             │    46 │   if action not in ("buy" │              
+                             │    47 │   │   raise ValueError("a │              
+                             │    48 │   if not name.strip() or  │              
+                             │ ❱  49 │   │   raise ValueError("n │              
+                             │    50 │   return f"SIMULATION ONL │              
+                             │       placed."                    │              
+                             │    51                             │              
+                             │    52                             │              
+                             ╰───────────────────────────────────╯              
+                             ValueError: name must be supplied and              
+                             qty must be a positive integer                     
+                                                                                
+                             The above exception was the direct                 
+                             cause of the following exception:                  
+                                                                                
+                             ╭─ Traceback (most recent call last─╮              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/server.py │              
+                             │ :442 in _handle_call_tool         │              
+                             │                                   │              
+                             │    439 │   ) -> CallToolResult |  │              
+                             │    440 │   │   context = Context( │              
+                             │        subscriptions=self._subscr │              
+                             │    441 │   │   try:               │              
+                             │ ❱  442 │   │   │   return await s │              
+                             │    443 │   │   except MCPError:   │              
+                             │    444 │   │   │   raise          │              
+                             │    445 │   │   except Exception a │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/server.py │              
+                             │ :548 in call_tool                 │              
+                             │                                   │              
+                             │    545 │   │   """                │              
+                             │    546 │   │   if context is None │              
+                             │    547 │   │   │   context = Cont │              
+                             │ ❱  548 │   │   return await self. │              
+                             │        convert_result=True)       │              
+                             │    549 │                          │              
+                             │    550 │   async def list_resourc │              
+                             │    551 │   │   """List all availa │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/too │              
+                             │ l_manager.py:87 in call_tool      │              
+                             │                                   │              
+                             │   84 │   │   if not tool:         │              
+                             │   85 │   │   │   raise ToolError( │              
+                             │   86 │   │                        │              
+                             │ ❱ 87 │   │   return await tool.ru │              
+                             │   88                              │              
+                             │                                   │              
+                             │ /opt/hostedtoolcache/Python/3.12. │              
+                             │ 16/x64/lib/python3.12/site-packag │              
+                             │ es/mcp/server/mcpserver/tools/bas │              
+                             │ e.py:213 in run                   │              
+                             │                                   │              
+                             │   210 │   │   │   raise ToolError │              
+                             │   211 │   │   except Exception as │              
+                             │   212 │   │   │   # A crash: the  │              
+                             │ ❱ 213 │   │   │   raise Unexpecte │              
+                             │   214                             │              
+                             ╰───────────────────────────────────╯              
+                             UnexpectedToolError: Error executing               
+                             tool buy_stock                                     
+[11/20/26 19:32:02] INFO     Proxy detected connected client -     proxy.py:1531
+                             reusing existing session for all                   
+                             requests. This may cause context                   
+                             mixing in concurrent scenarios, and                
+                             the session's existing settings                    
+                             apply, so backend results are                      
+                             validated against their declared                   
+                             output schema rather than relayed                  
+                             as-is. Pass a disconnected client to               
+                             avoid both.                                        
+                    INFO     Proxy detected connected client -     proxy.py:1531
+                             reusing existing session for all                   
+                             requests. This may cause context                   
+                             mixing in concurrent scenarios, and                
+                             the session's existing settings                    
+                             apply, so backend results are                      
+                             validated against their declared                   
+                             output schema rather than relayed                  
+                             as-is. Pass a disconnected client to               
+                             avoid both.                                        
+Traceback (most recent call last):
+  File "/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py", line 639, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py", line 615, in main
+    data = asyncio.run(main_async(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py", line 580, in main_async
+    data["evaluation"] = await evaluate(live_llm)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py", line 408, in evaluate
+    await run_agent(agent, llm, tools, use_async=True)
+  File "/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py", line 385, in run_agent
+    graph, limit = build_supervisor_graph(llm, stock, news), 20
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py", line 159, in build_supervisor_graph
+    g.add_conditional_edges("supervisor", route,
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/langgraph/graph/state.py", line 1027, in add_conditional_edges
+    self.branches[source][name] = BranchSpec.from_path(path, path_map, True)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/langgraph/graph/_branch.py", line 118, in from_path
+    input_schema = _get_branch_path_input_schema(path) if infer_schema else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/langgraph/graph/_branch.py", line 70, in _get_branch_path_input_schema
+    if callable_ is not None and (hints := get_type_hints(callable_)):
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/typing.py", line 2315, in get_type_hints
+    hints[name] = _eval_type(value, globalns, localns, type_params)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/typing.py", line 415, in _eval_type
+    return t._evaluate(globalns, localns, type_params, recursive_guard=recursive_guard)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/typing.py", line 947, in _evaluate
+    eval(self.__forward_code__, globalns, localns),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+NameError: name 'MessagesState' is not defined
