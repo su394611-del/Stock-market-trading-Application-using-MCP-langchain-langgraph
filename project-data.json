@@ -1,10 +1,10 @@
 [
   {
-    "slug": "mixtral-healthcare",
-    "title": "Mixtral Healthcare LLM — From Scratch, Pretraining & Medical SFT",
-    "url": "https://su394611-del.github.io/Mixtral-Healthcare-LLM-From-Scratch/",
+    "slug": "medsparse-healthcare",
+    "title": "MedSparse Healthcare LLM — From Scratch, Pretraining & Medical SFT",
+    "url": "https://su394611-del.github.io/MedSparse-Healthcare-LLM-From-Scratch/",
     "category": "training",
-    "description": "End-to-end PyTorch implementation of a Mixtral-style sparse Mixture-of-Experts language model: a healthcare-focused tokenizer, biomedical pretraining from randomly initialized weights, and full-parameter medical supervised fine-tuning. Explore the four-expert, top-2-routed decoder architecture, training checkpoints, evaluation workflow, and two separately hosted Hugging Face model releases.",
+    "description": "End-to-end PyTorch implementation of MedSparse Healthcare, a Mixtral-inspired sparse Mixture-of-Experts language model: a healthcare-focused tokenizer, biomedical pretraining from randomly initialized weights, and full-parameter medical supervised fine-tuning. Explore the four-expert, top-2-routed decoder architecture, training checkpoints, evaluation workflow, and two separately hosted Hugging Face model releases.",
     "keywords": "PyTorch Sparse MoE Medical SFT Hugging Face"
   },
   {
