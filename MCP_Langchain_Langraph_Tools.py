@@ -423,8 +423,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     modes.add_argument("--list", action="store_true", help="List all chapter topics")
     modes.add_argument("--self-test", action="store_true", help="Offline standard-library checks")
     parser.add_argument("--topic", choices=(*TOPICS, "all"), default="all")
-    parser.add_argument("--live", action="store_true", help="Use OpenAI API; default is deterministic offline demo")
-    parser.add_argument("--model", default=MODEL_DEFAULT, help="OpenAI chat model name (with --live)")
+    parser.add_argument("--live", action="store_true", help="Use a live model API (OpenAI; Anthropic for claude-* models); default is the deterministic offline demo")
+    parser.add_argument("--model", default=MODEL_DEFAULT, help="Chat model ID used with --live; names starting with claude use Anthropic")
     parser.add_argument("--include-news", action="store_true",
                         help="Connect HTTP MCP server on 127.0.0.1:8000 (start separately)")
     parser.add_argument("--graph-mermaid", action="store_true", help="Print Mermaid source, no network request")
