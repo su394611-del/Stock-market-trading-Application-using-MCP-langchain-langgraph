@@ -18,7 +18,7 @@
   {
     "slug": "langgraph-agents",
     "title": "Multi-Agent Workflows with LangGraph",
-    "url": "https://su394611-del.github.io/Mutli-agents-using-LangGraph/",
+    "url": "https://su394611-del.github.io/Multi-agents-using-LangGraph/",
     "category": "agents",
     "description": "StateGraph workflows, Pydantic validation, reducers, MessagesState and reusable HR/IT subgraphs.",
     "keywords": "LangGraph Pydantic Python"
