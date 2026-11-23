@@ -46,6 +46,7 @@ code,.mono{font-family:var(--mono);font-size:.92em}
 .chip{border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:6px 10px;font-size:12px;font-weight:700;color:var(--muted)}
 .chip[aria-pressed="true"]{border-color:var(--cyan);color:var(--text);background:#173452}
 .chip small{color:var(--dim);font-weight:600;margin-left:4px}
+.chip[aria-pressed="true"] small:not(.ext){color:var(--muted)}
 .chip .ext{color:var(--violet)}
 .field-label{display:block;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin:12px 0 6px}
 .prompt-row{display:flex;gap:8px}
