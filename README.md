@@ -179,4 +179,4 @@ python MCP_Langchain_Langraph_Tools.py --topic react --include-news --live --mod
 - LangGraph `ToolNode`: https://reference.langchain.com/python/langgraph.prebuilt/tool_node/ToolNode
 - LangGraph `tools_condition`: https://reference.langchain.com/python/langgraph.prebuilt/tool_node/tools_condition
   
-This project is licensed under the Apache License, Version 2.0.© 2026 Sudhanshu Shukla · Licensed under the Apache License, Version 2.0
+This project is licensed under the [Apache License, Version 2.0](License.txt). © 2026 Sudhanshu Shukla.
