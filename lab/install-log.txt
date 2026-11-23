@@ -271,14 +271,14 @@ Downloading mcp-2.3.0-py3-none-any.whl (368 kB)
 Downloading mcp_types-2.3.0-py3-none-any.whl (69 kB)
 Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
 Downloading aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 64.7 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 111.7 MB/s  0:00:00
 Downloading langchain_core-1.8.4-py3-none-any.whl (591 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 591.1/591.1 kB 136.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 591.1/591.1 kB 119.2 MB/s  0:00:00
 Downloading langgraph_checkpoint-4.3.2-py3-none-any.whl (58 kB)
 Downloading langgraph_prebuilt-1.1.3-py3-none-any.whl (42 kB)
 Downloading langgraph_sdk-0.4.14-py3-none-any.whl (171 kB)
 Downloading langsmith-0.16.0-py3-none-any.whl (1.0 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 198.2 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 138.5 MB/s  0:00:00
 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
 Downloading distro-1.9.0-py3-none-any.whl (20 kB)
 Downloading httpx2-2.16.2-py3-none-any.whl (97 kB)
@@ -286,7 +286,7 @@ Downloading httpcore2-2.16.2-py3-none-any.whl (85 kB)
 Downloading multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (516 kB)
 Downloading pydantic-2.14.4-py3-none-any.whl (494 kB)
 Downloading pydantic_core-2.50.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 199.5 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 273.0 MB/s  0:00:00
 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
 Downloading charset_normalizer-3.5.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (257 kB)
 Downloading idna-3.20-py3-none-any.whl (69 kB)
@@ -300,7 +300,7 @@ Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
 Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
 Downloading anthropic-2.12.0-py3-none-any.whl (2.6 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 292.4 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 275.0 MB/s  0:00:00
 Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
 Downloading jiter-0.19.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (338 kB)
 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
@@ -309,22 +309,22 @@ Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
 Downloading certifi-2026.11.20-py3-none-any.whl (127 kB)
 Downloading comm-0.2.3-py3-none-any.whl (7.3 kB)
 Downloading debugpy-1.8.22-cp312-cp312-manylinux_2_34_x86_64.whl (4.0 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 134.8 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 233.4 MB/s  0:00:00
 Downloading fastjsonschema-2.22.3-py3-none-any.whl (28 kB)
 Downloading fastmcp-4.2.5-py3-none-any.whl (8.2 kB)
 Downloading fastmcp_slim-4.2.5-py3-none-any.whl (1.0 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 236.1 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 211.7 MB/s  0:00:00
 Downloading py_key_value_aio-0.5.0-py3-none-any.whl (172 kB)
 Downloading pyyaml-6.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (849 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.2/849.2 kB 200.3 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.2/849.2 kB 180.7 MB/s  0:00:00
 Downloading aiofile-3.12.3-py3-none-any.whl (22 kB)
 Downloading caio-0.12.10-cp312-cp312-manylinux_2_34_x86_64.whl (162 kB)
 Downloading authlib-1.9.10-py2.py3-none-any.whl (267 kB)
 Downloading beartype-0.23.1-py3-none-any.whl (1.6 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 268.7 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 267.0 MB/s  0:00:00
 Downloading cachetools-8.0.2-py3-none-any.whl (19 kB)
 Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 189.6 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 209.8 MB/s  0:00:00
 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
 Downloading cyclopts-5.5.2-py3-none-any.whl (301 kB)
 Downloading rich_rst-2.2.0-py3-none-any.whl (279 kB)
@@ -335,11 +335,11 @@ Downloading h11-0.16.0-py3-none-any.whl (37 kB)
 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
 Downloading ipython-9.19.1-py3-none-any.whl (649 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 649.9/649.9 kB 171.6 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 649.9/649.9 kB 133.8 MB/s  0:00:00
 Downloading prompt_toolkit-3.0.53-py3-none-any.whl (392 kB)
 Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl (8.1 kB)
 Downloading jedi-0.20.1-py2.py3-none-any.whl (4.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 89.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 289.4 MB/s  0:00:00
 Downloading parso-0.8.7-py2.py3-none-any.whl (107 kB)
 Downloading joserfc-1.8.0-py3-none-any.whl (73 kB)
 Downloading jsonpatch-1.48-py3-none-any.whl (27 kB)
@@ -356,7 +356,7 @@ Downloading langchain_protocol-0.0.22-py3-none-any.whl (7.6 kB)
 Downloading matplotlib_inline-0.2.2-py3-none-any.whl (9.5 kB)
 Downloading nest_asyncio2-1.7.4-py3-none-any.whl (8.5 kB)
 Downloading openai-3.57.0-py3-none-any.whl (2.5 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 180.8 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 319.7 MB/s  0:00:00
 Downloading openapi_pydantic-0.6.0-py3-none-any.whl (96 kB)
 Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
 Downloading ormsgpack-1.13.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (273 kB)
@@ -370,13 +370,13 @@ Downloading pydantic_settings-2.16.3-py3-none-any.whl (82 kB)
 Downloading email_validator-2.4.0-py3-none-any.whl (36 kB)
 Downloading dnspython-2.9.2-py3-none-any.whl (360 kB)
 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 270.7 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 224.8 MB/s  0:00:00
 Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
 Downloading pyperclip-1.11.0-py3-none-any.whl (11 kB)
 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
 Downloading python_multipart-0.0.34-py3-none-any.whl (32 kB)
 Downloading pyzmq-27.3.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (855 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 855.2/855.2 kB 185.7 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 855.2/855.2 kB 138.7 MB/s  0:00:00
 Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
 Downloading rich-15.0.0-py3-none-any.whl (310 kB)
 Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
@@ -389,9 +389,9 @@ Downloading executing-2.3.0-py3-none-any.whl (29 kB)
 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
 Downloading tenacity-9.2.1-py3-none-any.whl (32 kB)
 Downloading tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 262.8 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 204.9 MB/s  0:00:00
 Downloading tornado-6.6.1-cp311-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (534 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 534.5/534.5 kB 105.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 534.5/534.5 kB 72.8 MB/s  0:00:00
 Downloading traitlets-5.16.1-py3-none-any.whl (86 kB)
 Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
 Downloading typer-0.29.2-py3-none-any.whl (121 kB)
@@ -403,15 +403,15 @@ Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
 Downloading click-8.5.1-py3-none-any.whl (126 kB)
 Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
 Downloading wcwidth-0.9.5-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (822 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 822.7/822.7 kB 42.0 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 822.7/822.7 kB 127.7 MB/s  0:00:00
 Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
 Downloading xxhash-4.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (472 kB)
 Downloading zstandard-0.25.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 198.7 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 351.4 MB/s  0:00:00
 Downloading pure_eval-0.2.4-py3-none-any.whl (11 kB)
 Downloading pycparser-3.12-py3-none-any.whl (62 kB)
 Downloading regex-2026.11.19-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (809 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 809.2/809.2 kB 192.8 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 809.2/809.2 kB 130.0 MB/s  0:00:00
 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
 Installing collected packages: pyperclip, pure-eval, ptyprocess, zstandard, xxhash, websockets, wcwidth, uuid-utils, urllib3, uncalled-for, tzdata, typing-extensions, truststore, traitlets, tornado, tenacity, sniffio, shellingham, rpds-py, regex, pyzmq, pyyaml, python-multipart, python-dotenv, pyjwt, pygments, pycparser, psutil, propcache, platformdirs, pexpect, pathable, parso, packaging, ormsgpack, orjson, nest-asyncio2, multidict, mdurl, jsonref, jsonpointer, jiter, idna, h11, griffelib, frozenlist, fastjsonschema, executing, docstring-parser, dnspython, distro, debugpy, comm, click, charset_normalizer, certifi, caio, cachetools, beartype, attrs, asttokens, annotated-types, annotated-doc, aiohappyeyeballs, yarl, uvicorn, typing-inspection, stack_data, requests, referencing, python-dateutil, pydantic-core, py-key-value-aio, prompt_toolkit, opentelemetry-api, matplotlib-inline, markdown-it-py, langchain-protocol, jupyter-core, jsonpatch, jedi, ipython-pygments-lexers, httpcore2, httpcore, exceptiongroup, email-validator, cffi, anyio, aiosignal, aiofile, watchfiles, tiktoken, starlette, rich, requests-toolbelt, pydantic, jupyter-client, jsonschema-specifications, jsonschema-path, ipython, httpx2, httpx, cryptography, aiohttp, typer, sse-starlette, rich-rst, pydantic-settings, openapi-pydantic, openai, mcp-types, langsmith, jsonschema, joserfc, ipykernel, anthropic, nbformat, mcp, langchain-core, fastmcp-slim, cyclopts, authlib, langgraph-sdk, langgraph-checkpoint, langchain-openai, langchain-anthropic, langgraph-prebuilt, fastmcp, langgraph, langchain, langchain-tavily
 

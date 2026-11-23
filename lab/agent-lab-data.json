@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-23 14:36:58 +0000",
+ "generated_at": "2026-11-23 14:40:18 +0000",
  "engine": {
-  "python": "3.12.14",
-  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
-  "runner": "local",
+  "python": "3.12.16",
+  "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
+  "runner": "GitHub Actions",
   "mcp": "2.3.0",
   "langgraph": "1.2.24",
   "langchain": "1.5.2",
   "langchain-core": "1.8.4",
-  "langchain-anthropic": null,
+  "langchain-anthropic": "1.7.12",
   "fastmcp": "4.2.5",
   "langgraph_source": "package",
   "live": {
@@ -23,8 +23,8 @@
    "target": "stock_market_mcp_server.py",
    "server": "DemoStockMarket",
    "protocol": "2026-07-28",
-   "connect_ms": 601.4,
-   "list_ms": 1.88,
+   "connect_ms": 732.6,
+   "list_ms": 2.07,
    "tools": [
     {
      "name": "stock_price",
@@ -58,7 +58,7 @@
      },
      "is_error": false,
      "text": "175.0",
-     "ms": 36.97
+     "ms": 41.6
     },
     {
      "tool": "stock_price",
@@ -67,7 +67,7 @@
      },
      "is_error": false,
      "text": "125.0",
-     "ms": 2.21
+     "ms": 2.5
     },
     {
      "tool": "stock_price",
@@ -76,7 +76,7 @@
      },
      "is_error": false,
      "text": "100.0",
-     "ms": 1.24
+     "ms": 1.63
     },
     {
      "tool": "buy_stock",
@@ -86,7 +86,7 @@
      },
      "is_error": false,
      "text": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-     "ms": 1.88
+     "ms": 2.42
     },
     {
      "tool": "sell_stock",
@@ -96,7 +96,7 @@
      },
      "is_error": false,
      "text": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-     "ms": 1.68
+     "ms": 2.33
     },
     {
      "tool": "buy_stock",
@@ -106,7 +106,7 @@
      },
      "is_error": true,
      "text": "Error executing tool buy_stock: name must be supplied and qty must be a positive integer",
-     "ms": 7.89
+     "ms": 9.42
     }
    ]
   },
@@ -115,8 +115,8 @@
    "target": "http://127.0.0.1:8000/mcp",
    "server": "DemoNews",
    "protocol": "2026-07-28",
-   "connect_ms": 37.0,
-   "list_ms": 2.02,
+   "connect_ms": 34.2,
+   "list_ms": 3.18,
    "tools": [
     {
      "name": "market_news",
@@ -141,7 +141,7 @@
      },
      "is_error": false,
      "text": "SYNTHETIC DEMO: Example news search for 'Tesla earnings'. No live articles were fetched.",
-     "ms": 3.69
+     "ms": 4.58
     },
     {
      "tool": "market_sentiment",
@@ -150,7 +150,7 @@
      },
      "is_error": false,
      "text": "SYNTHETIC DEMO: TSLA sentiment unavailable without real market data.",
-     "ms": 2.54
+     "ms": 3.69
     },
     {
      "tool": "market_sentiment",
@@ -159,7 +159,7 @@
      },
      "is_error": true,
      "text": "Error executing tool market_sentiment: symbol must not be blank",
-     "ms": 3.21
+     "ms": 4.08
     }
    ]
   }
@@ -375,7 +375,7 @@
    {
     "agent": "basic",
     "scenario": "S1",
-    "ms": 3.666,
+    "ms": 2.726,
     "crashed": null,
     "nodes": [
      "agent"
@@ -393,7 +393,7 @@
      },
      {
       "node": "agent",
-      "ms": 3.633,
+      "ms": 2.684,
       "messages": [
        {
         "type": "AIMessage",
@@ -438,7 +438,7 @@
    {
     "agent": "basic",
     "scenario": "S2",
-    "ms": 0.689,
+    "ms": 1.069,
     "crashed": null,
     "nodes": [
      "agent"
@@ -456,7 +456,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.667,
+      "ms": 1.026,
       "messages": [
        {
         "type": "AIMessage",
@@ -492,7 +492,7 @@
    {
     "agent": "basic",
     "scenario": "S3",
-    "ms": 0.557,
+    "ms": 0.923,
     "crashed": null,
     "nodes": [
      "agent"
@@ -510,7 +510,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.538,
+      "ms": 0.89,
       "messages": [
        {
         "type": "AIMessage",
@@ -546,7 +546,7 @@
    {
     "agent": "basic",
     "scenario": "S4",
-    "ms": 0.656,
+    "ms": 0.781,
     "crashed": null,
     "nodes": [
      "agent"
@@ -564,7 +564,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.637,
+      "ms": 0.749,
       "messages": [
        {
         "type": "AIMessage",
@@ -589,7 +589,7 @@
    {
     "agent": "basic",
     "scenario": "S5",
-    "ms": 0.524,
+    "ms": 0.857,
     "crashed": null,
     "nodes": [
      "agent"
@@ -607,7 +607,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.444,
+      "ms": 0.824,
       "messages": [
        {
         "type": "AIMessage",
@@ -634,7 +634,7 @@
    {
     "agent": "basic",
     "scenario": "S6",
-    "ms": 0.457,
+    "ms": 0.769,
     "crashed": null,
     "nodes": [
      "agent"
@@ -652,7 +652,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.439,
+      "ms": 0.737,
       "messages": [
        {
         "type": "AIMessage",
@@ -689,7 +689,7 @@
    {
     "agent": "basic",
     "scenario": "S7",
-    "ms": 0.432,
+    "ms": 0.759,
     "crashed": null,
     "nodes": [
      "agent"
@@ -707,7 +707,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.391,
+      "ms": 0.729,
       "messages": [
        {
         "type": "AIMessage",
@@ -732,7 +732,7 @@
    {
     "agent": "basic",
     "scenario": "S8",
-    "ms": 0.555,
+    "ms": 0.902,
     "crashed": null,
     "nodes": [
      "agent"
@@ -750,7 +750,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.536,
+      "ms": 0.87,
       "messages": [
        {
         "type": "AIMessage",
@@ -787,7 +787,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S1",
-    "ms": 1.614,
+    "ms": 2.421,
     "crashed": null,
     "nodes": [
      "agent",
@@ -806,7 +806,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.604,
+      "ms": 0.898,
       "messages": [
        {
         "type": "AIMessage",
@@ -834,7 +834,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.986,
+      "ms": 1.486,
       "messages": [
        {
         "type": "ToolMessage",
@@ -869,7 +869,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S2",
-    "ms": 1.095,
+    "ms": 1.691,
     "crashed": null,
     "nodes": [
      "agent",
@@ -888,7 +888,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.563,
+      "ms": 0.866,
       "messages": [
        {
         "type": "AIMessage",
@@ -907,7 +907,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.513,
+      "ms": 0.794,
       "messages": [
        {
         "type": "ToolMessage",
@@ -936,7 +936,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S3",
-    "ms": 0.891,
+    "ms": 1.497,
     "crashed": null,
     "nodes": [
      "agent",
@@ -955,7 +955,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.502,
+      "ms": 0.855,
       "messages": [
        {
         "type": "AIMessage",
@@ -974,995 +974,9 @@
      },
      {
       "node": "tools",
-      "ms": 0.372,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "135.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "manual-tools",
-    "scenario": "S4",
-    "ms": 0.674,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Explain the P/E ratio in one line"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.552,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "P/E ratio = stock price divided by earnings per share (demo)."
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.112,
-      "messages": []
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "manual-tools",
-    "scenario": "S5",
-    "ms": 0.59,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What are market sentiments of Tesla?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.473,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo mode: no tool call selected for this question."
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.106,
-      "messages": []
-     }
-    ],
-    "metrics": {
-     "selection": 0.0,
-     "execution": 0.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 0.5,
-     "status": "partial",
-     "notes": [
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "manual-tools",
-    "scenario": "S6",
-    "ms": 0.877,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Buy 0 shares of IBM"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.428,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "IBM",
-           "qty": 0
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.439,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "name must be supplied and qty must be a positive integer",
-        "name": "buy_stock",
-        "status": "error",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 1
-    }
-   },
-   {
-    "agent": "manual-tools",
-    "scenario": "S7",
-    "ms": 0.572,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Should I buy Nvidia stock?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.458,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo only: no real-time analysis or investment recommendation is provided."
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.103,
-      "messages": []
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "manual-tools",
-    "scenario": "S8",
-    "ms": 0.89,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Get the price of Tesla and the latest Tesla news"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.494,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Tesla"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.378,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "215.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.667,
-     "execution": 0.5,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.542,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer",
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S1",
-    "ms": 1.518,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.675,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "sell_stock",
-          "args": {
-           "name": "Apple",
-           "qty": 25
-          },
-          "id": "demo_call_1"
-         },
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "Microsoft",
-           "qty": 10
-          },
-          "id": "demo_call_2"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.819,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-        "name": "sell_stock",
-        "tool_call_id": "demo_call_1"
-       },
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-        "name": "buy_stock",
-        "tool_call_id": "demo_call_2"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 2,
-     "tool_messages": 2,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S2",
-    "ms": 1.483,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Apple stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.882,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Apple"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.58,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "175.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S3",
-    "ms": 1.076,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Google stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.641,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Google"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.417,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "135.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S4",
-    "ms": 0.495,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Explain the P/E ratio in one line"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.477,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "P/E ratio = stock price divided by earnings per share (demo)."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S5",
-    "ms": 0.535,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What are market sentiments of Tesla?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.516,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo mode: no tool call selected for this question."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.0,
-     "execution": 0.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 0.5,
-     "status": "partial",
-     "notes": [
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S6",
-    "ms": 0.952,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Buy 0 shares of IBM"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.501,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "IBM",
-           "qty": 0
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.441,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "name must be supplied and qty must be a positive integer",
-        "name": "buy_stock",
-        "status": "error",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 1
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S7",
-    "ms": 0.643,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Should I buy Nvidia stock?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.624,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo only: no real-time analysis or investment recommendation is provided."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S8",
-    "ms": 0.935,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Get the price of Tesla and the latest Tesla news"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.546,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Tesla"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.372,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "215.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.667,
-     "execution": 0.5,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.542,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer",
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S1",
-    "ms": 2.639,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.779,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "sell_stock",
-          "args": {
-           "name": "Apple",
-           "qty": 25
-          },
-          "id": "demo_call_1"
-         },
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "Microsoft",
-           "qty": 10
-          },
-          "id": "demo_call_2"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 1.828,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-        "name": "sell_stock",
-        "tool_call_id": "demo_call_1"
-       },
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-        "name": "buy_stock",
-        "tool_call_id": "demo_call_2"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 2,
-     "tool_messages": 2,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S2",
-    "ms": 1.525,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Apple stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.64,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Apple"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.863,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "175.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S3",
-    "ms": 1.385,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Google stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
       "ms": 0.613,
       "messages": [
        {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Google"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.75,
-      "messages": [
-       {
         "type": "ToolMessage",
         "content": "135.0",
         "name": "stock_price",
@@ -1987,12 +1001,13 @@
     }
    },
    {
-    "agent": "prebuilt",
+    "agent": "manual-tools",
     "scenario": "S4",
-    "ms": 0.555,
+    "ms": 1.022,
     "crashed": null,
     "nodes": [
-     "agent"
+     "agent",
+     "tools"
     ],
     "steps": [
      {
@@ -2007,524 +1022,18 @@
      },
      {
       "node": "agent",
-      "ms": 0.536,
+      "ms": 0.796,
       "messages": [
        {
         "type": "AIMessage",
         "content": "P/E ratio = stock price divided by earnings per share (demo)."
        }
       ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S5",
-    "ms": 0.512,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What are market sentiments of Tesla?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.495,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo mode: no tool call selected for this question."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.0,
-     "execution": 0.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 0.5,
-     "status": "partial",
-     "notes": [
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S6",
-    "ms": 1.388,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Buy 0 shares of IBM"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.48,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "IBM",
-           "qty": 0
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
      },
      {
       "node": "tools",
-      "ms": 0.894,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "name must be supplied and qty must be a positive integer",
-        "name": "buy_stock",
-        "status": "error",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 1
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S7",
-    "ms": 0.615,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Should I buy Nvidia stock?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.596,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo only: no real-time analysis or investment recommendation is provided."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S8",
-    "ms": 1.36,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Get the price of Tesla and the latest Tesla news"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.523,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Tesla"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.815,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "215.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.667,
-     "execution": 0.5,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.542,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer",
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "react-local",
-    "scenario": "S1",
-    "ms": 2.284,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools",
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.728,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "sell_stock",
-          "args": {
-           "name": "Apple",
-           "qty": 25
-          },
-          "id": "demo_call_1"
-         },
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "Microsoft",
-           "qty": 10
-          },
-          "id": "demo_call_2"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 1.281,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-        "name": "sell_stock",
-        "tool_call_id": "demo_call_1"
-       },
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-        "name": "buy_stock",
-        "tool_call_id": "demo_call_2"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.219,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo tool execution complete: SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed. | SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 2,
-     "tool_messages": 2,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "react-local",
-    "scenario": "S2",
-    "ms": 1.824,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools",
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Apple stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.559,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Apple"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 1.037,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "175.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     },
-     {
-      "node": "agent",
       "ms": 0.208,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo tool execution complete: 175.0"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "react-local",
-    "scenario": "S3",
-    "ms": 1.709,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools",
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Google stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.649,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Google"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.845,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "135.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.196,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo tool execution complete: 135.0"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "react-local",
-    "scenario": "S4",
-    "ms": 0.535,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Explain the P/E ratio in one line"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.516,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "P/E ratio = stock price divided by earnings per share (demo)."
-       }
-      ]
+      "messages": []
      }
     ],
     "metrics": {
@@ -2541,12 +1050,13 @@
     }
    },
    {
-    "agent": "react-local",
+    "agent": "manual-tools",
     "scenario": "S5",
-    "ms": 0.467,
+    "ms": 1.005,
     "crashed": null,
     "nodes": [
-     "agent"
+     "agent",
+     "tools"
     ],
     "steps": [
      {
@@ -2561,13 +1071,18 @@
      },
      {
       "node": "agent",
-      "ms": 0.449,
+      "ms": 0.787,
       "messages": [
        {
         "type": "AIMessage",
         "content": "Demo mode: no tool call selected for this question."
        }
       ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.201,
+      "messages": []
      }
     ],
     "metrics": {
@@ -2586,512 +1101,9 @@
     }
    },
    {
-    "agent": "react-local",
+    "agent": "manual-tools",
     "scenario": "S6",
-    "ms": 1.988,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools",
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Buy 0 shares of IBM"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.65,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "IBM",
-           "qty": 0
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 1.109,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "name must be supplied and qty must be a positive integer",
-        "name": "buy_stock",
-        "status": "error",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.211,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo tool execution reported an error: name must be supplied and qty must be a positive integer"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 1
-    }
-   },
-   {
-    "agent": "react-local",
-    "scenario": "S7",
-    "ms": 0.569,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Should I buy Nvidia stock?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.55,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo only: no real-time analysis or investment recommendation is provided."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "react-local",
-    "scenario": "S8",
-    "ms": 2.516,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools",
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Get the price of Tesla and the latest Tesla news"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 1.231,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Tesla"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.969,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "215.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.206,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo tool execution complete: 215.0"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.667,
-     "execution": 0.5,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 0.792,
-     "status": "partial",
-     "notes": [
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "mcp-prebuilt",
-    "scenario": "S1",
-    "ms": 7.349,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 1.766,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "sell_stock",
-          "args": {
-           "name": "Apple",
-           "qty": 25
-          },
-          "id": "demo_call_1"
-         },
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "Microsoft",
-           "qty": 10
-          },
-          "id": "demo_call_2"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 5.533,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-        "name": "sell_stock",
-        "tool_call_id": "demo_call_1"
-       },
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-        "name": "buy_stock",
-        "tool_call_id": "demo_call_2"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 2,
-     "tool_messages": 2,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "mcp-prebuilt",
-    "scenario": "S2",
-    "ms": 3.939,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Apple stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 1.089,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Apple"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 2.803,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "175.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "mcp-prebuilt",
-    "scenario": "S3",
-    "ms": 3.389,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Google stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 1.395,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Google"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 1.957,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "135.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "mcp-prebuilt",
-    "scenario": "S4",
-    "ms": 0.86,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Explain the P/E ratio in one line"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.826,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "P/E ratio = stock price divided by earnings per share (demo)."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "mcp-prebuilt",
-    "scenario": "S5",
-    "ms": 0.753,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What are market sentiments of Tesla?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.722,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo mode: no tool call selected for this question."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.0,
-     "execution": 0.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 0.5,
-     "status": "partial",
-     "notes": [
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "mcp-prebuilt",
-    "scenario": "S6",
-    "ms": 8.489,
+    "ms": 1.493,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3130,7 +1142,1995 @@
      },
      {
       "node": "tools",
-      "ms": 7.659,
+      "ms": 0.683,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "name must be supplied and qty must be a positive integer",
+        "name": "buy_stock",
+        "status": "error",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 1
+    }
+   },
+   {
+    "agent": "manual-tools",
+    "scenario": "S7",
+    "ms": 1.089,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Should I buy Nvidia stock?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.852,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo only: no real-time analysis or investment recommendation is provided."
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.219,
+      "messages": []
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "manual-tools",
+    "scenario": "S8",
+    "ms": 1.521,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Get the price of Tesla and the latest Tesla news"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.841,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Tesla"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.652,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "215.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.667,
+     "execution": 0.5,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.542,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer",
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S1",
+    "ms": 2.332,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.994,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "sell_stock",
+          "args": {
+           "name": "Apple",
+           "qty": 25
+          },
+          "id": "demo_call_1"
+         },
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "Microsoft",
+           "qty": 10
+          },
+          "id": "demo_call_2"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.303,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
+        "name": "sell_stock",
+        "tool_call_id": "demo_call_1"
+       },
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
+        "name": "buy_stock",
+        "tool_call_id": "demo_call_2"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 2,
+     "tool_messages": 2,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S2",
+    "ms": 1.713,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Apple stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.954,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Apple"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.73,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "175.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S3",
+    "ms": 1.584,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Google stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.921,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Google"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.635,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "135.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S4",
+    "ms": 0.833,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Explain the P/E ratio in one line"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.804,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "P/E ratio = stock price divided by earnings per share (demo)."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S5",
+    "ms": 0.836,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What are market sentiments of Tesla?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.807,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo mode: no tool call selected for this question."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.0,
+     "execution": 0.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 0.5,
+     "status": "partial",
+     "notes": [
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S6",
+    "ms": 1.631,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Buy 0 shares of IBM"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.935,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "IBM",
+           "qty": 0
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.678,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "name must be supplied and qty must be a positive integer",
+        "name": "buy_stock",
+        "status": "error",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 1
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S7",
+    "ms": 1.71,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Should I buy Nvidia stock?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 1.679,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo only: no real-time analysis or investment recommendation is provided."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S8",
+    "ms": 1.613,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Get the price of Tesla and the latest Tesla news"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.941,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Tesla"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.643,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "215.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.667,
+     "execution": 0.5,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.542,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer",
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S1",
+    "ms": 3.303,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 1.098,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "sell_stock",
+          "args": {
+           "name": "Apple",
+           "qty": 25
+          },
+          "id": "demo_call_1"
+         },
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "Microsoft",
+           "qty": 10
+          },
+          "id": "demo_call_2"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 2.167,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
+        "name": "sell_stock",
+        "tool_call_id": "demo_call_1"
+       },
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
+        "name": "buy_stock",
+        "tool_call_id": "demo_call_2"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 2,
+     "tool_messages": 2,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S2",
+    "ms": 2.102,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Apple stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.967,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Apple"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.104,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "175.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S3",
+    "ms": 1.92,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Google stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.959,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Google"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.93,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "135.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S4",
+    "ms": 0.874,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Explain the P/E ratio in one line"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.843,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "P/E ratio = stock price divided by earnings per share (demo)."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S5",
+    "ms": 0.884,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What are market sentiments of Tesla?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.853,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo mode: no tool call selected for this question."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.0,
+     "execution": 0.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 0.5,
+     "status": "partial",
+     "notes": [
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S6",
+    "ms": 2.007,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Buy 0 shares of IBM"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.927,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "IBM",
+           "qty": 0
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.059,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "name must be supplied and qty must be a positive integer",
+        "name": "buy_stock",
+        "status": "error",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 1
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S7",
+    "ms": 0.885,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Should I buy Nvidia stock?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.854,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo only: no real-time analysis or investment recommendation is provided."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S8",
+    "ms": 1.946,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Get the price of Tesla and the latest Tesla news"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.951,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Tesla"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.964,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "215.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.667,
+     "execution": 0.5,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.542,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer",
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "react-local",
+    "scenario": "S1",
+    "ms": 3.158,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools",
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.978,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "sell_stock",
+          "args": {
+           "name": "Apple",
+           "qty": 25
+          },
+          "id": "demo_call_1"
+         },
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "Microsoft",
+           "qty": 10
+          },
+          "id": "demo_call_2"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.804,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
+        "name": "sell_stock",
+        "tool_call_id": "demo_call_1"
+       },
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
+        "name": "buy_stock",
+        "tool_call_id": "demo_call_2"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.343,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo tool execution complete: SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed. | SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 2,
+     "tool_messages": 2,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "react-local",
+    "scenario": "S2",
+    "ms": 2.389,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools",
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Apple stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.91,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Apple"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.117,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "175.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.33,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo tool execution complete: 175.0"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "react-local",
+    "scenario": "S3",
+    "ms": 2.339,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools",
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Google stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.963,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Google"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.02,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "135.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.324,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo tool execution complete: 135.0"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "react-local",
+    "scenario": "S4",
+    "ms": 0.859,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Explain the P/E ratio in one line"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.828,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "P/E ratio = stock price divided by earnings per share (demo)."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "react-local",
+    "scenario": "S5",
+    "ms": 0.898,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What are market sentiments of Tesla?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.867,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo mode: no tool call selected for this question."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.0,
+     "execution": 0.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 0.5,
+     "status": "partial",
+     "notes": [
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "react-local",
+    "scenario": "S6",
+    "ms": 2.491,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools",
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Buy 0 shares of IBM"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.902,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "IBM",
+           "qty": 0
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.218,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "name must be supplied and qty must be a positive integer",
+        "name": "buy_stock",
+        "status": "error",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.349,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo tool execution reported an error: name must be supplied and qty must be a positive integer"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 1
+    }
+   },
+   {
+    "agent": "react-local",
+    "scenario": "S7",
+    "ms": 0.897,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Should I buy Nvidia stock?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.866,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo only: no real-time analysis or investment recommendation is provided."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "react-local",
+    "scenario": "S8",
+    "ms": 2.424,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools",
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Get the price of Tesla and the latest Tesla news"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.975,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Tesla"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.077,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "215.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.341,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo tool execution complete: 215.0"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.667,
+     "execution": 0.5,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 0.792,
+     "status": "partial",
+     "notes": [
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "mcp-prebuilt",
+    "scenario": "S1",
+    "ms": 9.695,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 2.081,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "sell_stock",
+          "args": {
+           "name": "Apple",
+           "qty": 25
+          },
+          "id": "demo_call_1"
+         },
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "Microsoft",
+           "qty": 10
+          },
+          "id": "demo_call_2"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 7.539,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
+        "name": "sell_stock",
+        "tool_call_id": "demo_call_1"
+       },
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
+        "name": "buy_stock",
+        "tool_call_id": "demo_call_2"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 2,
+     "tool_messages": 2,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "mcp-prebuilt",
+    "scenario": "S2",
+    "ms": 4.946,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Apple stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 1.403,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Apple"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 3.481,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "175.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "mcp-prebuilt",
+    "scenario": "S3",
+    "ms": 3.932,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Google stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 1.333,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Google"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 2.534,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "135.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "mcp-prebuilt",
+    "scenario": "S4",
+    "ms": 1.295,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Explain the P/E ratio in one line"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 1.238,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "P/E ratio = stock price divided by earnings per share (demo)."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "mcp-prebuilt",
+    "scenario": "S5",
+    "ms": 1.278,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What are market sentiments of Tesla?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 1.221,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo mode: no tool call selected for this question."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.0,
+     "execution": 0.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 0.5,
+     "status": "partial",
+     "notes": [
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "mcp-prebuilt",
+    "scenario": "S6",
+    "ms": 10.482,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Buy 0 shares of IBM"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 1.282,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "IBM",
+           "qty": 0
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 9.139,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3160,7 +3160,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S7",
-    "ms": 1.327,
+    "ms": 1.336,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3178,7 +3178,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.291,
+      "ms": 1.277,
       "messages": [
        {
         "type": "AIMessage",
@@ -3203,7 +3203,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S8",
-    "ms": 3.416,
+    "ms": 3.999,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3222,7 +3222,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.997,
+      "ms": 1.45,
       "messages": [
        {
         "type": "AIMessage",
@@ -3241,7 +3241,7 @@
      },
      {
       "node": "tools",
-      "ms": 2.382,
+      "ms": 2.49,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3271,7 +3271,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S1",
-    "ms": 13.939,
+    "ms": 17.933,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3291,7 +3291,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.907,
+      "ms": 2.334,
       "messages": [
        {
         "type": "AIMessage",
@@ -3319,7 +3319,7 @@
      },
      {
       "node": "tools",
-      "ms": 11.315,
+      "ms": 14.515,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3337,7 +3337,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.684,
+      "ms": 1.012,
       "messages": [
        {
         "type": "AIMessage",
@@ -3362,7 +3362,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S2",
-    "ms": 7.29,
+    "ms": 10.886,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3382,7 +3382,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.013,
+      "ms": 1.753,
       "messages": [
        {
         "type": "AIMessage",
@@ -3401,7 +3401,7 @@
      },
      {
       "node": "tools",
-      "ms": 5.47,
+      "ms": 8.072,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3413,7 +3413,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.772,
+      "ms": 0.993,
       "messages": [
        {
         "type": "AIMessage",
@@ -3438,7 +3438,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S3",
-    "ms": 7.502,
+    "ms": 10.791,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3458,7 +3458,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.234,
+      "ms": 1.794,
       "messages": [
        {
         "type": "AIMessage",
@@ -3477,7 +3477,7 @@
      },
      {
       "node": "tools",
-      "ms": 5.324,
+      "ms": 7.933,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3489,7 +3489,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.909,
+      "ms": 0.994,
       "messages": [
        {
         "type": "AIMessage",
@@ -3514,7 +3514,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S4",
-    "ms": 0.98,
+    "ms": 1.778,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3532,7 +3532,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.944,
+      "ms": 1.699,
       "messages": [
        {
         "type": "AIMessage",
@@ -3557,7 +3557,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S5",
-    "ms": 9.596,
+    "ms": 13.017,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3577,7 +3577,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.213,
+      "ms": 1.789,
       "messages": [
        {
         "type": "AIMessage",
@@ -3596,7 +3596,7 @@
      },
      {
       "node": "tools",
-      "ms": 7.75,
+      "ms": 10.129,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3608,7 +3608,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.548,
+      "ms": 1.0,
       "messages": [
        {
         "type": "AIMessage",
@@ -3633,7 +3633,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S6",
-    "ms": 14.556,
+    "ms": 19.181,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3653,7 +3653,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.67,
+      "ms": 1.813,
       "messages": [
        {
         "type": "AIMessage",
@@ -3673,7 +3673,7 @@
      },
      {
       "node": "tools",
-      "ms": 12.236,
+      "ms": 16.245,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3686,7 +3686,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.615,
+      "ms": 1.022,
       "messages": [
        {
         "type": "AIMessage",
@@ -3711,7 +3711,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S7",
-    "ms": 0.969,
+    "ms": 1.74,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3729,7 +3729,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.934,
+      "ms": 1.658,
       "messages": [
        {
         "type": "AIMessage",
@@ -3754,7 +3754,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S8",
-    "ms": 11.381,
+    "ms": 13.534,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3774,7 +3774,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.427,
+      "ms": 1.752,
       "messages": [
        {
         "type": "AIMessage",
@@ -3800,7 +3800,7 @@
      },
      {
       "node": "tools",
-      "ms": 9.253,
+      "ms": 10.733,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3818,7 +3818,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.666,
+      "ms": 0.977,
       "messages": [
        {
         "type": "AIMessage",
@@ -3843,7 +3843,7 @@
    {
     "agent": "supervisor",
     "scenario": "S1",
-    "ms": 13.575,
+    "ms": 15.702,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -3866,12 +3866,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.259,
+      "ms": 1.543,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.563,
+      "ms": 0.905,
       "messages": [
        {
         "type": "AIMessage",
@@ -3899,7 +3899,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 9.844,
+      "ms": 11.025,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3917,7 +3917,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.797,
+      "ms": 0.9,
       "messages": [
        {
         "type": "AIMessage",
@@ -3928,12 +3928,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.519,
+      "ms": 0.785,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.561,
+      "ms": 0.491,
       "messages": [
        {
         "type": "AIMessage",
@@ -3959,7 +3959,7 @@
    {
     "agent": "supervisor",
     "scenario": "S2",
-    "ms": 7.717,
+    "ms": 9.94,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -3982,12 +3982,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.001,
+      "ms": 1.309,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.688,
+      "ms": 0.859,
       "messages": [
        {
         "type": "AIMessage",
@@ -4006,7 +4006,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 4.358,
+      "ms": 5.595,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4018,7 +4018,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.78,
+      "ms": 0.856,
       "messages": [
        {
         "type": "AIMessage",
@@ -4029,12 +4029,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.459,
+      "ms": 0.776,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.399,
+      "ms": 0.493,
       "messages": [
        {
         "type": "AIMessage",
@@ -4060,7 +4060,7 @@
    {
     "agent": "supervisor",
     "scenario": "S3",
-    "ms": 7.183,
+    "ms": 9.78,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4083,12 +4083,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.296,
+      "ms": 1.319,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.61,
+      "ms": 0.856,
       "messages": [
        {
         "type": "AIMessage",
@@ -4107,7 +4107,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 3.846,
+      "ms": 5.424,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4119,7 +4119,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.537,
+      "ms": 0.829,
       "messages": [
        {
         "type": "AIMessage",
@@ -4130,12 +4130,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.59,
+      "ms": 0.813,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.275,
+      "ms": 0.486,
       "messages": [
        {
         "type": "AIMessage",
@@ -4161,7 +4161,7 @@
    {
     "agent": "supervisor",
     "scenario": "S4",
-    "ms": 1.223,
+    "ms": 1.909,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4180,12 +4180,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.8,
+      "ms": 1.337,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.383,
+      "ms": 0.511,
       "messages": [
        {
         "type": "AIMessage",
@@ -4211,7 +4211,7 @@
    {
     "agent": "supervisor",
     "scenario": "S5",
-    "ms": 9.691,
+    "ms": 11.215,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4234,12 +4234,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.109,
+      "ms": 1.28,
       "messages": []
      },
      {
       "node": "news_agent",
-      "ms": 0.529,
+      "ms": 0.853,
       "messages": [
        {
         "type": "AIMessage",
@@ -4258,7 +4258,7 @@
      },
      {
       "node": "news_tools",
-      "ms": 6.326,
+      "ms": 6.921,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4270,7 +4270,7 @@
      },
      {
       "node": "news_agent",
-      "ms": 0.877,
+      "ms": 0.86,
       "messages": [
        {
         "type": "AIMessage",
@@ -4281,12 +4281,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.536,
+      "ms": 0.792,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.285,
+      "ms": 0.456,
       "messages": [
        {
         "type": "AIMessage",
@@ -4312,7 +4312,7 @@
    {
     "agent": "supervisor",
     "scenario": "S6",
-    "ms": 13.616,
+    "ms": 17.902,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4335,12 +4335,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.968,
+      "ms": 1.308,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.477,
+      "ms": 0.827,
       "messages": [
        {
         "type": "AIMessage",
@@ -4360,7 +4360,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 10.13,
+      "ms": 13.597,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4373,7 +4373,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.917,
+      "ms": 0.857,
       "messages": [
        {
         "type": "AIMessage",
@@ -4384,12 +4384,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.559,
+      "ms": 0.794,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.53,
+      "ms": 0.465,
       "messages": [
        {
         "type": "AIMessage",
@@ -4415,7 +4415,7 @@
    {
     "agent": "supervisor",
     "scenario": "S7",
-    "ms": 2.594,
+    "ms": 3.272,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4436,12 +4436,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.982,
+      "ms": 1.268,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.715,
+      "ms": 0.797,
       "messages": [
        {
         "type": "AIMessage",
@@ -4452,12 +4452,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.54,
+      "ms": 0.742,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.321,
+      "ms": 0.406,
       "messages": [
        {
         "type": "AIMessage",
@@ -4483,7 +4483,7 @@
    {
     "agent": "supervisor",
     "scenario": "S8",
-    "ms": 16.414,
+    "ms": 19.751,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4510,12 +4510,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 1.154,
+      "ms": 1.296,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.64,
+      "ms": 0.803,
       "messages": [
        {
         "type": "AIMessage",
@@ -4534,7 +4534,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 4.76,
+      "ms": 6.656,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4546,7 +4546,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 1.055,
+      "ms": 1.16,
       "messages": [
        {
         "type": "AIMessage",
@@ -4557,12 +4557,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.681,
+      "ms": 0.876,
       "messages": []
      },
      {
       "node": "news_agent",
-      "ms": 0.683,
+      "ms": 0.934,
       "messages": [
        {
         "type": "AIMessage",
@@ -4581,7 +4581,7 @@
      },
      {
       "node": "news_tools",
-      "ms": 5.64,
+      "ms": 6.028,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4593,7 +4593,7 @@
      },
      {
       "node": "news_agent",
-      "ms": 0.811,
+      "ms": 0.798,
       "messages": [
        {
         "type": "AIMessage",
@@ -4604,12 +4604,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.606,
+      "ms": 0.726,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.353,
+      "ms": 0.422,
       "messages": [
        {
         "type": "AIMessage",
@@ -4644,9 +4644,9 @@
    "supervisor": "---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tsupervisor(supervisor)\n\tstock_agent(stock_agent)\n\tstock_tools(stock_tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock</em></small>)\n\tnews_agent(news_agent)\n\tnews_tools(news_tools<hr/><small><em>__tools = news_market_news, news_market_sentiment</em></small>)\n\tfinish(finish)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> supervisor;\n\tnews_agent -. &nbsp;tools&nbsp; .-> news_tools;\n\tnews_agent -. &nbsp;__end__&nbsp; .-> supervisor;\n\tnews_tools --> news_agent;\n\tstock_agent -. &nbsp;tools&nbsp; .-> stock_tools;\n\tstock_agent -. &nbsp;__end__&nbsp; .-> supervisor;\n\tstock_tools --> stock_agent;\n\tsupervisor -.-> finish;\n\tsupervisor -.-> news_agent;\n\tsupervisor -.-> stock_agent;\n\tfinish --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n"
   },
   "mcp_connect_ms": {
-   "mcp-prebuilt": 918.0,
-   "mcp-react": 538.4,
-   "supervisor": 572.8
+   "mcp-prebuilt": 1156.4,
+   "mcp-react": 744.0,
+   "supervisor": 722.9
   },
   "mcp_adapters": [
    "langchain.mcp.MCPAdapter"
@@ -4656,99 +4656,99 @@
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client --include-news   # news server NOT started",
    "exit": 1,
-   "ms": 2883.3,
-   "output": "============== MCP-CLIENT ==============\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:37:00] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n[11/23/26 14:37:00] Failed to connect to MCP server 'news', skipping            \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /workspace/work/audit/stock/httpx2/_transports/default.p \u2502\n                    \u2502 y:95 in map_httpcore_exceptions                          \u2502\n                    \u2502                                                          \u2502\n                    \u2502    92 \u2502   if len(HTTPCORE_EXC_MAP) == 0:                 \u2502\n                    \u2502    93 \u2502   \u2502   HTTPCORE_EXC_MAP = _load_httpcore_exceptio \u2502\n                    \u2502    94 \u2502   try:                                           \u2502\n                    \u2502 \u2771  95 \u2502   \u2502   yield                                      \u2502\n                    \u2502    96 \u2502   except Exception as exc:                       \u2502\n                    \u2502    97 \u2502   \u2502   mapped_exc = None                          \u2502\n                    \u2502    98                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/httpx2/_transports/default.p \u2502\n                    \u2502 y:385 in handle_async_request                            \u2502\n                    \u2502                                                          \u2502\n                    \u2502   382 \u2502   \u2502   \u2502   extensions=request.extensions,         \u2502\n                    \u2502   383 \u2502   \u2502   )                                          \u2502\n                    \u2502   384 \u2502   \u2502   with map_httpcore_exceptions():            \u2502\n                    \u2502 \u2771 385 \u2502   \u2502   \u2502   resp = await self._pool.handle_async_r \u2502\n                    \u2502   386 \u2502   \u2502                                              \u2502\n                    \u2502   387 \u2502   \u2502   assert isinstance(resp.stream, AsyncIterab \u2502\n                    \u2502   388                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 7 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/codex/runtimes/codex-primary-runtime/dependencies/p \u2502\n                    \u2502 ython/lib/python3.12/contextlib.py:158 in __exit__       \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/httpcore2/_exceptions.py:16  \u2502\n                    \u2502 in map_exceptions                                        \u2502\n                    \u2502                                                          \u2502\n                    \u2502   13 \u2502   except Exception as exc:                        \u2502\n                    \u2502   14 \u2502   \u2502   for from_exc, to_exc in map.items():        \u2502\n                    \u2502   15 \u2502   \u2502   \u2502   if isinstance(exc, from_exc):           \u2502\n                    \u2502 \u2771 16 \u2502   \u2502   \u2502   \u2502   raise to_exc(exc) from exc          \u2502\n                    \u2502   17 \u2502   \u2502   raise  # pragma: no cover                   \u2502\n                    \u2502   18                                                     \u2502\n                    \u2502   19                                                     \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/client.py:127 \u2502\n                    \u2502 2 in _session_runner                                     \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/codex/runtimes/codex-primary-runtime/dependencies/p \u2502\n                    \u2502 ython/lib/python3.12/contextlib.py:659 in                \u2502\n                    \u2502 enter_async_context                                      \u2502\n                    \u2502                                                          \u2502\n                    \u2502   656 \u2502   \u2502   \u2502   raise TypeError(f\"'{cls.__module__}.{c \u2502\n                    \u2502   657 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   f\"not support the asyn \u2502\n                    \u2502   658 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502      ) from None             \u2502\n                    \u2502 \u2771 659 \u2502   \u2502   result = await _enter(cm)                  \u2502\n                    \u2502   660 \u2502   \u2502   self._push_async_cm_exit(cm, _exit)        \u2502\n                    \u2502   661 \u2502   \u2502   return result                              \u2502\n                    \u2502   662                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 18 frames hidden ...                 \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/codex/runtimes/codex-primary-runtime/dependencies/p \u2502\n                    \u2502 ython/lib/python3.12/contextlib.py:158 in __exit__       \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/httpx2/_transports/default.p \u2502\n                    \u2502 y:112 in map_httpcore_exceptions                         \u2502\n                    \u2502                                                          \u2502\n                    \u2502   109 \u2502   \u2502   \u2502   raise                                  \u2502\n                    \u2502   110 \u2502   \u2502                                              \u2502\n                    \u2502   111 \u2502   \u2502   message = str(exc)                         \u2502\n                    \u2502 \u2771 112 \u2502   \u2502   raise mapped_exc(message) from exc         \u2502\n                    \u2502   113                                                    \u2502\n                    \u2502   114                                                    \u2502\n                    \u2502   115 class ResponseStream(SyncByteStream):              \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/transports/co \u2502\n                    \u2502 nfig.py:255 in _build_composite                          \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/transports/co \u2502\n                    \u2502 nfig.py:381 in _create_proxy                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 1 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/client.py:999 \u2502\n                    \u2502 in _enter_context                                        \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/client.py:115 \u2502\n                    \u2502 7 in _connect                                            \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    RuntimeError: Client failed to connect: All connection      \n                    attempts failed                                             \nCould not complete example: News MCP tools are unavailable. Start python news_mcp_server.py before using --include-news.",
+   "ms": 3336.4,
+   "output": "============== MCP-CLIENT ==============\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:40:21] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n[11/23/26 14:40:21] Failed to connect to MCP server 'news', skipping            \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:95 in         \u2502\n                    \u2502 map_httpcore_exceptions                                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502    92 \u2502   if len(HTTPCORE_EXC_MAP) == 0:                 \u2502\n                    \u2502    93 \u2502   \u2502   HTTPCORE_EXC_MAP = _load_httpcore_exceptio \u2502\n                    \u2502    94 \u2502   try:                                           \u2502\n                    \u2502 \u2771  95 \u2502   \u2502   yield                                      \u2502\n                    \u2502    96 \u2502   except Exception as exc:                       \u2502\n                    \u2502    97 \u2502   \u2502   mapped_exc = None                          \u2502\n                    \u2502    98                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:385 in        \u2502\n                    \u2502 handle_async_request                                     \u2502\n                    \u2502                                                          \u2502\n                    \u2502   382 \u2502   \u2502   \u2502   extensions=request.extensions,         \u2502\n                    \u2502   383 \u2502   \u2502   )                                          \u2502\n                    \u2502   384 \u2502   \u2502   with map_httpcore_exceptions():            \u2502\n                    \u2502 \u2771 385 \u2502   \u2502   \u2502   resp = await self._pool.handle_async_r \u2502\n                    \u2502   386 \u2502   \u2502                                              \u2502\n                    \u2502   387 \u2502   \u2502   assert isinstance(resp.stream, AsyncIterab \u2502\n                    \u2502   388                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 7 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:158 in __exit__                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpcore2/_exceptions.py:16 in              \u2502\n                    \u2502 map_exceptions                                           \u2502\n                    \u2502                                                          \u2502\n                    \u2502   13 \u2502   except Exception as exc:                        \u2502\n                    \u2502   14 \u2502   \u2502   for from_exc, to_exc in map.items():        \u2502\n                    \u2502   15 \u2502   \u2502   \u2502   if isinstance(exc, from_exc):           \u2502\n                    \u2502 \u2771 16 \u2502   \u2502   \u2502   \u2502   raise to_exc(exc) from exc          \u2502\n                    \u2502   17 \u2502   \u2502   raise  # pragma: no cover                   \u2502\n                    \u2502   18                                                     \u2502\n                    \u2502   19                                                     \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:1272 in            \u2502\n                    \u2502 _session_runner                                          \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:659 in enter_async_context                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502   656 \u2502   \u2502   \u2502   raise TypeError(f\"'{cls.__module__}.{c \u2502\n                    \u2502   657 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   f\"not support the asyn \u2502\n                    \u2502   658 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502      ) from None             \u2502\n                    \u2502 \u2771 659 \u2502   \u2502   result = await _enter(cm)                  \u2502\n                    \u2502   660 \u2502   \u2502   self._push_async_cm_exit(cm, _exit)        \u2502\n                    \u2502   661 \u2502   \u2502   return result                              \u2502\n                    \u2502   662                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 18 frames hidden ...                 \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:158 in __exit__                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:112 in        \u2502\n                    \u2502 map_httpcore_exceptions                                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502   109 \u2502   \u2502   \u2502   raise                                  \u2502\n                    \u2502   110 \u2502   \u2502                                              \u2502\n                    \u2502   111 \u2502   \u2502   message = str(exc)                         \u2502\n                    \u2502 \u2771 112 \u2502   \u2502   raise mapped_exc(message) from exc         \u2502\n                    \u2502   113                                                    \u2502\n                    \u2502   114                                                    \u2502\n                    \u2502   115 class ResponseStream(SyncByteStream):              \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/transports/config.py:255 in  \u2502\n                    \u2502 _build_composite                                         \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/transports/config.py:381 in  \u2502\n                    \u2502 _create_proxy                                            \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 1 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:999 in             \u2502\n                    \u2502 _enter_context                                           \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:1157 in _connect   \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    RuntimeError: Client failed to connect: All connection      \n                    attempts failed                                             \nCould not complete example: News MCP tools are unavailable. Start python news_mcp_server.py before using --include-news.",
    "expect_failure": true
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --list",
    "exit": 0,
-   "ms": 63.4,
+   "ms": 83.7,
    "output": "tools\ntool-calling\nmanual-execution\ngraph-basic\ngraph-manual-tools\ngraph-conditional\ngraph-prebuilt\ntavily\nmcp-client\nmcp-graph\nreact"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --self-test",
    "exit": 0,
-   "ms": 56.0,
+   "ms": 81.9,
    "output": "PASS: pure-Python parsing, simulated tools, safety checks, package files"
   },
   {
    "cmd": "python test.py",
    "exit": 0,
-   "ms": 848.3,
-   "output": "test_demo_response_uses_only_latest_tool_batch (__main__.GraphToolErrors.test_demo_response_uses_only_latest_tool_batch) ... ok\ntest_demo_uses_a_new_call_id_after_an_earlier_batch (__main__.GraphToolErrors.test_demo_uses_a_new_call_id_after_an_earlier_batch) ... ok\ntest_invalid_trade_returns_error_with_reason (__main__.GraphToolErrors.test_invalid_trade_returns_error_with_reason) ... ok\ntest_tool_schema_rejects_boolean_quantity (__main__.GraphToolErrors.test_tool_schema_rejects_boolean_quantity) ... ok\ntest_invalid_trades_rejected (__main__.MCP_LangChain_LangGraph.test_invalid_trades_rejected) ... ok\ntest_known_price_is_fixed_demo_data (__main__.MCP_LangChain_LangGraph.test_known_price_is_fixed_demo_data) ... ok\ntest_multi_tool_request (__main__.MCP_LangChain_LangGraph.test_multi_tool_request) ... ok\ntest_pe_ratio_no_tool (__main__.MCP_LangChain_LangGraph.test_pe_ratio_no_tool) ... ok\ntest_prefixed_mcp_tools (__main__.MCP_LangChain_LangGraph.test_prefixed_mcp_tools) ... ok\ntest_sentiment_tool (__main__.MCP_LangChain_LangGraph.test_sentiment_tool) ... ok\ntest_simulated_trade_cannot_place_an_order (__main__.MCP_LangChain_LangGraph.test_simulated_trade_cannot_place_an_order) ... ok\ntest_stock_price_tool (__main__.MCP_LangChain_LangGraph.test_stock_price_tool) ... ok\ntest_unknown_price_is_placeholder_not_live (__main__.MCP_LangChain_LangGraph.test_unknown_price_is_placeholder_not_live) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.616s\n\nOK"
+   "ms": 1106.2,
+   "output": "test_demo_response_uses_only_latest_tool_batch (__main__.GraphToolErrors.test_demo_response_uses_only_latest_tool_batch) ... ok\ntest_demo_uses_a_new_call_id_after_an_earlier_batch (__main__.GraphToolErrors.test_demo_uses_a_new_call_id_after_an_earlier_batch) ... ok\ntest_invalid_trade_returns_error_with_reason (__main__.GraphToolErrors.test_invalid_trade_returns_error_with_reason) ... ok\ntest_tool_schema_rejects_boolean_quantity (__main__.GraphToolErrors.test_tool_schema_rejects_boolean_quantity) ... ok\ntest_invalid_trades_rejected (__main__.MCP_LangChain_LangGraph.test_invalid_trades_rejected) ... ok\ntest_known_price_is_fixed_demo_data (__main__.MCP_LangChain_LangGraph.test_known_price_is_fixed_demo_data) ... ok\ntest_multi_tool_request (__main__.MCP_LangChain_LangGraph.test_multi_tool_request) ... ok\ntest_pe_ratio_no_tool (__main__.MCP_LangChain_LangGraph.test_pe_ratio_no_tool) ... ok\ntest_prefixed_mcp_tools (__main__.MCP_LangChain_LangGraph.test_prefixed_mcp_tools) ... ok\ntest_sentiment_tool (__main__.MCP_LangChain_LangGraph.test_sentiment_tool) ... ok\ntest_simulated_trade_cannot_place_an_order (__main__.MCP_LangChain_LangGraph.test_simulated_trade_cannot_place_an_order) ... ok\ntest_stock_price_tool (__main__.MCP_LangChain_LangGraph.test_stock_price_tool) ... ok\ntest_unknown_price_is_placeholder_not_live (__main__.MCP_LangChain_LangGraph.test_unknown_price_is_placeholder_not_live) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.813s\n\nOK"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tools",
    "exit": 0,
-   "ms": 519.0,
+   "ms": 847.1,
    "output": "============== TOOLS ==============\nStock price tool type: <class 'langchain_core.tools.structured.StructuredTool'>\nStock price example (NOT live): 175.0\nSimulated trade: SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tool-calling",
    "exit": 0,
-   "ms": 507.1,
+   "ms": 814.4,
    "output": "============== TOOL-CALLING ==============\n\nQUESTION: Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n\nQUESTION: Explain the P/E ratio in one line\n[AIMessage] P/E ratio = stock price divided by earnings per share (demo)."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic manual-execution",
    "exit": 0,
-   "ms": 544.0,
+   "ms": 838.9,
    "output": "============== MANUAL-EXECUTION ==============\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\nExecuted tool responses (ToolMessage objects):\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.\nNo-call case:\n[AIMessage] P/E ratio = stock price divided by earnings per share (demo)."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-basic --graph-mermaid",
    "exit": 0,
-   "ms": 750.2,
+   "ms": 998.2,
    "output": "============== GRAPH-BASIC ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-manual-tools",
    "exit": 0,
-   "ms": 746.3,
+   "ms": 1008.0,
    "output": "============== GRAPH-MANUAL-TOOLS ==============\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-conditional",
    "exit": 0,
-   "ms": 739.6,
+   "ms": 988.6,
    "output": "============== GRAPH-CONDITIONAL ==============\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-prebuilt --graph-mermaid",
    "exit": 0,
-   "ms": 806.6,
+   "ms": 1024.7,
    "output": "============== GRAPH-PREBUILT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_price, buy_stock, sell_stock</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tavily",
    "exit": 0,
-   "ms": 71.0,
+   "ms": 79.0,
    "output": "============== TAVILY ==============\nTavily is skipped in offline mode. Enable --live and set TAVILY_API_KEY + OPENAI_API_KEY."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client",
    "exit": 0,
-   "ms": 2335.9,
-   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO stock server tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter"
+   "ms": 2723.8,
+   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO stock server tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client --include-news",
    "exit": 0,
-   "ms": 2661.1,
-   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock', 'news_market_news', 'news_market_sentiment']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: ['news_market_news', 'news_market_sentiment']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:37:13] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 2787.7,
+   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock', 'news_market_news', 'news_market_sentiment']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: ['news_market_news', 'news_market_sentiment']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:40:37] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-graph --include-news",
    "exit": 0,
-   "ms": 2759.5,
-   "output": "============== MCP-GRAPH ==============\n[HumanMessage] What is the price of Apple stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Apple'})\n[ToolMessage] 175.0\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:409: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:37:15] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 3060.5,
+   "output": "============== MCP-GRAPH ==============\n[HumanMessage] What is the price of Apple stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Apple'})\n[ToolMessage] 175.0\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:409: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:40:40] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic react --graph-mermaid --include-news",
    "exit": 0,
-   "ms": 2895.9,
-   "output": "============== REACT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock, news_market_news, news_market_sentiment</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> agent;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] What is the price of Google stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Google'})\n[ToolMessage] 135.0\n[AIMessage] Demo tool execution complete: 135.0\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:409: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:37:18] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 3073.6,
+   "output": "============== REACT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock, news_market_news, news_market_sentiment</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> agent;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] What is the price of Google stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Google'})\n[ToolMessage] 135.0\n[AIMessage] Demo tool execution complete: 135.0\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:409: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:40:43] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   }
  ]
 }
