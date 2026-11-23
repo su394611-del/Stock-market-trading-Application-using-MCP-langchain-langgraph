@@ -1,10 +1,10 @@
 # Stock-market-trading-Application-using-MCP-langchain-langgraph
-Stock market trading application using MCP-LangChain-LangGraph
-#  LangChain Tools, MCP and LangGraph/ReAct and multi-agents
- LangChain Tools, MCP, LangGraph/ReAct, and multi-agent, production-grade example or demonstration.
- **`Model Context Protocol (MCP).ipynb`**. Includes a standalone Python program, a guided Jupyter Notebook, a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
 
-> **Safety and accuracy:** This course uses simulated stock quotes, synthetic market news, and simulated buy/sell operations. It **never** places brokerage orders and does not offer investment advice. The *offline* model is a small, deterministic, rule-based demonstration, **not ** a real decoder-only  LLM. Using `--live` enables OpenAI API requests (costs may apply).
+Stock market trading application using MCP, LangChain and LangGraph: LangChain tools, MCP servers, LangGraph/ReAct and multi-agent workflows, as a runnable demonstration.
+
+It includes a standalone Python program, a guided Jupyter notebook (`MCP_Langchain_Langraph_Tools.ipynb`), a STDIO MCP server, a Streamable HTTP MCP server, a dependency list, and a Windows launcher.
+
+> **Safety and accuracy:** This project uses simulated stock quotes, synthetic market news, and simulated buy/sell operations. It **never** places brokerage orders and does not offer investment advice. The *offline* model is a small, deterministic, rule-based demonstration, **not** a real decoder-only LLM. Using `--live` enables OpenAI API requests (costs may apply).
 
 ## Files
 
@@ -17,6 +17,7 @@ Stock market trading application using MCP-LangChain-LangGraph
 | `requirements.txt` | Python package dependencies |
 | `.env.example` | Optional API-key template; no real credentials are included |
 | `run_windows.cmd` | Windows double-click launcher (requires installed packages) |
+
 ## Requirements
 
 - **Python 3.12** recommended (Windows 11, Linux, macOS, Google Colab compatible subject to package support).
@@ -27,10 +28,10 @@ Stock market trading application using MCP-LangChain-LangGraph
 
 ### Installation on Windows PowerShell (recommended)
 
-Extract the ZIP to a folder, then:
+Clone the repository (or extract the ZIP) and open PowerShell in that folder:
 
 ```powershell
-cd C:\HF_Projects\1\2
+cd path\to\Stock-market-trading-Application-using-MCP-langchain-langgraph
 conda create -n mcp_langchain_langgraph-new python=3.12 -y
 conda activate mcp_langchain_langgraph-new
 python -m pip install --upgrade pip
@@ -45,7 +46,7 @@ py -3.12 -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-If `Activate.ps1` is blocked by PowerShell policy, run `\.venv\Scripts\python.exe -m pip install -r requirements.txt` and call that interpreter directly instead of changing system security settings.
+If `Activate.ps1` is blocked by PowerShell policy, run `.\.venv\Scripts\python.exe -m pip install -r requirements.txt` and call that interpreter directly instead of changing system security settings.
 
 ### Jupyter / Google Colab
 
@@ -112,10 +113,10 @@ notepad .env
 Set your `OPENAI_API_KEY` without printing it or committing it to Git. If you intend to try Tavily, also set `TAVILY_API_KEY`.
 
 ```powershell
-MCP_Langchain_Langraph_Tools.py --topic tool-calling --live
-MCP_Langchain_Langraph_Tools.py --topic graph-prebuilt --live
-MCP_Langchain_Langraph_Tools.py --topic tavily --live
-MCP_Langchain_Langraph_Tools.py --topic react --live
+python MCP_Langchain_Langraph_Tools.py --topic tool-calling --live
+python MCP_Langchain_Langraph_Tools.py --topic graph-prebuilt --live
+python MCP_Langchain_Langraph_Tools.py --topic tavily --live
+python MCP_Langchain_Langraph_Tools.py --topic react --live
 ```
 
 The default model is `gpt-5-mini` to match the supplied source. Change it with `--model YOUR_MODEL_ID` if your account supports a different tool-capable model. Live LLM calls may incur charges.
@@ -157,13 +158,13 @@ python MCP_Langchain_Langraph_Tools.py --topic react --include-news --live --mod
 6. **No execution-order dependency:** every section constructs its own tools and graph, rather than relying on earlier cells' global variables.
 7. **No hidden external graph rendering:** `--graph-mermaid` prints Mermaid source locally rather than downloading remote PNG graphics.
 8. **Tool execution and routing:** `ToolNode`, `tools_condition`, `MessagesState`, and `ToolMessage` patterns use current LangGraph and LangChain approaches.
-11. **Critical dependency compatibility:** replaced legacy `langchain-mcp-adapters` with the native `langchain.mcp.MCPAdapter` introduced in LangChain 1.4, because the old adapters require `mcp<2` but the current `MCPServer` requires SDK v2. `get_tools(server_name=...)` is replaced with `list_tools()` and filtering server-prefixed tool names.
 9. **Explicit HTTP server setup:** optional Streamable HTTP at `http://127.0.0.1:8000/mcp`; example is not exposed to the public internet.
 10. **Offline first:** a deterministic tool-calling model lets you explore graph control flow without paying for APIs; it is *not* real AI inference.
+11. **Critical dependency compatibility:** replaced legacy `langchain-mcp-adapters` with the native `langchain.mcp.MCPAdapter` introduced in LangChain 1.4, because the old adapters require `mcp<2` but the current `MCPServer` requires SDK v2. `get_tools(server_name=...)` is replaced with `list_tools()` and filtering server-prefixed tool names.
 
 ## Known limitations
 
-- This is a ** production-grade runnable Python program**, not a native compiled Windows `.exe`. The included `.cmd` launcher can be double-clicked on Windows after installing dependencies. Native EXE packaging with PyInstaller is outside the scope of this conversion and can require bundling server scripts and the Python packages.
+- This is a **runnable Python program**, not a native compiled Windows `.exe`. The included `.cmd` launcher can be double-clicked on Windows after installing dependencies. Native EXE packaging with PyInstaller is outside the scope of this conversion and can require bundling server scripts and the Python packages.
 - The `--self-test` only tests standard-library functionality; it **does not verify** live OpenAI, Tavily, HTTP MCP interoperability, or third-party LangGraph API behavior.
 - This package was syntax-checked and passed standard-library tests, but complete third-party integration execution was not available in the conversion environment due to missing packages.
 - The demonstration parser is deliberately limited; example prompts are selected to be deterministic. Use `--live` for real LLM tool-call selection.
@@ -178,5 +179,5 @@ python MCP_Langchain_Langraph_Tools.py --topic react --include-news --live --mod
 - Old adapter compatibility warning: https://github.com/langchain-ai/langchain-mcp-adapters/releases
 - LangGraph `ToolNode`: https://reference.langchain.com/python/langgraph.prebuilt/tool_node/ToolNode
 - LangGraph `tools_condition`: https://reference.langchain.com/python/langgraph.prebuilt/tool_node/tools_condition
-  
+
 This project is licensed under the [Apache License, Version 2.0](License.txt). © 2026 Sudhanshu Shukla.
