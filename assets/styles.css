@@ -22,3 +22,12 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
 .iframe-bar #preview-open-link,.iframe-bar #preview-close{display:none}
+/* AI Lab home button: the same on every subproject page */
+.home-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0 0 28px}
+.home-pill{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 15px 8px 12px;border:1px solid #3c5975;border-radius:999px;background:#122338;color:#eef5ff;font:800 13px/1.2 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.01em;text-decoration:none;transition:border-color .15s,background-color .15s}
+.home-pill:hover{border-color:#7be2f0;background:#163049;color:#eef5ff}
+.home-pill:focus-visible{outline:3px solid #95eaff;outline-offset:2px}
+.home-pill svg{display:block;flex:none;width:16px;height:16px;max-width:none;color:#7be2f0}
+.is-embedded .home-nav,.is-embedded .home-pill{display:none}
+.home-nav{margin:44px 0 0}
+@media(max-width:640px){.home-nav{margin-top:22px}}
