@@ -68,11 +68,11 @@ python test.py
 python MCP_Langchain_Langraph_Tools.py --topic all
 python MCP_Langchain_Langraph_Tools.py --topic tools
 python MCP_Langchain_Langraph_Tools.py --topic tool-calling
-python MCP_Langchain_Langraph_Tools.py--topic manual-execution
+python MCP_Langchain_Langraph_Tools.py --topic manual-execution
 python MCP_Langchain_Langraph_Tools.py --topic graph-basic
 python MCP_Langchain_Langraph_Tools.py --topic graph-manual-tools
 python MCP_Langchain_Langraph_Tools.py --topic graph-conditional
-python MCP_Langchain_Langraph_Tools.py--topic graph-prebuilt
+python MCP_Langchain_Langraph_Tools.py --topic graph-prebuilt
 python MCP_Langchain_Langraph_Tools.py --topic mcp-client
 python MCP_Langchain_Langraph_Tools.py --topic mcp-graph
 python MCP_Langchain_Langraph_Tools.py --topic react --graph-mermaid
@@ -93,9 +93,9 @@ python news_mcp_server.py
 The HTTP server listens on **`127.0.0.1:8000/mcp`**. Keep that terminal running. From a second terminal:
 
 ```powershell
-MCP_Langchain_Langraph_Tools.py --topic mcp-client --include-news
-MCP_Langchain_Langraph_Tools.py --topic mcp-graph --include-news
-MCP_Langchain_Langraph_Tools.py--topic react --include-news
+python MCP_Langchain_Langraph_Tools.py --topic mcp-client --include-news
+python MCP_Langchain_Langraph_Tools.py --topic mcp-graph --include-news
+python MCP_Langchain_Langraph_Tools.py --topic react --include-news
 ```
 
 `--include-news` will fail if the HTTP server is not listening. The HTTP example intentionally binds to localhost, not an external interface, and has no authentication; **do not expose it publicly**.
