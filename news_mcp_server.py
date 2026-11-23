@@ -1,19 +1,17 @@
 
 #Local Streamable HTTP MCP news example, with clearly synthetic responses.
 
-try:
-    from mcp.server.fastmcp import FastMCP
-except ImportError:  # compatibility with older SDK layouts
-    from mcp.server import MCPServer as FastMCP
+from mcp.server import MCPServer
+from mcp.server.mcpserver.exceptions import ToolError
 
-mcp = FastMCP("DemoNews")
+mcp = MCPServer("DemoNews")
 
 
 @mcp.tool()
 def market_news(query: str) -> str:
     """Return a synthetic example headline; does NOT retrieve actual news."""
     if not query.strip():
-        raise ValueError("query must not be blank")
+        raise ToolError("query must not be blank")
     return f"SYNTHETIC DEMO: Example news search for {query!r}. No live articles were fetched."
 
 
@@ -21,7 +19,7 @@ def market_news(query: str) -> str:
 def market_sentiment(symbol: str) -> str:
     """Return fictional market sentiment; NOT an investment recommendation."""
     if not symbol.strip():
-        raise ValueError("symbol must not be blank")
+        raise ToolError("symbol must not be blank")
     return f"SYNTHETIC DEMO: {symbol.upper()} sentiment unavailable without real market data."
 
 

@@ -99,7 +99,7 @@ python MCP_Langchain_Langraph_Tools.py --topic mcp-graph --include-news
 python MCP_Langchain_Langraph_Tools.py --topic react --include-news
 ```
 
-`--include-news` will fail if the HTTP server is not listening. The HTTP example intentionally binds to localhost, not an external interface, and has no authentication; **do not expose it publicly**.
+`--include-news` requires both HTTP news tools. If they are unavailable, the CLI exits with instructions to start the server. The HTTP example intentionally binds to localhost, not an external interface, and has no authentication; **do not expose it publicly**.
 
 ### Live OpenAI tool calling (optional)
 
@@ -166,7 +166,7 @@ python MCP_Langchain_Langraph_Tools.py --topic react --include-news --live --mod
 
 - This is a **runnable Python program**, not a native compiled Windows `.exe`. The included `.cmd` launcher can be double-clicked on Windows after installing dependencies. Native EXE packaging with PyInstaller is outside the scope of this conversion and can require bundling server scripts and the Python packages.
 - The `--self-test` only tests standard-library functionality; it **does not verify** live OpenAI, Tavily, HTTP MCP interoperability, or third-party LangGraph API behavior.
-- This package was syntax-checked and passed standard-library tests, but complete third-party integration execution was not available in the conversion environment due to missing packages.
+- The offline integration checks exercise local LangGraph and both MCP transports. Rejected inputs produce tool errors with the validation message.
 - The demonstration parser is deliberately limited; example prompts are selected to be deterministic. Use `--live` for real LLM tool-call selection.
 - The MCP client spawns a fresh STDIO session for tool discovery/invocation. The HTTP news server must be started separately.
 - Demo news and prices are *not* real. For live news, implement a trusted source with appropriate authentication and attribution.

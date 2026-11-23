@@ -334,7 +334,7 @@ async def open_mcp_tools(stack: AsyncExitStack, include_news: bool) -> tuple[lis
     try:
         from langchain.mcp import MCPAdapter
         adapter = await stack.enter_async_context(MCPAdapter(app.mcp_connections(include_news=include_news)))
-        tools = await adapter.list_tools()
+        tools = await app.list_mcp_tools(adapter, include_news=include_news)
         if tools:
             return list(tools), "langchain.mcp.MCPAdapter"
         reason = "MCPAdapter listed no tools"
@@ -366,7 +366,7 @@ async def sdk_tools(stack: AsyncExitStack, include_news: bool) -> list:
             schema = getattr(t, "input_schema", None) or getattr(t, "inputSchema", None) or \
                 {"type": "object", "properties": {}}
             tools.append(StructuredTool(name=f"{server}_{remote}", description=t.description or "",
-                                        args_schema=schema, coroutine=_call))
+                                        args_schema=schema, coroutine=_call, handle_tool_error=str))
     return tools
 
 

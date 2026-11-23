@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-23 13:58:14 +0000",
+ "generated_at": "2026-11-23 14:36:58 +0000",
  "engine": {
-  "python": "3.12.16",
-  "platform": "Linux-7.0.0-1020-azure-x86_64-with-glibc2.43",
-  "runner": "GitHub Actions",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "runner": "local",
   "mcp": "2.3.0",
   "langgraph": "1.2.24",
   "langchain": "1.5.2",
   "langchain-core": "1.8.4",
-  "langchain-anthropic": "1.7.12",
+  "langchain-anthropic": null,
   "fastmcp": "4.2.5",
   "langgraph_source": "package",
   "live": {
@@ -23,8 +23,8 @@
    "target": "stock_market_mcp_server.py",
    "server": "DemoStockMarket",
    "protocol": "2026-07-28",
-   "connect_ms": 382.2,
-   "list_ms": 1.23,
+   "connect_ms": 601.4,
+   "list_ms": 1.88,
    "tools": [
     {
      "name": "stock_price",
@@ -58,7 +58,7 @@
      },
      "is_error": false,
      "text": "175.0",
-     "ms": 25.82
+     "ms": 36.97
     },
     {
      "tool": "stock_price",
@@ -67,7 +67,7 @@
      },
      "is_error": false,
      "text": "125.0",
-     "ms": 0.95
+     "ms": 2.21
     },
     {
      "tool": "stock_price",
@@ -76,7 +76,7 @@
      },
      "is_error": false,
      "text": "100.0",
-     "ms": 0.74
+     "ms": 1.24
     },
     {
      "tool": "buy_stock",
@@ -86,7 +86,7 @@
      },
      "is_error": false,
      "text": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-     "ms": 1.11
+     "ms": 1.88
     },
     {
      "tool": "sell_stock",
@@ -96,7 +96,7 @@
      },
      "is_error": false,
      "text": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-     "ms": 1.13
+     "ms": 1.68
     },
     {
      "tool": "buy_stock",
@@ -105,8 +105,8 @@
       "qty": 0
      },
      "is_error": true,
-     "text": "Error executing tool buy_stock",
-     "ms": 342.99
+     "text": "Error executing tool buy_stock: name must be supplied and qty must be a positive integer",
+     "ms": 7.89
     }
    ]
   },
@@ -115,8 +115,8 @@
    "target": "http://127.0.0.1:8000/mcp",
    "server": "DemoNews",
    "protocol": "2026-07-28",
-   "connect_ms": 19.9,
-   "list_ms": 1.54,
+   "connect_ms": 37.0,
+   "list_ms": 2.02,
    "tools": [
     {
      "name": "market_news",
@@ -141,7 +141,7 @@
      },
      "is_error": false,
      "text": "SYNTHETIC DEMO: Example news search for 'Tesla earnings'. No live articles were fetched.",
-     "ms": 2.73
+     "ms": 3.69
     },
     {
      "tool": "market_sentiment",
@@ -150,7 +150,7 @@
      },
      "is_error": false,
      "text": "SYNTHETIC DEMO: TSLA sentiment unavailable without real market data.",
-     "ms": 1.88
+     "ms": 2.54
     },
     {
      "tool": "market_sentiment",
@@ -158,8 +158,8 @@
       "symbol": "  "
      },
      "is_error": true,
-     "text": "Error executing tool market_sentiment",
-     "ms": 304.18
+     "text": "Error executing tool market_sentiment: symbol must not be blank",
+     "ms": 3.21
     }
    ]
   }
@@ -375,7 +375,7 @@
    {
     "agent": "basic",
     "scenario": "S1",
-    "ms": 1.712,
+    "ms": 3.666,
     "crashed": null,
     "nodes": [
      "agent"
@@ -393,7 +393,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.685,
+      "ms": 3.633,
       "messages": [
        {
         "type": "AIMessage",
@@ -438,7 +438,7 @@
    {
     "agent": "basic",
     "scenario": "S2",
-    "ms": 0.61,
+    "ms": 0.689,
     "crashed": null,
     "nodes": [
      "agent"
@@ -456,7 +456,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.591,
+      "ms": 0.667,
       "messages": [
        {
         "type": "AIMessage",
@@ -492,7 +492,7 @@
    {
     "agent": "basic",
     "scenario": "S3",
-    "ms": 0.506,
+    "ms": 0.557,
     "crashed": null,
     "nodes": [
      "agent"
@@ -510,7 +510,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.488,
+      "ms": 0.538,
       "messages": [
        {
         "type": "AIMessage",
@@ -546,7 +546,7 @@
    {
     "agent": "basic",
     "scenario": "S4",
-    "ms": 0.394,
+    "ms": 0.656,
     "crashed": null,
     "nodes": [
      "agent"
@@ -564,7 +564,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.378,
+      "ms": 0.637,
       "messages": [
        {
         "type": "AIMessage",
@@ -589,7 +589,7 @@
    {
     "agent": "basic",
     "scenario": "S5",
-    "ms": 0.383,
+    "ms": 0.524,
     "crashed": null,
     "nodes": [
      "agent"
@@ -607,7 +607,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.368,
+      "ms": 0.444,
       "messages": [
        {
         "type": "AIMessage",
@@ -634,7 +634,7 @@
    {
     "agent": "basic",
     "scenario": "S6",
-    "ms": 0.401,
+    "ms": 0.457,
     "crashed": null,
     "nodes": [
      "agent"
@@ -652,7 +652,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.386,
+      "ms": 0.439,
       "messages": [
        {
         "type": "AIMessage",
@@ -689,7 +689,7 @@
    {
     "agent": "basic",
     "scenario": "S7",
-    "ms": 0.344,
+    "ms": 0.432,
     "crashed": null,
     "nodes": [
      "agent"
@@ -707,7 +707,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.33,
+      "ms": 0.391,
       "messages": [
        {
         "type": "AIMessage",
@@ -732,7 +732,7 @@
    {
     "agent": "basic",
     "scenario": "S8",
-    "ms": 0.448,
+    "ms": 0.555,
     "crashed": null,
     "nodes": [
      "agent"
@@ -750,7 +750,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.433,
+      "ms": 0.536,
       "messages": [
        {
         "type": "AIMessage",
@@ -787,7 +787,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S1",
-    "ms": 1.295,
+    "ms": 1.614,
     "crashed": null,
     "nodes": [
      "agent",
@@ -806,7 +806,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.509,
+      "ms": 0.604,
       "messages": [
        {
         "type": "AIMessage",
@@ -834,7 +834,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.765,
+      "ms": 0.986,
       "messages": [
        {
         "type": "ToolMessage",
@@ -869,7 +869,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S2",
-    "ms": 0.864,
+    "ms": 1.095,
     "crashed": null,
     "nodes": [
      "agent",
@@ -888,7 +888,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.437,
+      "ms": 0.563,
       "messages": [
        {
         "type": "AIMessage",
@@ -907,7 +907,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.41,
+      "ms": 0.513,
       "messages": [
        {
         "type": "ToolMessage",
@@ -936,7 +936,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S3",
-    "ms": 0.75,
+    "ms": 0.891,
     "crashed": null,
     "nodes": [
      "agent",
@@ -955,7 +955,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.42,
+      "ms": 0.502,
       "messages": [
        {
         "type": "AIMessage",
@@ -974,7 +974,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.315,
+      "ms": 0.372,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1003,7 +1003,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S4",
-    "ms": 0.509,
+    "ms": 0.674,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1022,7 +1022,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.408,
+      "ms": 0.552,
       "messages": [
        {
         "type": "AIMessage",
@@ -1032,7 +1032,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.092,
+      "ms": 0.112,
       "messages": []
      }
     ],
@@ -1052,7 +1052,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S5",
-    "ms": 0.462,
+    "ms": 0.59,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1071,7 +1071,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.367,
+      "ms": 0.473,
       "messages": [
        {
         "type": "AIMessage",
@@ -1081,7 +1081,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.087,
+      "ms": 0.106,
       "messages": []
      }
     ],
@@ -1103,10 +1103,11 @@
    {
     "agent": "manual-tools",
     "scenario": "S6",
-    "ms": 1.226,
-    "crashed": "ValueError: name must be supplied and qty must be a positive integer",
+    "ms": 0.877,
+    "crashed": null,
     "nodes": [
-     "agent"
+     "agent",
+     "tools"
     ],
     "steps": [
      {
@@ -1121,7 +1122,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.379,
+      "ms": 0.428,
       "messages": [
        {
         "type": "AIMessage",
@@ -1138,27 +1139,40 @@
         ]
        }
       ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.439,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "name must be supplied and qty must be a positive integer",
+        "name": "buy_stock",
+        "status": "error",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
      }
     ],
     "metrics": {
      "selection": 1.0,
-     "execution": 0.0,
+     "execution": 1.0,
      "answer": 0.0,
      "safety": 1.0,
-     "overall": 0.0,
-     "status": "crash",
+     "overall": 0.75,
+     "status": "partial",
      "notes": [
-      "graph raised ValueError"
+      "ends after tools - no final AI answer"
      ],
      "tool_calls": 1,
-     "tool_messages": 0,
-     "tool_errors": 0
+     "tool_messages": 1,
+     "tool_errors": 1
     }
    },
    {
     "agent": "manual-tools",
     "scenario": "S7",
-    "ms": 0.527,
+    "ms": 0.572,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1177,7 +1191,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.421,
+      "ms": 0.458,
       "messages": [
        {
         "type": "AIMessage",
@@ -1187,7 +1201,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.096,
+      "ms": 0.103,
       "messages": []
      }
     ],
@@ -1207,7 +1221,7 @@
    {
     "agent": "manual-tools",
     "scenario": "S8",
-    "ms": 0.758,
+    "ms": 0.89,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1221,626 +1235,6 @@
        {
         "type": "HumanMessage",
         "content": "Get the price of Tesla and the latest Tesla news"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.412,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Tesla"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.33,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "215.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.667,
-     "execution": 0.5,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.542,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer",
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S1",
-    "ms": 1.209,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.548,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "sell_stock",
-          "args": {
-           "name": "Apple",
-           "qty": 25
-          },
-          "id": "demo_call_1"
-         },
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "Microsoft",
-           "qty": 10
-          },
-          "id": "demo_call_2"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.642,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-        "name": "sell_stock",
-        "tool_call_id": "demo_call_1"
-       },
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-        "name": "buy_stock",
-        "tool_call_id": "demo_call_2"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 2,
-     "tool_messages": 2,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S2",
-    "ms": 0.865,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Apple stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.48,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Apple"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.369,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "175.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S3",
-    "ms": 0.775,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Google stocks?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.448,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Google"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.311,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "135.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S4",
-    "ms": 0.401,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Explain the P/E ratio in one line"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.387,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "P/E ratio = stock price divided by earnings per share (demo)."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S5",
-    "ms": 0.39,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What are market sentiments of Tesla?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.376,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo mode: no tool call selected for this question."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.0,
-     "execution": 0.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 0.5,
-     "status": "partial",
-     "notes": [
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S6",
-    "ms": 0.657,
-    "crashed": "ValueError: name must be supplied and qty must be a positive integer",
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Buy 0 shares of IBM"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.399,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "IBM",
-           "qty": 0
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 0.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.0,
-     "status": "crash",
-     "notes": [
-      "graph raised ValueError"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S7",
-    "ms": 0.537,
-    "crashed": null,
-    "nodes": [
-     "agent"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Should I buy Nvidia stock?"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.522,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "Demo only: no real-time analysis or investment recommendation is provided."
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 1.0,
-     "safety": 1.0,
-     "overall": 1.0,
-     "status": "pass",
-     "notes": [],
-     "tool_calls": 0,
-     "tool_messages": 0,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "conditional",
-    "scenario": "S8",
-    "ms": 0.765,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Get the price of Tesla and the latest Tesla news"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.42,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "stock_price",
-          "args": {
-           "name": "Tesla"
-          },
-          "id": "demo_call_1"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 0.33,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "215.0",
-        "name": "stock_price",
-        "tool_call_id": "demo_call_1"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 0.667,
-     "execution": 0.5,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.542,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer",
-      "missing tool call: market_sentiment"
-     ],
-     "tool_calls": 1,
-     "tool_messages": 1,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S1",
-    "ms": 1.837,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
-       }
-      ]
-     },
-     {
-      "node": "agent",
-      "ms": 0.543,
-      "messages": [
-       {
-        "type": "AIMessage",
-        "content": "",
-        "tool_calls": [
-         {
-          "name": "sell_stock",
-          "args": {
-           "name": "Apple",
-           "qty": 25
-          },
-          "id": "demo_call_1"
-         },
-         {
-          "name": "buy_stock",
-          "args": {
-           "name": "Microsoft",
-           "qty": 10
-          },
-          "id": "demo_call_2"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "node": "tools",
-      "ms": 1.271,
-      "messages": [
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
-        "name": "sell_stock",
-        "tool_call_id": "demo_call_1"
-       },
-       {
-        "type": "ToolMessage",
-        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
-        "name": "buy_stock",
-        "tool_call_id": "demo_call_2"
-       }
-      ]
-     }
-    ],
-    "metrics": {
-     "selection": 1.0,
-     "execution": 1.0,
-     "answer": 0.0,
-     "safety": 1.0,
-     "overall": 0.75,
-     "status": "partial",
-     "notes": [
-      "ends after tools - no final AI answer"
-     ],
-     "tool_calls": 2,
-     "tool_messages": 2,
-     "tool_errors": 0
-    }
-   },
-   {
-    "agent": "prebuilt",
-    "scenario": "S2",
-    "ms": 1.105,
-    "crashed": null,
-    "nodes": [
-     "agent",
-     "tools"
-    ],
-    "steps": [
-     {
-      "node": "__start__",
-      "ms": 0.0,
-      "messages": [
-       {
-        "type": "HumanMessage",
-        "content": "What is the price of Apple stocks?"
        }
       ]
      },
@@ -1855,6 +1249,156 @@
          {
           "name": "stock_price",
           "args": {
+           "name": "Tesla"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.378,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "215.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.667,
+     "execution": 0.5,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.542,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer",
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S1",
+    "ms": 1.518,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.675,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "sell_stock",
+          "args": {
+           "name": "Apple",
+           "qty": 25
+          },
+          "id": "demo_call_1"
+         },
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "Microsoft",
+           "qty": 10
+          },
+          "id": "demo_call_2"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.819,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
+        "name": "sell_stock",
+        "tool_call_id": "demo_call_1"
+       },
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
+        "name": "buy_stock",
+        "tool_call_id": "demo_call_2"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 2,
+     "tool_messages": 2,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S2",
+    "ms": 1.483,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Apple stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.882,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
            "name": "Apple"
           },
           "id": "demo_call_1"
@@ -1865,7 +1409,491 @@
      },
      {
       "node": "tools",
-      "ms": 0.593,
+      "ms": 0.58,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "175.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S3",
+    "ms": 1.076,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Google stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.641,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Google"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.417,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "135.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S4",
+    "ms": 0.495,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Explain the P/E ratio in one line"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.477,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "P/E ratio = stock price divided by earnings per share (demo)."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S5",
+    "ms": 0.535,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What are market sentiments of Tesla?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.516,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo mode: no tool call selected for this question."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.0,
+     "execution": 0.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 0.5,
+     "status": "partial",
+     "notes": [
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S6",
+    "ms": 0.952,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Buy 0 shares of IBM"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.501,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "IBM",
+           "qty": 0
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.441,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "name must be supplied and qty must be a positive integer",
+        "name": "buy_stock",
+        "status": "error",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 1
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S7",
+    "ms": 0.643,
+    "crashed": null,
+    "nodes": [
+     "agent"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Should I buy Nvidia stock?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.624,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo only: no real-time analysis or investment recommendation is provided."
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 1.0,
+     "safety": 1.0,
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
+     "tool_calls": 0,
+     "tool_messages": 0,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "conditional",
+    "scenario": "S8",
+    "ms": 0.935,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Get the price of Tesla and the latest Tesla news"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.546,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Tesla"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.372,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "215.0",
+        "name": "stock_price",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 0.667,
+     "execution": 0.5,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.542,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer",
+      "missing tool call: market_sentiment"
+     ],
+     "tool_calls": 1,
+     "tool_messages": 1,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S1",
+    "ms": 2.639,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "Sell 25 Apple shares and purchase 10 Microsoft stocks"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.779,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "sell_stock",
+          "args": {
+           "name": "Apple",
+           "qty": 25
+          },
+          "id": "demo_call_1"
+         },
+         {
+          "name": "buy_stock",
+          "args": {
+           "name": "Microsoft",
+           "qty": 10
+          },
+          "id": "demo_call_2"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.828,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.",
+        "name": "sell_stock",
+        "tool_call_id": "demo_call_1"
+       },
+       {
+        "type": "ToolMessage",
+        "content": "SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.",
+        "name": "buy_stock",
+        "tool_call_id": "demo_call_2"
+       }
+      ]
+     }
+    ],
+    "metrics": {
+     "selection": 1.0,
+     "execution": 1.0,
+     "answer": 0.0,
+     "safety": 1.0,
+     "overall": 0.75,
+     "status": "partial",
+     "notes": [
+      "ends after tools - no final AI answer"
+     ],
+     "tool_calls": 2,
+     "tool_messages": 2,
+     "tool_errors": 0
+    }
+   },
+   {
+    "agent": "prebuilt",
+    "scenario": "S2",
+    "ms": 1.525,
+    "crashed": null,
+    "nodes": [
+     "agent",
+     "tools"
+    ],
+    "steps": [
+     {
+      "node": "__start__",
+      "ms": 0.0,
+      "messages": [
+       {
+        "type": "HumanMessage",
+        "content": "What is the price of Apple stocks?"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.64,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+         {
+          "name": "stock_price",
+          "args": {
+           "name": "Apple"
+          },
+          "id": "demo_call_1"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.863,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1894,7 +1922,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S3",
-    "ms": 1.0,
+    "ms": 1.385,
     "crashed": null,
     "nodes": [
      "agent",
@@ -1913,7 +1941,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.471,
+      "ms": 0.613,
       "messages": [
        {
         "type": "AIMessage",
@@ -1932,7 +1960,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.512,
+      "ms": 0.75,
       "messages": [
        {
         "type": "ToolMessage",
@@ -1961,7 +1989,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S4",
-    "ms": 0.405,
+    "ms": 0.555,
     "crashed": null,
     "nodes": [
      "agent"
@@ -1979,7 +2007,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.39,
+      "ms": 0.536,
       "messages": [
        {
         "type": "AIMessage",
@@ -2004,7 +2032,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S5",
-    "ms": 0.4,
+    "ms": 0.512,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2022,7 +2050,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.385,
+      "ms": 0.495,
       "messages": [
        {
         "type": "AIMessage",
@@ -2049,10 +2077,11 @@
    {
     "agent": "prebuilt",
     "scenario": "S6",
-    "ms": 0.852,
-    "crashed": "ValueError: name must be supplied and qty must be a positive integer",
+    "ms": 1.388,
+    "crashed": null,
     "nodes": [
-     "agent"
+     "agent",
+     "tools"
     ],
     "steps": [
      {
@@ -2067,7 +2096,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.398,
+      "ms": 0.48,
       "messages": [
        {
         "type": "AIMessage",
@@ -2084,27 +2113,40 @@
         ]
        }
       ]
+     },
+     {
+      "node": "tools",
+      "ms": 0.894,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "name must be supplied and qty must be a positive integer",
+        "name": "buy_stock",
+        "status": "error",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
      }
     ],
     "metrics": {
      "selection": 1.0,
-     "execution": 0.0,
+     "execution": 1.0,
      "answer": 0.0,
      "safety": 1.0,
-     "overall": 0.0,
-     "status": "crash",
+     "overall": 0.75,
+     "status": "partial",
      "notes": [
-      "graph raised ValueError"
+      "ends after tools - no final AI answer"
      ],
      "tool_calls": 1,
-     "tool_messages": 0,
-     "tool_errors": 0
+     "tool_messages": 1,
+     "tool_errors": 1
     }
    },
    {
     "agent": "prebuilt",
     "scenario": "S7",
-    "ms": 0.443,
+    "ms": 0.615,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2122,7 +2164,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.428,
+      "ms": 0.596,
       "messages": [
        {
         "type": "AIMessage",
@@ -2147,7 +2189,7 @@
    {
     "agent": "prebuilt",
     "scenario": "S8",
-    "ms": 1.068,
+    "ms": 1.36,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2166,7 +2208,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.411,
+      "ms": 0.523,
       "messages": [
        {
         "type": "AIMessage",
@@ -2185,7 +2227,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.639,
+      "ms": 0.815,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2215,7 +2257,7 @@
    {
     "agent": "react-local",
     "scenario": "S1",
-    "ms": 1.597,
+    "ms": 2.284,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2235,7 +2277,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.543,
+      "ms": 0.728,
       "messages": [
        {
         "type": "AIMessage",
@@ -2263,7 +2305,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.865,
+      "ms": 1.281,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2281,7 +2323,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.171,
+      "ms": 0.219,
       "messages": [
        {
         "type": "AIMessage",
@@ -2306,7 +2348,7 @@
    {
     "agent": "react-local",
     "scenario": "S2",
-    "ms": 1.176,
+    "ms": 1.824,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2326,7 +2368,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.445,
+      "ms": 0.559,
       "messages": [
        {
         "type": "AIMessage",
@@ -2345,7 +2387,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.56,
+      "ms": 1.037,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2357,7 +2399,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.155,
+      "ms": 0.208,
       "messages": [
        {
         "type": "AIMessage",
@@ -2382,7 +2424,7 @@
    {
     "agent": "react-local",
     "scenario": "S3",
-    "ms": 1.121,
+    "ms": 1.709,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2402,7 +2444,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.437,
+      "ms": 0.649,
       "messages": [
        {
         "type": "AIMessage",
@@ -2421,7 +2463,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.518,
+      "ms": 0.845,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2433,7 +2475,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.15,
+      "ms": 0.196,
       "messages": [
        {
         "type": "AIMessage",
@@ -2458,7 +2500,7 @@
    {
     "agent": "react-local",
     "scenario": "S4",
-    "ms": 0.407,
+    "ms": 0.535,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2476,7 +2518,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.392,
+      "ms": 0.516,
       "messages": [
        {
         "type": "AIMessage",
@@ -2501,7 +2543,7 @@
    {
     "agent": "react-local",
     "scenario": "S5",
-    "ms": 0.376,
+    "ms": 0.467,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2519,7 +2561,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.363,
+      "ms": 0.449,
       "messages": [
        {
         "type": "AIMessage",
@@ -2546,9 +2588,11 @@
    {
     "agent": "react-local",
     "scenario": "S6",
-    "ms": 0.924,
-    "crashed": "ValueError: name must be supplied and qty must be a positive integer",
+    "ms": 1.988,
+    "crashed": null,
     "nodes": [
+     "agent",
+     "tools",
      "agent"
     ],
     "steps": [
@@ -2564,7 +2608,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.384,
+      "ms": 0.65,
       "messages": [
        {
         "type": "AIMessage",
@@ -2581,27 +2625,48 @@
         ]
        }
       ]
+     },
+     {
+      "node": "tools",
+      "ms": 1.109,
+      "messages": [
+       {
+        "type": "ToolMessage",
+        "content": "name must be supplied and qty must be a positive integer",
+        "name": "buy_stock",
+        "status": "error",
+        "tool_call_id": "demo_call_1"
+       }
+      ]
+     },
+     {
+      "node": "agent",
+      "ms": 0.211,
+      "messages": [
+       {
+        "type": "AIMessage",
+        "content": "Demo tool execution reported an error: name must be supplied and qty must be a positive integer"
+       }
+      ]
      }
     ],
     "metrics": {
      "selection": 1.0,
-     "execution": 0.0,
-     "answer": 0.0,
+     "execution": 1.0,
+     "answer": 1.0,
      "safety": 1.0,
-     "overall": 0.0,
-     "status": "crash",
-     "notes": [
-      "graph raised ValueError"
-     ],
+     "overall": 1.0,
+     "status": "pass",
+     "notes": [],
      "tool_calls": 1,
-     "tool_messages": 0,
-     "tool_errors": 0
+     "tool_messages": 1,
+     "tool_errors": 1
     }
    },
    {
     "agent": "react-local",
     "scenario": "S7",
-    "ms": 0.419,
+    "ms": 0.569,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2619,7 +2684,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.404,
+      "ms": 0.55,
       "messages": [
        {
         "type": "AIMessage",
@@ -2644,7 +2709,7 @@
    {
     "agent": "react-local",
     "scenario": "S8",
-    "ms": 1.131,
+    "ms": 2.516,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2664,7 +2729,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.426,
+      "ms": 1.231,
       "messages": [
        {
         "type": "AIMessage",
@@ -2683,7 +2748,7 @@
      },
      {
       "node": "tools",
-      "ms": 0.529,
+      "ms": 0.969,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2695,7 +2760,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.161,
+      "ms": 0.206,
       "messages": [
        {
         "type": "AIMessage",
@@ -2722,7 +2787,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S1",
-    "ms": 5.592,
+    "ms": 7.349,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2741,7 +2806,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.345,
+      "ms": 1.766,
       "messages": [
        {
         "type": "AIMessage",
@@ -2769,7 +2834,7 @@
      },
      {
       "node": "tools",
-      "ms": 4.205,
+      "ms": 5.533,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2804,7 +2869,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S2",
-    "ms": 2.695,
+    "ms": 3.939,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2823,7 +2888,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.78,
+      "ms": 1.089,
       "messages": [
        {
         "type": "AIMessage",
@@ -2842,7 +2907,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.88,
+      "ms": 2.803,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2871,7 +2936,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S3",
-    "ms": 2.087,
+    "ms": 3.389,
     "crashed": null,
     "nodes": [
      "agent",
@@ -2890,7 +2955,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.724,
+      "ms": 1.395,
       "messages": [
        {
         "type": "AIMessage",
@@ -2909,7 +2974,7 @@
      },
      {
       "node": "tools",
-      "ms": 1.33,
+      "ms": 1.957,
       "messages": [
        {
         "type": "ToolMessage",
@@ -2938,7 +3003,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S4",
-    "ms": 0.691,
+    "ms": 0.86,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2956,7 +3021,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.659,
+      "ms": 0.826,
       "messages": [
        {
         "type": "AIMessage",
@@ -2981,7 +3046,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S5",
-    "ms": 0.625,
+    "ms": 0.753,
     "crashed": null,
     "nodes": [
      "agent"
@@ -2999,7 +3064,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.597,
+      "ms": 0.722,
       "messages": [
        {
         "type": "AIMessage",
@@ -3026,7 +3091,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S6",
-    "ms": 296.918,
+    "ms": 8.489,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3045,7 +3110,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.617,
+      "ms": 0.791,
       "messages": [
        {
         "type": "AIMessage",
@@ -3065,11 +3130,11 @@
      },
      {
       "node": "tools",
-      "ms": 296.224,
+      "ms": 7.659,
       "messages": [
        {
         "type": "ToolMessage",
-        "content": "Error executing tool buy_stock",
+        "content": "Error executing tool buy_stock: name must be supplied and qty must be a positive integer",
         "name": "buy_stock",
         "status": "error",
         "tool_call_id": "demo_call_1"
@@ -3095,7 +3160,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S7",
-    "ms": 2.584,
+    "ms": 1.327,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3113,7 +3178,7 @@
      },
      {
       "node": "agent",
-      "ms": 2.527,
+      "ms": 1.291,
       "messages": [
        {
         "type": "AIMessage",
@@ -3138,7 +3203,7 @@
    {
     "agent": "mcp-prebuilt",
     "scenario": "S8",
-    "ms": 3.696,
+    "ms": 3.416,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3157,7 +3222,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.268,
+      "ms": 0.997,
       "messages": [
        {
         "type": "AIMessage",
@@ -3176,7 +3241,7 @@
      },
      {
       "node": "tools",
-      "ms": 2.389,
+      "ms": 2.382,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3206,7 +3271,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S1",
-    "ms": 9.5,
+    "ms": 13.939,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3226,7 +3291,7 @@
      },
      {
       "node": "agent",
-      "ms": 1.37,
+      "ms": 1.907,
       "messages": [
        {
         "type": "AIMessage",
@@ -3254,7 +3319,7 @@
      },
      {
       "node": "tools",
-      "ms": 7.546,
+      "ms": 11.315,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3272,7 +3337,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.548,
+      "ms": 0.684,
       "messages": [
        {
         "type": "AIMessage",
@@ -3297,7 +3362,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S2",
-    "ms": 5.439,
+    "ms": 7.29,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3317,7 +3382,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.95,
+      "ms": 1.013,
       "messages": [
        {
         "type": "AIMessage",
@@ -3336,7 +3401,7 @@
      },
      {
       "node": "tools",
-      "ms": 3.907,
+      "ms": 5.47,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3348,7 +3413,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.545,
+      "ms": 0.772,
       "messages": [
        {
         "type": "AIMessage",
@@ -3373,7 +3438,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S3",
-    "ms": 4.985,
+    "ms": 7.502,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3393,7 +3458,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.933,
+      "ms": 1.234,
       "messages": [
        {
         "type": "AIMessage",
@@ -3412,7 +3477,7 @@
      },
      {
       "node": "tools",
-      "ms": 3.459,
+      "ms": 5.324,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3424,7 +3489,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.556,
+      "ms": 0.909,
       "messages": [
        {
         "type": "AIMessage",
@@ -3449,7 +3514,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S4",
-    "ms": 0.921,
+    "ms": 0.98,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3467,7 +3532,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.879,
+      "ms": 0.944,
       "messages": [
        {
         "type": "AIMessage",
@@ -3492,7 +3557,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S5",
-    "ms": 6.793,
+    "ms": 9.596,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3512,7 +3577,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.98,
+      "ms": 1.213,
       "messages": [
        {
         "type": "AIMessage",
@@ -3531,7 +3596,7 @@
      },
      {
       "node": "tools",
-      "ms": 5.22,
+      "ms": 7.75,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3543,7 +3608,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.554,
+      "ms": 0.548,
       "messages": [
        {
         "type": "AIMessage",
@@ -3568,7 +3633,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S6",
-    "ms": 298.677,
+    "ms": 14.556,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3588,7 +3653,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.937,
+      "ms": 1.67,
       "messages": [
        {
         "type": "AIMessage",
@@ -3608,11 +3673,11 @@
      },
      {
       "node": "tools",
-      "ms": 297.144,
+      "ms": 12.236,
       "messages": [
        {
         "type": "ToolMessage",
-        "content": "Error executing tool buy_stock",
+        "content": "Error executing tool buy_stock: name must be supplied and qty must be a positive integer",
         "name": "stock_buy_stock",
         "status": "error",
         "tool_call_id": "demo_call_1"
@@ -3621,11 +3686,11 @@
      },
      {
       "node": "agent",
-      "ms": 0.565,
+      "ms": 0.615,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: Error executing tool buy_stock"
+        "content": "Demo tool execution reported an error: Error executing tool buy_stock: name must be supplied and qty must be a positive integer"
        }
       ]
      }
@@ -3646,7 +3711,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S7",
-    "ms": 0.793,
+    "ms": 0.969,
     "crashed": null,
     "nodes": [
      "agent"
@@ -3664,7 +3729,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.762,
+      "ms": 0.934,
       "messages": [
        {
         "type": "AIMessage",
@@ -3689,7 +3754,7 @@
    {
     "agent": "mcp-react",
     "scenario": "S8",
-    "ms": 6.991,
+    "ms": 11.381,
     "crashed": null,
     "nodes": [
      "agent",
@@ -3709,7 +3774,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.741,
+      "ms": 1.427,
       "messages": [
        {
         "type": "AIMessage",
@@ -3735,7 +3800,7 @@
      },
      {
       "node": "tools",
-      "ms": 5.813,
+      "ms": 9.253,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3753,7 +3818,7 @@
      },
      {
       "node": "agent",
-      "ms": 0.409,
+      "ms": 0.666,
       "messages": [
        {
         "type": "AIMessage",
@@ -3778,7 +3843,7 @@
    {
     "agent": "supervisor",
     "scenario": "S1",
-    "ms": 8.31,
+    "ms": 13.575,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -3801,12 +3866,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.887,
+      "ms": 1.259,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.434,
+      "ms": 0.563,
       "messages": [
        {
         "type": "AIMessage",
@@ -3834,7 +3899,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 5.868,
+      "ms": 9.844,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3852,7 +3917,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.466,
+      "ms": 0.797,
       "messages": [
        {
         "type": "AIMessage",
@@ -3863,12 +3928,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.402,
+      "ms": 0.519,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.227,
+      "ms": 0.561,
       "messages": [
        {
         "type": "AIMessage",
@@ -3894,7 +3959,7 @@
    {
     "agent": "supervisor",
     "scenario": "S2",
-    "ms": 5.098,
+    "ms": 7.717,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -3917,12 +3982,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.665,
+      "ms": 1.001,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.398,
+      "ms": 0.688,
       "messages": [
        {
         "type": "AIMessage",
@@ -3941,7 +4006,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 2.964,
+      "ms": 4.358,
       "messages": [
        {
         "type": "ToolMessage",
@@ -3953,7 +4018,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.434,
+      "ms": 0.78,
       "messages": [
        {
         "type": "AIMessage",
@@ -3964,12 +4029,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.391,
+      "ms": 0.459,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.22,
+      "ms": 0.399,
       "messages": [
        {
         "type": "AIMessage",
@@ -3995,7 +4060,7 @@
    {
     "agent": "supervisor",
     "scenario": "S3",
-    "ms": 4.714,
+    "ms": 7.183,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4018,12 +4083,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.641,
+      "ms": 1.296,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.388,
+      "ms": 0.61,
       "messages": [
        {
         "type": "AIMessage",
@@ -4042,7 +4107,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 2.624,
+      "ms": 3.846,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4054,7 +4119,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.43,
+      "ms": 0.537,
       "messages": [
        {
         "type": "AIMessage",
@@ -4065,12 +4130,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.387,
+      "ms": 0.59,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.219,
+      "ms": 0.275,
       "messages": [
        {
         "type": "AIMessage",
@@ -4096,7 +4161,7 @@
    {
     "agent": "supervisor",
     "scenario": "S4",
-    "ms": 0.892,
+    "ms": 1.223,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4115,12 +4180,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.628,
+      "ms": 0.8,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.235,
+      "ms": 0.383,
       "messages": [
        {
         "type": "AIMessage",
@@ -4146,7 +4211,7 @@
    {
     "agent": "supervisor",
     "scenario": "S5",
-    "ms": 6.014,
+    "ms": 9.691,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4169,12 +4234,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.592,
+      "ms": 1.109,
       "messages": []
      },
      {
       "node": "news_agent",
-      "ms": 0.401,
+      "ms": 0.529,
       "messages": [
        {
         "type": "AIMessage",
@@ -4193,7 +4258,7 @@
      },
      {
       "node": "news_tools",
-      "ms": 3.938,
+      "ms": 6.326,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4205,7 +4270,7 @@
      },
      {
       "node": "news_agent",
-      "ms": 0.439,
+      "ms": 0.877,
       "messages": [
        {
         "type": "AIMessage",
@@ -4216,12 +4281,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.376,
+      "ms": 0.536,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.242,
+      "ms": 0.285,
       "messages": [
        {
         "type": "AIMessage",
@@ -4247,7 +4312,7 @@
    {
     "agent": "supervisor",
     "scenario": "S6",
-    "ms": 301.622,
+    "ms": 13.616,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4270,12 +4335,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.635,
+      "ms": 0.968,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.416,
+      "ms": 0.477,
       "messages": [
        {
         "type": "AIMessage",
@@ -4295,11 +4360,11 @@
      },
      {
       "node": "stock_tools",
-      "ms": 299.302,
+      "ms": 10.13,
       "messages": [
        {
         "type": "ToolMessage",
-        "content": "Error executing tool buy_stock",
+        "content": "Error executing tool buy_stock: name must be supplied and qty must be a positive integer",
         "name": "stock_buy_stock",
         "status": "error",
         "tool_call_id": "demo_call_1"
@@ -4308,27 +4373,27 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.616,
+      "ms": 0.917,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: Error executing tool buy_stock",
+        "content": "Demo tool execution reported an error: Error executing tool buy_stock: name must be supplied and qty must be a positive integer",
         "name": "stock_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.395,
+      "ms": 0.559,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.23,
+      "ms": 0.53,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Supervisor summary - stock_agent: Demo tool execution complete: Error executing tool buy_stock",
+        "content": "Supervisor summary - stock_agent: Demo tool execution reported an error: Error executing tool buy_stock: name must be supplied and qty must be a positive integer",
         "name": "supervisor"
        }
       ]
@@ -4350,7 +4415,7 @@
    {
     "agent": "supervisor",
     "scenario": "S7",
-    "ms": 1.86,
+    "ms": 2.594,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4371,12 +4436,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.907,
+      "ms": 0.982,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.414,
+      "ms": 0.715,
       "messages": [
        {
         "type": "AIMessage",
@@ -4387,12 +4452,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.319,
+      "ms": 0.54,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.188,
+      "ms": 0.321,
       "messages": [
        {
         "type": "AIMessage",
@@ -4418,7 +4483,7 @@
    {
     "agent": "supervisor",
     "scenario": "S8",
-    "ms": 10.831,
+    "ms": 16.414,
     "crashed": null,
     "nodes": [
      "supervisor",
@@ -4445,12 +4510,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.611,
+      "ms": 1.154,
       "messages": []
      },
      {
       "node": "stock_agent",
-      "ms": 0.366,
+      "ms": 0.64,
       "messages": [
        {
         "type": "AIMessage",
@@ -4469,7 +4534,7 @@
      },
      {
       "node": "stock_tools",
-      "ms": 3.223,
+      "ms": 4.76,
       "messages": [
        {
         "type": "ToolMessage",
@@ -4481,7 +4546,7 @@
      },
      {
       "node": "stock_agent",
-      "ms": 0.398,
+      "ms": 1.055,
       "messages": [
        {
         "type": "AIMessage",
@@ -4492,12 +4557,12 @@
      },
      {
       "node": "supervisor",
-      "ms": 0.335,
+      "ms": 0.681,
       "messages": []
      },
      {
       "node": "news_agent",
-      "ms": 0.376,
+      "ms": 0.683,
       "messages": [
        {
         "type": "AIMessage",
@@ -4508,7 +4573,7 @@
           "args": {
            "symbol": "TESLA"
           },
-          "id": "demo_call_1"
+          "id": "demo_call_2"
          }
         ]
        }
@@ -4516,39 +4581,39 @@
      },
      {
       "node": "news_tools",
-      "ms": 4.347,
+      "ms": 5.64,
       "messages": [
        {
         "type": "ToolMessage",
         "content": "SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
         "name": "news_market_sentiment",
-        "tool_call_id": "demo_call_1"
+        "tool_call_id": "demo_call_2"
        }
       ]
      },
      {
       "node": "news_agent",
-      "ms": 0.417,
+      "ms": 0.811,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Demo tool execution complete: 215.0 | SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
+        "content": "Demo tool execution complete: SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
         "name": "news_agent"
        }
       ]
      },
      {
       "node": "supervisor",
-      "ms": 0.475,
+      "ms": 0.606,
       "messages": []
      },
      {
       "node": "finish",
-      "ms": 0.255,
+      "ms": 0.353,
       "messages": [
        {
         "type": "AIMessage",
-        "content": "Supervisor summary - stock_agent: Demo tool execution complete: 215.0 || news_agent: Demo tool execution complete: 215.0 | SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
+        "content": "Supervisor summary - stock_agent: Demo tool execution complete: 215.0 || news_agent: Demo tool execution complete: SYNTHETIC DEMO: TESLA sentiment unavailable without real market data.",
         "name": "supervisor"
        }
       ]
@@ -4579,9 +4644,9 @@
    "supervisor": "---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tsupervisor(supervisor)\n\tstock_agent(stock_agent)\n\tstock_tools(stock_tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock</em></small>)\n\tnews_agent(news_agent)\n\tnews_tools(news_tools<hr/><small><em>__tools = news_market_news, news_market_sentiment</em></small>)\n\tfinish(finish)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> supervisor;\n\tnews_agent -. &nbsp;tools&nbsp; .-> news_tools;\n\tnews_agent -. &nbsp;__end__&nbsp; .-> supervisor;\n\tnews_tools --> news_agent;\n\tstock_agent -. &nbsp;tools&nbsp; .-> stock_tools;\n\tstock_agent -. &nbsp;__end__&nbsp; .-> supervisor;\n\tstock_tools --> stock_agent;\n\tsupervisor -.-> finish;\n\tsupervisor -.-> news_agent;\n\tsupervisor -.-> stock_agent;\n\tfinish --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n"
   },
   "mcp_connect_ms": {
-   "mcp-prebuilt": 655.8,
-   "mcp-react": 414.8,
-   "supervisor": 402.8
+   "mcp-prebuilt": 918.0,
+   "mcp-react": 538.4,
+   "supervisor": 572.8
   },
   "mcp_adapters": [
    "langchain.mcp.MCPAdapter"
@@ -4590,100 +4655,100 @@
  "cli": [
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client --include-news   # news server NOT started",
-   "exit": 0,
-   "ms": 2114.2,
-   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: []\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:354: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 13:58:15] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n[11/23/26 13:58:15] Failed to connect to MCP server 'news', skipping            \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:95 in         \u2502\n                    \u2502 map_httpcore_exceptions                                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502    92 \u2502   if len(HTTPCORE_EXC_MAP) == 0:                 \u2502\n                    \u2502    93 \u2502   \u2502   HTTPCORE_EXC_MAP = _load_httpcore_exceptio \u2502\n                    \u2502    94 \u2502   try:                                           \u2502\n                    \u2502 \u2771  95 \u2502   \u2502   yield                                      \u2502\n                    \u2502    96 \u2502   except Exception as exc:                       \u2502\n                    \u2502    97 \u2502   \u2502   mapped_exc = None                          \u2502\n                    \u2502    98                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:385 in        \u2502\n                    \u2502 handle_async_request                                     \u2502\n                    \u2502                                                          \u2502\n                    \u2502   382 \u2502   \u2502   \u2502   extensions=request.extensions,         \u2502\n                    \u2502   383 \u2502   \u2502   )                                          \u2502\n                    \u2502   384 \u2502   \u2502   with map_httpcore_exceptions():            \u2502\n                    \u2502 \u2771 385 \u2502   \u2502   \u2502   resp = await self._pool.handle_async_r \u2502\n                    \u2502   386 \u2502   \u2502                                              \u2502\n                    \u2502   387 \u2502   \u2502   assert isinstance(resp.stream, AsyncIterab \u2502\n                    \u2502   388                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 7 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:158 in __exit__                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpcore2/_exceptions.py:16 in              \u2502\n                    \u2502 map_exceptions                                           \u2502\n                    \u2502                                                          \u2502\n                    \u2502   13 \u2502   except Exception as exc:                        \u2502\n                    \u2502   14 \u2502   \u2502   for from_exc, to_exc in map.items():        \u2502\n                    \u2502   15 \u2502   \u2502   \u2502   if isinstance(exc, from_exc):           \u2502\n                    \u2502 \u2771 16 \u2502   \u2502   \u2502   \u2502   raise to_exc(exc) from exc          \u2502\n                    \u2502   17 \u2502   \u2502   raise  # pragma: no cover                   \u2502\n                    \u2502   18                                                     \u2502\n                    \u2502   19                                                     \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:1272 in            \u2502\n                    \u2502 _session_runner                                          \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:659 in enter_async_context                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502   656 \u2502   \u2502   \u2502   raise TypeError(f\"'{cls.__module__}.{c \u2502\n                    \u2502   657 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   f\"not support the asyn \u2502\n                    \u2502   658 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502      ) from None             \u2502\n                    \u2502 \u2771 659 \u2502   \u2502   result = await _enter(cm)                  \u2502\n                    \u2502   660 \u2502   \u2502   self._push_async_cm_exit(cm, _exit)        \u2502\n                    \u2502   661 \u2502   \u2502   return result                              \u2502\n                    \u2502   662                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 18 frames hidden ...                 \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/c \u2502\n                    \u2502 ontextlib.py:158 in __exit__                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/httpx2/_transports/default.py:112 in        \u2502\n                    \u2502 map_httpcore_exceptions                                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502   109 \u2502   \u2502   \u2502   raise                                  \u2502\n                    \u2502   110 \u2502   \u2502                                              \u2502\n                    \u2502   111 \u2502   \u2502   message = str(exc)                         \u2502\n                    \u2502 \u2771 112 \u2502   \u2502   raise mapped_exc(message) from exc         \u2502\n                    \u2502   113                                                    \u2502\n                    \u2502   114                                                    \u2502\n                    \u2502   115 class ResponseStream(SyncByteStream):              \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/transports/config.py:255 in  \u2502\n                    \u2502 _build_composite                                         \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/transports/config.py:381 in  \u2502\n                    \u2502 _create_proxy                                            \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 1 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:999 in             \u2502\n                    \u2502 _enter_context                                           \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/s \u2502\n                    \u2502 ite-packages/fastmcp/client/client.py:1157 in _connect   \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    RuntimeError: Client failed to connect: All connection      \n                    attempts failed",
+   "exit": 1,
+   "ms": 2883.3,
+   "output": "============== MCP-CLIENT ==============\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:37:00] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n[11/23/26 14:37:00] Failed to connect to MCP server 'news', skipping            \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /workspace/work/audit/stock/httpx2/_transports/default.p \u2502\n                    \u2502 y:95 in map_httpcore_exceptions                          \u2502\n                    \u2502                                                          \u2502\n                    \u2502    92 \u2502   if len(HTTPCORE_EXC_MAP) == 0:                 \u2502\n                    \u2502    93 \u2502   \u2502   HTTPCORE_EXC_MAP = _load_httpcore_exceptio \u2502\n                    \u2502    94 \u2502   try:                                           \u2502\n                    \u2502 \u2771  95 \u2502   \u2502   yield                                      \u2502\n                    \u2502    96 \u2502   except Exception as exc:                       \u2502\n                    \u2502    97 \u2502   \u2502   mapped_exc = None                          \u2502\n                    \u2502    98                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/httpx2/_transports/default.p \u2502\n                    \u2502 y:385 in handle_async_request                            \u2502\n                    \u2502                                                          \u2502\n                    \u2502   382 \u2502   \u2502   \u2502   extensions=request.extensions,         \u2502\n                    \u2502   383 \u2502   \u2502   )                                          \u2502\n                    \u2502   384 \u2502   \u2502   with map_httpcore_exceptions():            \u2502\n                    \u2502 \u2771 385 \u2502   \u2502   \u2502   resp = await self._pool.handle_async_r \u2502\n                    \u2502   386 \u2502   \u2502                                              \u2502\n                    \u2502   387 \u2502   \u2502   assert isinstance(resp.stream, AsyncIterab \u2502\n                    \u2502   388                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 7 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/codex/runtimes/codex-primary-runtime/dependencies/p \u2502\n                    \u2502 ython/lib/python3.12/contextlib.py:158 in __exit__       \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/httpcore2/_exceptions.py:16  \u2502\n                    \u2502 in map_exceptions                                        \u2502\n                    \u2502                                                          \u2502\n                    \u2502   13 \u2502   except Exception as exc:                        \u2502\n                    \u2502   14 \u2502   \u2502   for from_exc, to_exc in map.items():        \u2502\n                    \u2502   15 \u2502   \u2502   \u2502   if isinstance(exc, from_exc):           \u2502\n                    \u2502 \u2771 16 \u2502   \u2502   \u2502   \u2502   raise to_exc(exc) from exc          \u2502\n                    \u2502   17 \u2502   \u2502   raise  # pragma: no cover                   \u2502\n                    \u2502   18                                                     \u2502\n                    \u2502   19                                                     \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/client.py:127 \u2502\n                    \u2502 2 in _session_runner                                     \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/codex/runtimes/codex-primary-runtime/dependencies/p \u2502\n                    \u2502 ython/lib/python3.12/contextlib.py:659 in                \u2502\n                    \u2502 enter_async_context                                      \u2502\n                    \u2502                                                          \u2502\n                    \u2502   656 \u2502   \u2502   \u2502   raise TypeError(f\"'{cls.__module__}.{c \u2502\n                    \u2502   657 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   \u2502   f\"not support the asyn \u2502\n                    \u2502   658 \u2502   \u2502   \u2502   \u2502   \u2502   \u2502      ) from None             \u2502\n                    \u2502 \u2771 659 \u2502   \u2502   result = await _enter(cm)                  \u2502\n                    \u2502   660 \u2502   \u2502   self._push_async_cm_exit(cm, _exit)        \u2502\n                    \u2502   661 \u2502   \u2502   return result                              \u2502\n                    \u2502   662                                                    \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 18 frames hidden ...                 \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /opt/codex/runtimes/codex-primary-runtime/dependencies/p \u2502\n                    \u2502 ython/lib/python3.12/contextlib.py:158 in __exit__       \u2502\n                    \u2502                                                          \u2502\n                    \u2502   155 \u2502   \u2502   \u2502   \u2502   # tell if we get the same exceptio \u2502\n                    \u2502   156 \u2502   \u2502   \u2502   \u2502   value = typ()                      \u2502\n                    \u2502   157 \u2502   \u2502   \u2502   try:                                   \u2502\n                    \u2502 \u2771 158 \u2502   \u2502   \u2502   \u2502   self.gen.throw(value)              \u2502\n                    \u2502   159 \u2502   \u2502   \u2502   except StopIteration as exc:           \u2502\n                    \u2502   160 \u2502   \u2502   \u2502   \u2502   # Suppress StopIteration *unless*  \u2502\n                    \u2502   161 \u2502   \u2502   \u2502   \u2502   # was passed to throw().  This pre \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/httpx2/_transports/default.p \u2502\n                    \u2502 y:112 in map_httpcore_exceptions                         \u2502\n                    \u2502                                                          \u2502\n                    \u2502   109 \u2502   \u2502   \u2502   raise                                  \u2502\n                    \u2502   110 \u2502   \u2502                                              \u2502\n                    \u2502   111 \u2502   \u2502   message = str(exc)                         \u2502\n                    \u2502 \u2771 112 \u2502   \u2502   raise mapped_exc(message) from exc         \u2502\n                    \u2502   113                                                    \u2502\n                    \u2502   114                                                    \u2502\n                    \u2502   115 class ResponseStream(SyncByteStream):              \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    ConnectError: All connection attempts failed                \n                                                                                \n                    The above exception was the direct cause of the following   \n                    exception:                                                  \n                                                                                \n                    \u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Traceback (most recent call last) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/transports/co \u2502\n                    \u2502 nfig.py:255 in _build_composite                          \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/transports/co \u2502\n                    \u2502 nfig.py:381 in _create_proxy                             \u2502\n                    \u2502                                                          \u2502\n                    \u2502                 ... 1 frames hidden ...                  \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/client.py:999 \u2502\n                    \u2502 in _enter_context                                        \u2502\n                    \u2502                                                          \u2502\n                    \u2502 /workspace/work/audit/stock/fastmcp/client/client.py:115 \u2502\n                    \u2502 7 in _connect                                            \u2502\n                    \u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n                    RuntimeError: Client failed to connect: All connection      \n                    attempts failed                                             \nCould not complete example: News MCP tools are unavailable. Start python news_mcp_server.py before using --include-news.",
    "expect_failure": true
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --list",
    "exit": 0,
-   "ms": 77.2,
+   "ms": 63.4,
    "output": "tools\ntool-calling\nmanual-execution\ngraph-basic\ngraph-manual-tools\ngraph-conditional\ngraph-prebuilt\ntavily\nmcp-client\nmcp-graph\nreact"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --self-test",
    "exit": 0,
-   "ms": 49.9,
+   "ms": 56.0,
    "output": "PASS: pure-Python parsing, simulated tools, safety checks, package files"
   },
   {
    "cmd": "python test.py",
    "exit": 0,
-   "ms": 121.0,
-   "output": "test_invalid_trades_rejected (__main__.MCP_LangChain_LangGraph.test_invalid_trades_rejected) ... ok\ntest_known_price_is_fixed_demo_data (__main__.MCP_LangChain_LangGraph.test_known_price_is_fixed_demo_data) ... ok\ntest_multi_tool_request (__main__.MCP_LangChain_LangGraph.test_multi_tool_request) ... ok\ntest_pe_ratio_no_tool (__main__.MCP_LangChain_LangGraph.test_pe_ratio_no_tool) ... ok\ntest_prefixed_mcp_tools (__main__.MCP_LangChain_LangGraph.test_prefixed_mcp_tools) ... ok\ntest_sentiment_tool (__main__.MCP_LangChain_LangGraph.test_sentiment_tool) ... ok\ntest_simulated_trade_cannot_place_an_order (__main__.MCP_LangChain_LangGraph.test_simulated_trade_cannot_place_an_order) ... ok\ntest_stock_price_tool (__main__.MCP_LangChain_LangGraph.test_stock_price_tool) ... ok\ntest_unknown_price_is_placeholder_not_live (__main__.MCP_LangChain_LangGraph.test_unknown_price_is_placeholder_not_live) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.001s\n\nOK"
+   "ms": 848.3,
+   "output": "test_demo_response_uses_only_latest_tool_batch (__main__.GraphToolErrors.test_demo_response_uses_only_latest_tool_batch) ... ok\ntest_demo_uses_a_new_call_id_after_an_earlier_batch (__main__.GraphToolErrors.test_demo_uses_a_new_call_id_after_an_earlier_batch) ... ok\ntest_invalid_trade_returns_error_with_reason (__main__.GraphToolErrors.test_invalid_trade_returns_error_with_reason) ... ok\ntest_tool_schema_rejects_boolean_quantity (__main__.GraphToolErrors.test_tool_schema_rejects_boolean_quantity) ... ok\ntest_invalid_trades_rejected (__main__.MCP_LangChain_LangGraph.test_invalid_trades_rejected) ... ok\ntest_known_price_is_fixed_demo_data (__main__.MCP_LangChain_LangGraph.test_known_price_is_fixed_demo_data) ... ok\ntest_multi_tool_request (__main__.MCP_LangChain_LangGraph.test_multi_tool_request) ... ok\ntest_pe_ratio_no_tool (__main__.MCP_LangChain_LangGraph.test_pe_ratio_no_tool) ... ok\ntest_prefixed_mcp_tools (__main__.MCP_LangChain_LangGraph.test_prefixed_mcp_tools) ... ok\ntest_sentiment_tool (__main__.MCP_LangChain_LangGraph.test_sentiment_tool) ... ok\ntest_simulated_trade_cannot_place_an_order (__main__.MCP_LangChain_LangGraph.test_simulated_trade_cannot_place_an_order) ... ok\ntest_stock_price_tool (__main__.MCP_LangChain_LangGraph.test_stock_price_tool) ... ok\ntest_unknown_price_is_placeholder_not_live (__main__.MCP_LangChain_LangGraph.test_unknown_price_is_placeholder_not_live) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.616s\n\nOK"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tools",
    "exit": 0,
-   "ms": 445.8,
+   "ms": 519.0,
    "output": "============== TOOLS ==============\nStock price tool type: <class 'langchain_core.tools.structured.StructuredTool'>\nStock price example (NOT live): 175.0\nSimulated trade: SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tool-calling",
    "exit": 0,
-   "ms": 450.7,
+   "ms": 507.1,
    "output": "============== TOOL-CALLING ==============\n\nQUESTION: Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n\nQUESTION: Explain the P/E ratio in one line\n[AIMessage] P/E ratio = stock price divided by earnings per share (demo)."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic manual-execution",
    "exit": 0,
-   "ms": 447.9,
+   "ms": 544.0,
    "output": "============== MANUAL-EXECUTION ==============\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\nExecuted tool responses (ToolMessage objects):\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed.\nNo-call case:\n[AIMessage] P/E ratio = stock price divided by earnings per share (demo)."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-basic --graph-mermaid",
    "exit": 0,
-   "ms": 587.2,
+   "ms": 750.2,
    "output": "============== GRAPH-BASIC ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-manual-tools",
    "exit": 0,
-   "ms": 591.2,
+   "ms": 746.3,
    "output": "============== GRAPH-MANUAL-TOOLS ==============\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-conditional",
    "exit": 0,
-   "ms": 605.3,
+   "ms": 739.6,
    "output": "============== GRAPH-CONDITIONAL ==============\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic graph-prebuilt --graph-mermaid",
    "exit": 0,
-   "ms": 637.5,
+   "ms": 806.6,
    "output": "============== GRAPH-PREBUILT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_price, buy_stock, sell_stock</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> __end__;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] Sell 25 Apple shares and purchase 10 Microsoft stocks\n[AIMessage] \n  TOOL CALL: sell_stock({'name': 'Apple', 'qty': 25})\n  TOOL CALL: buy_stock({'name': 'Microsoft', 'qty': 10})\n[ToolMessage] SIMULATION ONLY: would sell 25 shares of Apple. No trade was placed.\n[ToolMessage] SIMULATION ONLY: would buy 10 shares of Microsoft. No trade was placed."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic tavily",
    "exit": 0,
-   "ms": 49.1,
+   "ms": 71.0,
    "output": "============== TAVILY ==============\nTavily is skipped in offline mode. Enable --live and set TAVILY_API_KEY + OPENAI_API_KEY."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client",
    "exit": 0,
-   "ms": 1708.3,
-   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO stock server tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:354: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter"
+   "ms": 2335.9,
+   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO stock server tools: ['stock_price', 'buy_stock', 'sell_stock']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter"
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-client --include-news",
    "exit": 0,
-   "ms": 1704.5,
-   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock', 'news_market_news', 'news_market_sentiment']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: ['news_market_news', 'news_market_sentiment']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:354: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 13:58:25] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 2661.1,
+   "output": "============== MCP-CLIENT ==============\nAll MCP tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock', 'news_market_news', 'news_market_sentiment']\nSTDIO stock server tools: ['stock_stock_price', 'stock_buy_stock', 'stock_sell_stock']\nHTTP news server tools: ['news_market_news', 'news_market_sentiment']\nSTDIO sample tool result: 175.0 (simulated, not market data)\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:392: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:37:13] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic mcp-graph --include-news",
    "exit": 0,
-   "ms": 1867.5,
-   "output": "============== MCP-GRAPH ==============\n[HumanMessage] What is the price of Apple stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Apple'})\n[ToolMessage] 175.0\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:371: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 13:58:27] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 2759.5,
+   "output": "============== MCP-GRAPH ==============\n[HumanMessage] What is the price of Apple stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Apple'})\n[ToolMessage] 175.0\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:409: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:37:15] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   },
   {
    "cmd": "python MCP_Langchain_Langraph_Tools.py --topic react --graph-mermaid --include-news",
    "exit": 0,
-   "ms": 1872.8,
-   "output": "============== REACT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock, news_market_news, news_market_sentiment</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> agent;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] What is the price of Google stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Google'})\n[ToolMessage] 135.0\n[AIMessage] Demo tool execution complete: 135.0\n\n/home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:371: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 13:58:28] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n[11/23/26 13:58:29] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
+   "ms": 2895.9,
+   "output": "============== REACT ==============\n---\nconfig:\n  flowchart:\n    curve: linear\n---\ngraph TD;\n\t__start__([<p>__start__</p>]):::first\n\tagent(agent)\n\ttools(tools<hr/><small><em>__tools = stock_stock_price, stock_buy_stock, stock_sell_stock, news_market_news, news_market_sentiment</em></small>)\n\t__end__([<p>__end__</p>]):::last\n\t__start__ --> agent;\n\tagent -.-> __end__;\n\tagent -.-> tools;\n\ttools --> agent;\n\tclassDef default fill:#f2f0ff,line-height:1.2\n\tclassDef first fill-opacity:0\n\tclassDef last fill:#bfb6fc\n\n[HumanMessage] What is the price of Google stocks?\n[AIMessage] \n  TOOL CALL: stock_stock_price({'name': 'Google'})\n[ToolMessage] 135.0\n[AIMessage] Demo tool execution complete: 135.0\n\n/workspace/work/audit/repos/Stock-market-trading-Application-using-MCP-langchain-langgraph/MCP_Langchain_Langraph_Tools.py:409: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.\n  from langchain.mcp import MCPAdapter\n[11/23/26 14:37:18] INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both.                                        \n                    INFO     Proxy detected connected client -     proxy.py:1608\n                             reusing existing session for all                   \n                             requests. This may cause context                   \n                             mixing in concurrent scenarios, and                \n                             the session's existing settings                    \n                             apply, so backend results are                      \n                             validated against their declared                   \n                             output schema rather than relayed                  \n                             as-is. Pass a disconnected client to               \n                             avoid both."
   }
  ]
 }

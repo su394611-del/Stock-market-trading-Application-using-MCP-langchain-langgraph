@@ -131,18 +131,23 @@ def self_test() -> None:
 def make_tools():
     """Create LangChain tools. Requires dependencies from requirements.txt."""
     from langchain_core.tools import tool
+    from pydantic import BaseModel, Field
+
+    class TradeInput(BaseModel):
+        name: str
+        qty: int = Field(strict=True, description="A positive number of shares")
 
     @tool
     def stock_price(name: str) -> float:
         """Look up an illustrative, fixed stock price in USD (NOT live data)."""
         return fake_price(name)
 
-    @tool
+    @tool(args_schema=TradeInput)
     def buy_stock(name: str, qty: int) -> str:
         """SIMULATE buying qty shares; does NOT execute a brokerage transaction."""
         return simulated_trade("buy", name, qty)
 
-    @tool
+    @tool(args_schema=TradeInput)
     def sell_stock(name: str, qty: int) -> str:
         """SIMULATE selling qty shares; does NOT execute a brokerage transaction."""
         return simulated_trade("sell", name, qty)
@@ -167,6 +172,7 @@ class DemoToolCallingModel:
         from langchain_core.messages import AIMessage, ToolMessage, HumanMessage
         if isinstance(messages, str):
             text = messages
+            msgs = []
             last = None
         else:
             msgs = [messages] if isinstance(messages, HumanMessage) else list(messages)
@@ -174,14 +180,24 @@ class DemoToolCallingModel:
             text = next((str(m.content) for m in reversed(msgs)
                          if isinstance(m, HumanMessage)), "")
         if isinstance(last, ToolMessage):
-            last_results = [content_text(m.content) for m in msgs if isinstance(m, ToolMessage)]
-            return AIMessage(content="Demo tool execution complete: " + " | ".join(last_results))
+            results = []
+            for message in reversed(msgs):
+                if not isinstance(message, ToolMessage):
+                    break
+                results.append(message)
+            failed = any(message.status == "error" for message in results)
+            label = "Demo tool execution reported an error: " if failed else "Demo tool execution complete: "
+            details = " | ".join(content_text(message.content) for message in reversed(results))
+            return AIMessage(content=label + details)
         if "p/e" in text.lower() or "pe ratio" in text.lower():
             return AIMessage(content="P/E ratio = stock price divided by earnings per share (demo).")
         if "should i" in text.lower() or "recommendation" in text.lower():
             return AIMessage(content="Demo only: no real-time analysis or investment recommendation is provided.")
         calls = interpret_demo_request(text, [tool.name for tool in self.tools])
         if calls:
+            prior_calls = sum(len(message.tool_calls) for message in msgs if isinstance(message, AIMessage))
+            for index, call in enumerate(calls, prior_calls + 1):
+                call["id"] = f"demo_call_{index}"
             return AIMessage(content="", tool_calls=calls)
         return AIMessage(content="Demo mode: no tool call selected for this question.")
 
@@ -227,8 +243,15 @@ def _sample_input():
 
 def build_graph(llm: Any, tools: Sequence[Any], *, variant: str = "react"):
     """Build four progressively more capable LangGraph lesson examples."""
+    from langchain_core.messages import ToolMessage
+    from langchain_core.tools import ToolException
     from langgraph.graph import START, END, MessagesState, StateGraph
     from langgraph.prebuilt import ToolNode, tools_condition
+
+    def tool_error_message(error: Exception) -> str:
+        if not isinstance(error, (ToolException, ValueError)):
+            raise error
+        return str(error)
 
     if variant not in ("basic", "manual-tools", "conditional", "prebuilt", "react"):
         raise ValueError(f"Unknown graph variant: {variant}")
@@ -249,12 +272,18 @@ def build_graph(llm: Any, tools: Sequence[Any], *, variant: str = "react"):
 
         def execute_tools(state: MessagesState):
             last = state["messages"][-1]
-            return {"messages": [mapping[c["name"]].invoke(c)
-                                 for c in getattr(last, "tool_calls", []) or []]}
+            results = []
+            for call in getattr(last, "tool_calls", []) or []:
+                try:
+                    results.append(mapping[call["name"]].invoke(call))
+                except (ToolException, ValueError) as exc:
+                    results.append(ToolMessage(content=tool_error_message(exc), name=call["name"],
+                                               tool_call_id=call["id"], status="error"))
+            return {"messages": results}
 
         builder.add_node("tools", execute_tools)
     else:
-        builder.add_node("tools", ToolNode(tools))
+        builder.add_node("tools", ToolNode(tools, handle_tool_errors=tool_error_message))
 
     if variant == "manual-tools":
         builder.add_edge("agent", "tools")
@@ -348,12 +377,21 @@ def mcp_connections(*, include_news: bool = False) -> dict[str, Any]:
     return {"mcpServers": servers}
 
 
+async def list_mcp_tools(adapter, *, include_news: bool) -> list[Any]:
+    tools = await adapter.list_tools()
+    if include_news:
+        available = {server_tool_name(tool.name, "news") for tool in tools}
+        if not set(NEWS_TOOL_NAMES).issubset(available):
+            raise RuntimeError("News MCP tools are unavailable. Start python news_mcp_server.py before using --include-news.")
+    return tools
+
+
 async def _run_mcp_client(*, include_news: bool) -> list[Any]:
     # LangChain >=1.4 has native MCP support. The legacy separate package
     # langchain-mcp-adapters 0.3.2 requires MCP SDK <2 and conflicts with v2.
     from langchain.mcp import MCPAdapter
     async with MCPAdapter(mcp_connections(include_news=include_news)) as adapter:
-        tools = await adapter.list_tools()
+        tools = await list_mcp_tools(adapter, include_news=include_news)
         print("All MCP tools:", [t.name for t in tools])
         stock_tools = [t for t in tools if server_tool_name(t.name, "stock") in STOCK_TOOL_NAMES]
         print("STDIO stock server tools:", [t.name for t in stock_tools])
@@ -371,7 +409,7 @@ async def _run_mcp_graph(llm: Any, *, include_news: bool, react: bool, graph_mer
     from langchain.mcp import MCPAdapter
     from langchain_core.messages import HumanMessage
     async with MCPAdapter(mcp_connections(include_news=include_news)) as adapter:
-        tools = await adapter.list_tools()
+        tools = await list_mcp_tools(adapter, include_news=include_news)
         graph = build_graph(llm, tools, variant="react" if react else "prebuilt")
         if graph_mermaid:
             print(graph.get_graph().draw_mermaid())

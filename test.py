@@ -1,6 +1,9 @@
 import unittest
+from importlib.util import find_spec
 
-from MCP_Langchain_Langraph_Tools import fake_price, interpret_demo_request, simulated_trade
+from MCP_Langchain_Langraph_Tools import (
+    DemoToolCallingModel, build_graph, fake_price, interpret_demo_request, make_tools, simulated_trade,
+)
 
 
 class MCP_LangChain_LangGraph(unittest.TestCase):
@@ -44,6 +47,48 @@ class MCP_LangChain_LangGraph(unittest.TestCase):
     def test_sentiment_tool(self):
         result = interpret_demo_request("What are market sentiments of Tesla?", ["market_sentiment"])
         self.assertEqual(result[0]["name"], "market_sentiment")
+
+
+@unittest.skipUnless(find_spec("langgraph") and find_spec("langchain_core"), "requires LangGraph")
+class GraphToolErrors(unittest.TestCase):
+    def test_invalid_trade_returns_error_with_reason(self):
+        from langchain_core.messages import HumanMessage, ToolMessage
+
+        for variant in ("manual-tools", "conditional", "prebuilt", "react"):
+            with self.subTest(variant=variant):
+                graph = build_graph(DemoToolCallingModel(), make_tools(), variant=variant)
+                messages = graph.invoke({"messages": [HumanMessage(content="Buy 0 shares of IBM")]})["messages"]
+                tool_message = next(msg for msg in messages if isinstance(msg, ToolMessage))
+                self.assertEqual(tool_message.status, "error")
+                self.assertIn("positive integer", tool_message.content)
+                if variant == "react":
+                    self.assertIn("reported an error", messages[-1].content)
+
+    def test_tool_schema_rejects_boolean_quantity(self):
+        from pydantic import ValidationError
+
+        buy_stock = next(tool for tool in make_tools() if tool.name == "buy_stock")
+        with self.assertRaises(ValidationError):
+            buy_stock.invoke({"name": "IBM", "qty": True})
+
+    def test_demo_response_uses_only_latest_tool_batch(self):
+        from langchain_core.messages import AIMessage, ToolMessage
+
+        response = DemoToolCallingModel().invoke([
+            ToolMessage(content="135.0", tool_call_id="stock"),
+            AIMessage(content="Stock lookup complete"),
+            ToolMessage(content="news is unavailable", tool_call_id="news", status="error"),
+        ])
+        self.assertEqual(response.content, "Demo tool execution reported an error: news is unavailable")
+
+    def test_demo_uses_a_new_call_id_after_an_earlier_batch(self):
+        from langchain_core.messages import AIMessage, HumanMessage
+
+        model = DemoToolCallingModel(make_tools())
+        prior_call = model.invoke("What is the price of IBM?")
+        new_call = model.invoke([prior_call, AIMessage(content="Price checked"),
+                                 HumanMessage(content="What is the price of Apple?")])
+        self.assertNotEqual(prior_call.tool_calls[0]["id"], new_call.tool_calls[0]["id"])
 
 
 if __name__ == "__main__":
