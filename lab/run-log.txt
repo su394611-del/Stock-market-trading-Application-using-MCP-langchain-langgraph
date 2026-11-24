@@ -1,14 +1,14 @@
-[11/23/26 14:40:24] INFO     Tool 'buy_stock' failed: 'Error       server.py:453
+[11/24/26 11:02:36] INFO     Tool 'buy_stock' failed: 'Error       server.py:453
                              executing tool buy_stock: name must                
                              be supplied and qty must be a                      
                              positive integer'                                  
 /home/runner/work/Stock-market-trading-Application-using-MCP-langchain-langgraph/Stock-market-trading-Application-using-MCP-langchain-langgraph/lab/run_agent_lab.py:335: LangChainBetaWarning: `langchain.mcp` is in beta. It is actively being worked on, so the API may change.
   from langchain.mcp import MCPAdapter
-[11/23/26 14:40:45] INFO     Tool 'buy_stock' failed: 'Error       server.py:453
+[11/24/26 11:02:51] INFO     Tool 'buy_stock' failed: 'Error       server.py:453
                              executing tool buy_stock: name must                
                              be supplied and qty must be a                      
                              positive integer'                                  
-[11/23/26 14:40:46] INFO     Proxy detected connected client -     proxy.py:1608
+[11/24/26 11:02:52] INFO     Proxy detected connected client -     proxy.py:1608
                              reusing existing session for all                   
                              requests. This may cause context                   
                              mixing in concurrent scenarios, and                
@@ -28,11 +28,11 @@
                              output schema rather than relayed                  
                              as-is. Pass a disconnected client to               
                              avoid both.                                        
-[11/23/26 14:40:46] INFO     Tool 'buy_stock' failed: 'Error       server.py:453
+[11/24/26 11:02:52] INFO     Tool 'buy_stock' failed: 'Error       server.py:453
                              executing tool buy_stock: name must                
                              be supplied and qty must be a                      
                              positive integer'                                  
-[11/23/26 14:40:47] INFO     Proxy detected connected client -     proxy.py:1608
+                    INFO     Proxy detected connected client -     proxy.py:1608
                              reusing existing session for all                   
                              requests. This may cause context                   
                              mixing in concurrent scenarios, and                
@@ -52,7 +52,7 @@
                              output schema rather than relayed                  
                              as-is. Pass a disconnected client to               
                              avoid both.                                        
-[11/23/26 14:40:47] INFO     Tool 'buy_stock' failed: 'Error       server.py:453
+[11/24/26 11:02:52] INFO     Tool 'buy_stock' failed: 'Error       server.py:453
                              executing tool buy_stock: name must                
                              be supplied and qty must be a                      
                              positive integer'                                  
