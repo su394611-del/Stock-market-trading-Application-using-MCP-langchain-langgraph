@@ -13,7 +13,11 @@
  }
  if(window.Vue&&typeof window.Vue.createApp==='function'){
   const {createApp}=window.Vue;
-  try{createApp({data(){return{active:'',items:options};},computed:{selected(){return this.items[this.active]||null;}},methods:{open(k){this.active=k;},close(){this.active='';}}}).mount(root);return;}catch(e){console.warn('Vue preview unavailable, using native controls.',e);}
+  // Vue clears the container before compiling it; keep the static markup so the native controls can take over on failure.
+  const snapshot=root.innerHTML;
+  // Text inside v-text/v-html elements is only the no-JavaScript fallback. Vue's compiler rejects it (error 56), so drop it first.
+  root.querySelectorAll('[v-text],[v-html]').forEach(el=>{el.textContent='';});
+  try{createApp({data(){return{active:'',items:options};},computed:{selected(){return this.items[this.active]||null;}},methods:{open(k){this.active=k;},close(){this.active='';}}}).mount(root);return;}catch(e){console.warn('Vue preview unavailable, using native controls.',e);root.innerHTML=snapshot;}
  }
  root.removeAttribute('v-cloak');fallback();
 })();
