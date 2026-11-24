@@ -604,7 +604,7 @@ def inline_into_page(data: dict, page: Path) -> bool:
     pattern = re.compile(r'(<script id="lab-data" type="application/json">)(.*?)(</script>)', re.S)
     if not pattern.search(html):
         return False
-    payload = json.dumps(data, separators=(",", ":")).replace("</", "<\\/")
+    payload = json.dumps(data, separators=(",", ":")).replace("<", "\\u003c")
     page.write_text(pattern.sub(lambda m: m.group(1) + payload + m.group(3), html, count=1), encoding="utf-8")
     return True
 

@@ -381,7 +381,7 @@ function finishRun() {
   }
 }
 function strip(r) { return {nodes: r.nodes, crashed: r.crashed, msgs: r.steps.map(s => s.messages.map(m => [m.type, m.content, (m.tool_calls || []).map(c => [c.name, c.args]), m.status || null, m.name || null]))}; }
-function statusEl(s) { const icon = {pass: "✓", partial: "◐", crash: "✕", fail: "✕"}[s]; return el("span", {class: "status s-" + s, html: `<i aria-hidden="true">${icon}</i>${s}`}); }
+function statusEl(s) { const icon = {pass: "✓", partial: "◐", crash: "✕", fail: "✕"}[s]; return el("span", {class: "status s-" + s, text: `${icon || ""} ${s}`}); }
 function play() { if ((!R.run || R.i >= R.seq.length - 1) && !prepare()) return; stop(); $("#run-btn").textContent = "❚❚ Pause"; R.timer = setInterval(() => { if (!step()) stop(); }, +$("#speed").value); step(); }
 function stop() { if (R.timer) clearInterval(R.timer); R.timer = null; $("#run-btn").textContent = "▶ Run"; }
 function selectAgent(id, sync = true) {
@@ -415,7 +415,7 @@ function hex(h) { return [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16)); }
 function matrix(show) {
   const t = $("#matrix");
   const head = el("tr", {}, el("th", {text: "Agent"}));
-  EV.scenarios.forEach(s => head.append(el("th", {scope: "col", html: `${s.id}<small>${esc(s.title)}</small>`})));
+  EV.scenarios.forEach(s => head.append(el("th", {scope: "col", html: `${esc(s.id)}<small>${esc(s.title)}</small>`})));
   head.append(el("th", {scope: "col", "data-lab-style": "text-align-right", text: "Mean"}));
   t.append(el("thead", {}, head));
   const tb = el("tbody");
@@ -427,10 +427,10 @@ function matrix(show) {
       const bg = m.status === "crash" ? "#3a1820" : rampColor(m.overall);
       const dark = m.overall >= 0.7 && m.status !== "crash";
       const icon = {pass: "✓", partial: "◐", crash: "✕", fail: "✕"}[m.status];
-      const btn = el("button", {type: "button", "aria-label": `${a.label}, ${s.id} ${s.title}: ${m.status}, score ${fmt(m.overall)}. Replay run.`, html: `<span class="v">${fmt(m.overall)}</span><span class="st">${icon} ${m.status}</span>`});
+      const btn = el("button", {type: "button", "aria-label": `${a.label}, ${s.id} ${s.title}: ${m.status}, score ${fmt(m.overall)}. Replay run.`, html: `<span class="v">${fmt(m.overall)}</span><span class="st">${esc(icon || "")} ${esc(m.status)}</span>`});
       btn.style.color = dark ? "#07121f" : "#edf5ff";
       const td = el("td", {class: "cell"}, btn); td.style.background = bg; if (m.status === "crash") td.style.boxShadow = "inset 0 0 0 2px #d03b3b";
-      bindTip(btn, `<b>${esc(a.label)} · ${s.id}</b><div class="r">${esc(s.prompt)}</div><div data-lab-style="margin-top-6px">selection <b>${fmt(m.selection)}</b> · execution <b>${fmt(m.execution)}</b><br>answer <b>${fmt(m.answer)}</b> · safety <b>${fmt(m.safety)}</b></div><div class="r" data-lab-style="margin-top-4px">${m.notes.length ? esc(m.notes.join("; ")) : "all checks met"}</div><div class="r">path: ${esc(r.nodes.join(" → ") || "—")}</div>`);
+      bindTip(btn, `<b>${esc(a.label)} · ${esc(s.id)}</b><div class="r">${esc(s.prompt)}</div><div data-lab-style="margin-top-6px">selection <b>${fmt(m.selection)}</b> · execution <b>${fmt(m.execution)}</b><br>answer <b>${fmt(m.answer)}</b> · safety <b>${fmt(m.safety)}</b></div><div class="r" data-lab-style="margin-top-4px">${m.notes.length ? esc(m.notes.join("; ")) : "all checks met"}</div><div class="r">path: ${esc(r.nodes.join(" → ") || "—")}</div>`);
       btn.addEventListener("click", () => { hideTip(); selectAgent(a.id, false); selectScenario(s.id); show(document.getElementById("t-run")); play(); });
       tr.append(td);
     });
@@ -519,10 +519,10 @@ function charts() {
   tb.append(body); $("#c-break").append(tb);
   // depth
   const maxDepth = Math.max(4, ...EV.runs.map(r => r.nodes.length));
-  dotPlot($("#c-depth"), rows.map(r => ({label: r.label, points: r.rs.map(x => ({v: x.nodes.length, sc: x.scenario, crash: !!x.crashed, path: x.nodes}))})), {max: maxDepth + (maxDepth % 2), tipFn: (r, g) => `<b>${esc(r.label)}</b> · ${g.v} node executions${g.crash ? " · graph raised" : ""}<div class="r">${g.pts.map(p => `${p.sc}: ${esc(p.path.join(" → "))}`).join("<br>")}</div>`});
+  dotPlot($("#c-depth"), rows.map(r => ({label: r.label, points: r.rs.map(x => ({v: x.nodes.length, sc: x.scenario, crash: !!x.crashed, path: x.nodes}))})), {max: maxDepth + (maxDepth % 2), tipFn: (r, g) => `<b>${esc(r.label)}</b> · ${g.v} node executions${g.crash ? " · graph raised" : ""}<div class="r">${g.pts.map(p => `${esc(p.sc)}: ${esc(p.path.join(" → "))}`).join("<br>")}</div>`});
   // calls
-  const cr = rows.map(r => ({label: r.label, proposed: r.rs.reduce((s, x) => s + x.metrics.tool_calls, 0), executed: r.rs.reduce((s, x) => s + x.metrics.tool_messages, 0), errors: r.rs.reduce((s, x) => s + x.metrics.tool_errors, 0)}));
-  groupedHBar($("#c-calls"), cr, [{key: "proposed", label: "proposed", color: "var(--series-1)"}, {key: "executed", label: "executed", color: "var(--series-2)"}], {max: Math.ceil((Math.max(...cr.map(r => Math.max(r.proposed, r.executed))) + 1) / 4) * 4, tipFn: r => `<b>${esc(r.label)}</b><div class="r">proposed ${r.proposed} · executed ${r.executed} · of which errors ${r.errors}</div>`});
+  const cr = rows.map(r => ({label: r.label, proposed: r.rs.reduce((s, x) => s + Number(x.metrics.tool_calls), 0), executed: r.rs.reduce((s, x) => s + Number(x.metrics.tool_messages), 0), errors: r.rs.reduce((s, x) => s + Number(x.metrics.tool_errors), 0)}));
+  groupedHBar($("#c-calls"), cr, [{key: "proposed", label: "proposed", color: "var(--series-1)"}, {key: "executed", label: "executed", color: "var(--series-2)"}], {max: Math.ceil((Math.max(...cr.map(r => Math.max(r.proposed, r.executed))) + 1) / 4) * 4, tipFn: r => `<b>${esc(r.label)}</b><div class="r">proposed ${r.proposed} · executed ${r.executed} · of which errors ${Number(r.errors)}</div>`});
   // MCP round trips
   const mrows = [];
   (DATA.mcp_sdk || []).forEach(t => t.calls.forEach(c => mrows.push({label: `${c.tool}(${Object.values(c.args).join(", ").trim() || "␣"})`, value: c.ms, color: t.transport === "stdio" ? "var(--series-1)" : "var(--series-2)", t, c})));
@@ -596,7 +596,7 @@ function notes() {
     ["Multi-agent routing costs depth, not correctness.", `On S8 the supervisor takes ${find("supervisor", "S8").nodes ? find("supervisor", "S8").nodes.length : 9} node executions against ${find("mcp-react", "S8").nodes ? find("mcp-react", "S8").nodes.length : 3} for single-agent ReAct with the same five tools. Both score 1.00; the supervisor keeps each agent's tool access scoped.`],
     ["Guardrails hold on every path.", "No run produced a “would buy 0” trade or advice text. Invalid quantities are rejected by simulated_trade on both the local and MCP paths."]
   ];
-  F.forEach(([t, d]) => $("#findings").append(el("div", {class: "check"}, el("span", {class: "ic ok", text: "i", "aria-hidden": "true", "data-lab-style": "background-var-cyan"}), el("div", {}, el("strong", {text: t}), el("p", {html: d})))));
+  F.forEach(([t, d]) => $("#findings").append(el("div", {class: "check"}, el("span", {class: "ic ok", text: "i", "aria-hidden": "true", "data-lab-style": "background-var-cyan"}), el("div", {}, el("strong", {text: t}), el("p", {text: d})))));
   const D = [
     ["CLI and local setup", "Use the Python commands in the README. Install the dependencies into the interpreter that launches both MCP processes."],
     ["HTTP server setup", "Start the local news server before using --include-news. The CLI reports when the requested tools are unavailable."]

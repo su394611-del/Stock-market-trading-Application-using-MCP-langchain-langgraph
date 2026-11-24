@@ -9,15 +9,8 @@
  function fallback(){ const cards=root.querySelectorAll('[data-preview]'),viewer=root.querySelector('#preview-frame'),empty=root.querySelector('#preview-placeholder'),label=root.querySelector('#preview-label'),link=root.querySelector('#preview-open-link'),close=root.querySelector('#preview-close');let active='';
  function select(k){const opt=options[k];if(!opt)return;active=k; viewer.hidden=false;viewer.parentElement.style.display='block';viewer.src=opt.url;viewer.title='Preview of '+opt.title;empty.hidden=true;label.textContent=opt.title;link.href=opt.url;link.hidden=false;link.style.display='inline-flex';close.hidden=false;close.style.display='inline-flex';cards.forEach(c=>c.classList.toggle('active',c.dataset.preview===k));}
  cards.forEach(b=>b.addEventListener('click',()=>select(b.dataset.preview)));
+ viewer.hidden=true;viewer.parentElement.style.display='none';link.style.display='none';close.style.display='none';
  close?.addEventListener('click',()=>{viewer.removeAttribute('src');viewer.hidden=true;viewer.parentElement.style.display='none';empty.hidden=false;close.hidden=true;close.style.display='none';link.hidden=true;link.style.display='none';label.textContent='Choose a project preview';cards.forEach(c=>c.classList.remove('active'));});
- }
- if(window.Vue&&typeof window.Vue.createApp==='function'){
-  const {createApp}=window.Vue;
-  // Vue clears the container before compiling it; keep the static markup so the native controls can take over on failure.
-  const snapshot=root.innerHTML;
-  // Text inside v-text/v-html elements is only the no-JavaScript fallback. Vue's compiler rejects it (error 56), so drop it first.
-  root.querySelectorAll('[v-text],[v-html]').forEach(el=>{el.textContent='';});
-  try{createApp({data(){return{active:'',items:options};},computed:{selected(){return this.items[this.active]||null;}},methods:{open(k){this.active=k;},close(){this.active='';}}}).mount(root);return;}catch(e){console.warn('Vue preview unavailable, using native controls.',e);root.innerHTML=snapshot;}
  }
  root.removeAttribute('v-cloak');fallback();
 })();
